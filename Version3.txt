@@ -1,0 +1,9 @@
+Version 3
+
+Version 3 är menat till att finslipa och lägga "finish" på hemsidan. Detta inkluderar bland annat: 
+
+• Animera och sätta transitions
+
+• Lägga till drop-shadow till diverse element
+
+• Ändra färger satta i version 2 som inte blir bra.
