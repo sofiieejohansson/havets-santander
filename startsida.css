@@ -41,13 +41,14 @@ body {
 }
 
 .header {
-    width: 100vw;
+    width: 90vw;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
+    margin-left: 10vw;
 }
 
 .textholder {
@@ -58,6 +59,64 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container-top-destinations{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10vw;
+}
+
+.top-destination-sqaure{
+    height: 405px;
+    border: black 1px solid;
+    margin: 30px;
+    border-radius: 50px;
+    background-color: gray;
+}
+
+.picture{
+    height: 288px;
+    background-color: black;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.top-destinations-h1{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.top-destinations-p{
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.view-all-cities{
+    height: 50px;
+    width: 300px;
+    margin-left: 10vw;
+    margin-top: 20px;
+    background-color: lightgrey;
+    margin-bottom: 5vw;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-cities-container{
+    display: flex;
+    justify-content: center;
+}
+
+.explore-h1{
+    margin-left: 15vw;
+    margin-top: 65px;
+    font-size: 50px;
+
 }
 
   
