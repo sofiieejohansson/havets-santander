@@ -50,8 +50,16 @@ body {
 
 .search-container input {
   padding: 5px;
+  margin-top: 30px;
   border: 1px solid grey;
   margin-left: 15vw;
+  font-size: 15px;
+}
+
+.search-container button {
+  padding: 5px;
+  margin-top: 30px;
+  border: 1px solid grey;
   font-size: 15px;
 }
   
