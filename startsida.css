@@ -60,4 +60,38 @@ body {
     align-items: center;
 }
 
+.container-top-destinations{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10vw;
+}
+
+.top-destination-sqaure{
+    height: 405px;
+    border: black 1px solid;
+    margin: 30px;
+    border-radius: 50px;
+    background-color: gray;
+}
+
+.picture{
+    height: 288px;
+    background-color: black;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.top-destinations-h1{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.top-destinations-p{
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+
   
