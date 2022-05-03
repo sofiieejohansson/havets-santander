@@ -47,4 +47,11 @@ body {
   height: 80vh;
   border: 1px solid black;
 }
+
+.search-container input {
+  padding: 5px;
+  border: 1px solid grey;
+  margin-left: 15vw;
+  font-size: 15px;
+}
   
