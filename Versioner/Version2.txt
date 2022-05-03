@@ -1,0 +1,9 @@
+Version 2
+
+Version 2 ska funktionerna börja kodas. Till deadline ska alla filtreringar fungera 
+så som att kunna söka på city på sidan destinations, samt kunna filtrera på sidan 
+programs med country, city, field, language och level. Karusellen som finns i 
+pop up-rutan på sidan programs och destinations ska fungera samt all info ska vara 
+på plats i pop up-rutan. På sidan destinations ska kartan med destinationerna vara 
+utsatta på plats samt vara klickbara. Färger och bilder ska vara på plats på samtliga 
+sidor. Alla knappar ska vara klickbara och länkade till rätt sida. 
