@@ -1,3 +1,10 @@
+:root {
+    --iceblue: #e6f4f1;
+    --red: #842700;
+    --darkblue: #005c84;
+    --lightblue: #8ccbd6;
+}
+
 body {
     height: 100vh;
     margin: 0;
