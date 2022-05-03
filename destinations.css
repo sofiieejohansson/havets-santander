@@ -62,4 +62,15 @@ body {
   border: 1px solid grey;
   font-size: 15px;
 }
-  
+
+.popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20vh;
+  left: 25vw;
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--iceblue);
+}
