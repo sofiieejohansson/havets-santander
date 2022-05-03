@@ -39,4 +39,12 @@ body {
     transition: 1s;
     transition-timing-function: ease-in-out;
   }
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 80vh;
+  border: 1px solid black;
+}
   
