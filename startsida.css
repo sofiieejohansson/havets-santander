@@ -1,0 +1,23 @@
+body {
+    margin: 0px;
+}
+
+.header {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.textholder {
+    width: 670px;
+    height: 175px;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
