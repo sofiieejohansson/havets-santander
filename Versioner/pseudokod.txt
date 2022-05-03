@@ -1,0 +1,30 @@
+
+INFO
+elements_of_dropDown (array)
+  text
+  path_to_image
+  function
+
+preSelected_option
+--------------------------
+
+
+function buildDropDown(elements_of_dropDown, preSelected_option)
+
+  create div dropDownHTML
+
+  loop through elements_of_dropDown
+    append dropDownElement(oneElement) to dropDownHTML
+
+  return dropDownHTML
+
+
+function dropDownElement(oneElement)
+  create div elementHTML
+  set text
+  set image 
+  set eventlistener to function
+  return elementHTML
+
+const countries = countries.map
+append buildDropDown(countries, "Sverige" or id for the country) to body
