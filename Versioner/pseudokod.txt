@@ -28,3 +28,30 @@ function dropDownElement(oneElement)
 
 const countries = countries.map
 append buildDropDown(countries, "Sverige" or id for the country) to body
+
+
+INFO
+search_on_cities
+---------------------------
+
+function searchOnCities()
+  return the input value toLowerCase()
+
+
+function citiesResult ()
+  cityArray = []
+
+  loop through the cities
+    get the search element from HTML = "";
+
+    if("" == searchOnCities())
+      get the search element from HTML = "";
+    else if (cities[i].name toLowerCase() includes searchOnCities())
+      cityArray.push(the info needed)
+
+  renderCities(cityArray)
+
+
+INFO
+render_cities_on_destination_page 
+----------------------------------
