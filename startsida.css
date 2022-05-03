@@ -41,13 +41,14 @@ body {
 }
 
 .header {
-    width: 100vw;
+    width: 90vw;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
+    margin-left: 10vw;
 }
 
 .textholder {
@@ -93,5 +94,29 @@ body {
   font-size: 15px;
 }
 
+.view-all-cities{
+    height: 50px;
+    width: 300px;
+    margin-left: 10vw;
+    margin-top: 20px;
+    background-color: lightgrey;
+    margin-bottom: 5vw;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-cities-container{
+    display: flex;
+    justify-content: center;
+}
+
+.explore-h1{
+    margin-left: 15vw;
+    margin-top: 65px;
+    font-size: 50px;
+
+}
 
   
