@@ -123,10 +123,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: fit-content;
     width: 90vw;
     margin-left: 10vw;
     gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .picture-stories {
