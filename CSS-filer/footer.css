@@ -13,5 +13,9 @@ footer {
     height: 100px;
     bottom: 0%;
     left: 0%;
-    margin-left: 10vw;
+    margin-left: 140px;
+}
+
+footer > p {
+    margin: 0px;
 }
