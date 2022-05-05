@@ -9,9 +9,38 @@
 
 footer {
     background-color: rgba(128, 128, 128, 0.5);
-    width: 90vw;
-    height: 100px;
+    width: 100vw;
+    height: 150px;
     bottom: 0%;
     left: 0%;
-    margin-left: 10vw;
+}
+
+.wrapper-footer {
+    display: grid;
+    height: 150px;
+    margin-left: 140px;
+    grid-template-columns: 150px 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+.logotyp-div-footer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.logotyp-footer {
+    height: 100px;
+    width: 100px;
+}
+
+.adress-footer, .contact-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-footer {
+    margin: 0%;
 }
