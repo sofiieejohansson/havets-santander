@@ -103,14 +103,16 @@
 .text-container{
     opacity: 0%;
     transition: 0.5s;
+    visibility: hidden;
 }
  
 
 .text-container2{
     opacity: 100%;
+    visibility: visible;
     color: white;
     transition: 0.5s;
-    transition-delay: 0.4s;
+    transition-delay: 0.5s;
     
 }
 
@@ -127,4 +129,16 @@
 .text{
     font-size: 60px;
     text-align: center;
+    color: white;
 }
+
+a{
+    text-decoration: none;
+}
+
+.text:hover{
+    opacity: 50%;
+    cursor: pointer;
+}
+
+
