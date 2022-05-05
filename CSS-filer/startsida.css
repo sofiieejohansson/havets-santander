@@ -55,8 +55,9 @@ body {
 
 .picture2{
     height: 288px;
-    background-image: url(../Images/australia_normal_2.jpg);
+    background-image: url(../Images/sidney_big_2.jpg);
     background-size: cover;
+    background-position: center;
     border-radius: 50px 50px 0px 0px;;
 }
 
