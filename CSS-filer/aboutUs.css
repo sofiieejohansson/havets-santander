@@ -23,13 +23,20 @@ body {
 }
 
 .about-us-text {
-  font-weight: bolder;
   font-size: larger;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 90vw;
   height: 50vh;
   margin-left: 10vw;
-  background-color: var(--darkblue);
+  background-color: var(--iceblue);
+}
+
+.about-us-text > center {
+  width: 60vw;
+}
+.about-us-text > h1 {
+  font-size: 20px;
 }
