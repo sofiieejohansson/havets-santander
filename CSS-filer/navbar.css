@@ -76,7 +76,9 @@
   .a2{
     width: 0vw;
     height: 100vh;
-    background-color: wheat;
+    background-image: url(../Images/navbar-bild.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: fixed;
     right: 0;
     top: 0;
@@ -87,7 +89,9 @@
   .b2{
     width: 35vw;
     height: 100vh;
-    background-color: wheat;
+    background-image: url(../Images/navbar-bild.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: fixed;
     right: 0;
     top: 0;
