@@ -9,8 +9,6 @@ body {
     height: 100vh;
     margin: 0;
 }
-  
-
 
 .header {
     width: auto;
@@ -41,29 +39,53 @@ body {
 }
 
 .top-destination-sqaure{
-    height: 405px;
-    border: black 1px solid;
+    height: 415px;
+    width: 255px;
     margin: 30px;
     border-radius: 50px;
-    background-color: gray;
+    background-color: lightgray;
 }
 
-.picture{
+.picture1{
     height: 288px;
-    background-color: black;
+    background-image: url(../Images/madrid_normal_2.jpg);
+    background-size: cover;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.picture2{
+    height: 288px;
+    background-image: url(../Images/sidney_big_2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.picture3{
+    height: 288px;
+    background-image: url(../Images/london_big_2.jpg);
+    background-size: cover;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.picture4{
+    height: 288px;
+    background-image: url(../Images/paris_big_2.jpg);
+    background-size: cover;
+    background-position: right;
     border-radius: 50px 50px 0px 0px;;
 }
 
 .top-destinations-h1{
-    margin-left: 10px;
+    margin-left: 14px;
     margin-top: 10px;
     margin-bottom: 0px;
 }
 
 .top-destinations-p{
   margin-top: 0px;
-  margin-left: 10px;
-  font-size: 15px;
+  margin-left: 14px;
+  font-size: 14px;
 }
 
 .all-cities-container{
