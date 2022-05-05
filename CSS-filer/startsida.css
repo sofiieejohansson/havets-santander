@@ -20,7 +20,7 @@ body {
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
-    margin-left: 10vw;
+    margin-left: 140px;
 }
 
 .textholder {
@@ -37,7 +37,7 @@ body {
     width: fit-content;
     display: flex;
     flex-direction: row;
-    margin-left: 10vw;
+    margin-left: 140px;
 }
 
 .top-destination-sqaure{
@@ -83,7 +83,7 @@ body {
     align-items: center;
     height: fit-content;
     width: 90vw;
-    margin-left: 10vw;
+    margin-left: 140px;
     gap: 20px;
     margin-top: 50px;
     margin-bottom: 30px;

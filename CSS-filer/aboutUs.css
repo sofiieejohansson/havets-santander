@@ -18,8 +18,7 @@ body {
   align-items: center;
   width: 90vw;
   height: 50vh;
-  margin-left: 10vw;
-  border: 1px solid black;
+  margin-left: 140px;
 }
 
 .about-us-text {
@@ -30,7 +29,7 @@ body {
   align-items: center;
   width: 90vw;
   height: 50vh;
-  margin-left: 10vw;
+  margin-left: 140px;
   background-color: var(--iceblue);
 }
 
