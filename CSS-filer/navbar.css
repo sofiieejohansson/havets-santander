@@ -5,7 +5,7 @@
     --lightblue: #8ccbd6;
 }
 
-.a{
+.navbar-container-closed{
     color: #181307;
     background-color: #181307;
     width: 140px;
@@ -21,7 +21,7 @@
     
   
   }
-  .b{
+  .navbar-container-opened{
     background-color: #181307;
     width: 65vw;
     height: 100vh;
@@ -37,43 +37,43 @@
   
   }
   
-  .streck{
+  .line{
     width: 70px;
     height: 15px;
     background-color: #A5BCC3;
     margin-bottom: 10px;
     border-radius: 20px;
   }
-  .tres:hover .streck{
+  .hamburger-menu-closed:hover .streck{
     background-color: #a5bcc385;
   }
-  .tres2:hover .streck{
+  .hamburger-menu-opened:hover .streck{
     background-color: #a5bcc371;
   }
   
   
-  .tres{
+  .hamburger-menu-closed{
     display: flex;
     flex-direction: column;
     position: fixed;
   top: 50vh;
-  right: 93vw;
+  left: 35px;
   transition: 1s;
   transition-timing-function: ease-in-out;
   }
   
-  .tres2{
+  .hamburger-menu-opened{
     display: flex;
     flex-direction: column;
     position: fixed;
   top: 50vh;
-  right: 93vw;
+  left: 35px;
   transform: rotate(90deg);
   transition: 1s;
   transition-timing-function: ease-in-out;
   }
   
-  .a2{
+  .picture-hidden{
     width: 0vw;
     height: 100vh;
     background-image: url(../Images/navbar-bild.jpg);
@@ -86,7 +86,7 @@
     transition-timing-function: ease-in-out;
   }
   
-  .b2{
+  .picture-visible{
     width: 35vw;
     height: 100vh;
     background-image: url(../Images/navbar-bild.jpg);
@@ -100,14 +100,14 @@
   }
 
 
-.text-container{
+.text-container-hidden{
     opacity: 0%;
     transition: 0.5s;
     visibility: hidden;
 }
  
 
-.text-container2{
+.text-container-visible{
     opacity: 100%;
     visibility: visible;
     color: white;

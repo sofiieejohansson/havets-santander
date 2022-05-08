@@ -1,35 +1,35 @@
 "use strict";
 
-let a = document.querySelector(".a");
-let a2 = document.querySelector(".a2")
+let navBar = document.querySelector(".navbar-container-closed");
+let picture = document.querySelector(".picture-hidden")
 let body = document.querySelector("body")
-let streck = document.querySelector(".tres")
-let text = document.querySelector(".text-container")
-streck.style.cursor = "pointer"
-streck.addEventListener("click", function(){
-    if (a.className == "a"){
-    a.className = "b"
+let line = document.querySelector(".hamburger-menu-closed")
+let text = document.querySelector(".text-container-hidden")
+line.style.cursor = "pointer"
+line.addEventListener("click", function(){
+    if (navBar.className == "navbar-container-closed"){
+    navBar.className = "navbar-container-opened"
 }
     else {
-    a.className = "a";
+    navBar.className = "navbar-container-closed";
 }
-if (a2.className == "a2"){
-    a2.className = "b2"
-}
-    else {
-    a2.className = "a2";
-}
-if (streck.className == "tres"){
-    streck.className = "tres2"
+if (picture.className == "picture-hidden"){
+    picture.className = "picture-visible"
 }
     else {
-    streck.className = "tres";
+    picture.className = "picture-hidden";
+}
+if (line.className == "hamburger-menu-closed"){
+    line.className = "hamburger-menu-opened"
+}
+    else {
+    line.className = "hamburger-menu-closed";
 }
 
-if (text.className == "text-container"){
-    text.className = "text-container2"
+if (text.className == "text-container-visible"){
+    text.className = "text-container-hidden"
 }
     else {
-    text.className = "text-container";
+    text.className = "text-container-visible";
 }
 });
