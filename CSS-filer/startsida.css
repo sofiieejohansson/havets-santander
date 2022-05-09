@@ -17,8 +17,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
     margin-left: 140px;
+    background-image: url(../Images/edinburgh_big_1.jpg);
+    background-size: cover;
 }
 
 .textholder {
