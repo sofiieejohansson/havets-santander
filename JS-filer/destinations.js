@@ -1,5 +1,16 @@
 function renderCountries () {
-    let countryName = COUNTRIES.filter((country) => country.name);
+    let countryName = COUNTRIES.filter((country) => country.name).sort((a, b) => {
+        if(a.name > b.name) {
+            return 1;
+        }
+
+        else if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
+
+    });
+
     let countryContainer = document.getElementById('destinations-container');
     for (let i = 0; i < countryName.length; i++) {
         countryContainer.innerHTML += `
@@ -15,7 +26,19 @@ function renderCountries () {
 }
 
 function renderCities (counter) {
-    for(let city of CITIES) {
+    let cities = CITIES.filter((city) => city).sort((a, b) => {
+        if(a.name > b.name) {
+            return 1;
+        }
+
+        else if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
+
+    });
+
+    for(let city of cities) {
 
         if(COUNTRIES[counter].id == city.countryID) {
 
