@@ -1,15 +1,16 @@
 function renderCountries () {
-    let countryName = COUNTRIES.filter((country) => country.name).sort((a, b) => {
-        if(a.name > b.name) {
-            return 1;
-        }
+    let countryName = COUNTRIES.filter((country) => country)
+    // .sort((a, b) => {
+    //     if(a.name > b.name) {
+    //         return 1;
+    //     }
 
-        else if (a.name < b.name) {
-            return -1;
-        }
-        return 0;
+    //     else if (a.name < b.name) {
+    //         return -1;
+    //     }
+    //     return 0;
 
-    });
+    // });
 
     let countryContainer = document.getElementById('destinations-container');
     for (let i = 0; i < countryName.length; i++) {
