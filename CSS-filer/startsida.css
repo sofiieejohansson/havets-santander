@@ -25,7 +25,7 @@ body {
 .textholder {
     width: 670px;
     height: 175px;
-    border: 1px solid black;
+    background-color: rgba(143, 196, 215, 0.358);
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -41,7 +41,7 @@ body {
 
 .top-destination-sqaure{
     height: 415px;
-    width: 255px;
+    width: 260px;
     margin: 30px;
     border-radius: 50px;
     background-color: lightgray;
@@ -80,7 +80,8 @@ body {
 .top-destinations-h1{
     margin-left: 14px;
     margin-top: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
+    font-size: 25px;
 }
 
 .top-destinations-p{
