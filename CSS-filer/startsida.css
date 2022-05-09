@@ -134,7 +134,17 @@ body {
     padding: 10px;
     background-color: rgba(224, 213, 206, 0.447);
     border-radius: 5px;
-    text-align: center;
+    line-height: 23px;
+}
+
+.stories-text-box > h1 {
+    font-size: 33px;
+    margin: 30px 25px 0px 25px;
+}
+
+.stories-text-box > p {
+    font-size: 18px;
+    margin: 25px 25px 0px 25px;
 }
 
 .button-link {
