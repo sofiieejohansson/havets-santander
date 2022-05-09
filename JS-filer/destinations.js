@@ -16,7 +16,7 @@ function renderCountries () {
     for (let i = 0; i < countryName.length; i++) {
         countryContainer.innerHTML += `
         <div class="country-container">
-            <h1>${countryName[i].name}</h1>
+            <h1 class= "country-h1">${countryName[i].name}</h1>
             <div class="cities-container">
 
             </div>
