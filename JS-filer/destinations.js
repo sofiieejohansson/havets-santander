@@ -1,16 +1,16 @@
 function renderCountries () {
     let countryName = COUNTRIES.filter((country) => country)
-    // .sort((a, b) => {
-    //     if(a.name > b.name) {
-    //         return 1;
-    //     }
+    .sort((a, b) => {
+        if(a.name > b.name) {
+            return 1;
+        }
 
-    //     else if (a.name < b.name) {
-    //         return -1;
-    //     }
-    //     return 0;
+        else if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
 
-    // });
+    });
 
     let countryContainer = document.getElementById('destinations-container');
     for (let i = 0; i < countryName.length; i++) {
@@ -21,12 +21,13 @@ function renderCountries () {
 
             </div>
         </div>`;
-        renderCities(i)
+        renderCities(i, countryName)
     }
     return countryName
 }
 
-function renderCities (counter) {
+function renderCities (counter, array) {
+
     let cities = CITIES.filter((city) => city).sort((a, b) => {
         if(a.name > b.name) {
             return 1;
@@ -41,7 +42,7 @@ function renderCities (counter) {
 
     for(let city of cities) {
 
-        if(COUNTRIES[counter].id == city.countryID) {
+        if(array[counter].id == city.countryID) {
 
             document.querySelector(`#destinations-container > div:last-child > div`).innerHTML += `
             <div class="city-box">
