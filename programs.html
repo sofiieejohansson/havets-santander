@@ -26,16 +26,35 @@
       <h1>Programs</h1>
       <p>Here you can filter programs</p>
       <div class="drop-down-buttons">
-        <div><p>Sort by:</p></div>
-        <div class="drop-down-box"><p>Field</p></div>
-        <div class="drop-down-box"><p>Language</p></div>
-        <div class="drop-down-box"><p>Level</p></div>
-        <div class="drop-down-box"><p>Country</p></div>
-        <div class="drop-down-box"><p>City</p></div>
+        <select id="field" onChange="update()">
+          <option value="" disabled selected hidden>Field</option>
+          <option value="mathematics">Mathematics</option>
+          <option value="engineering">Engineering</option>
+          <option value="jurisprudence">Jurisprudence</option>
+          <option value="medicine">Medicine</option>
+          <option value="sociology">Sociology</option>
+          <option value="philosophy">Philosophy</option>
+          <option value="design">Design</option>
+        </select>
+        <select id="language" onChange="update()">
+          <option value="" disabled selected hidden>Language</option>
+          <option value="spanish">Spanish</option>
+          <option value="english">English</option>
+          <option value="french">French</option>
+          <option value="swedish">Swedish</option>
+        </select>
+        <select id="level" onChange="update()">
+          <option value="" disabled selected hidden>Level</option>
+          <option value="bachelor">Bachelor</option>
+          <option value="master">Master</option>
+          <option value="doctorate">Doctorate</option>
+        </select>
       </div>
     </div>
     </div>
-
+    <div class="program-info-container">
+      
+    </div>
     <footer>
       <div class="wrapper-footer">
         <div class="logotyp-div-footer">
