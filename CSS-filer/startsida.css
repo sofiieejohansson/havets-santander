@@ -12,23 +12,30 @@ body {
 
 .header {
     width: auto;
-    height: 50vh;
+    height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
     margin-left: 140px;
+    background-image: url(../Images/edinburgh_big_1.jpg);
+    background-size: cover;
+    font-size: 50px;
 }
 
 .textholder {
     width: 670px;
-    height: 175px;
-    border: 1px solid black;
+    height: 120px;
+    background-color: rgba(36, 36, 36, 0.447);
+    color: whitesmoke;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 20px 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .container-top-destinations{
@@ -40,7 +47,7 @@ body {
 
 .top-destination-sqaure{
     height: 415px;
-    width: 255px;
+    width: 260px;
     margin: 30px;
     border-radius: 50px;
     background-color: lightgray;
@@ -79,7 +86,8 @@ body {
 .top-destinations-h1{
     margin-left: 14px;
     margin-top: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
+    font-size: 25px;
 }
 
 .top-destinations-p{
@@ -114,7 +122,9 @@ body {
     padding: 10px;
     height: 400px;
     width: 400px;
-    background-color: black;
+    background-image: url(../Images/joel-mott-LaK153ghdig-unsplash.jpg);
+    background-size: cover;
+    background-position: bottom;
     border-radius: 5px;
 }
 
@@ -122,8 +132,19 @@ body {
     height: 400px;
     width: 600px;
     padding: 10px;
-    background-color: beige;
+    background-color: rgba(224, 213, 206, 0.447);
     border-radius: 5px;
+    line-height: 23px;
+}
+
+.stories-text-box > h1 {
+    font-size: 33px;
+    margin: 30px 25px 0px 25px;
+}
+
+.stories-text-box > p {
+    font-size: 18px;
+    margin: 25px 25px 0px 25px;
 }
 
 .button-link {
@@ -149,6 +170,7 @@ body {
     background-color: lightgrey;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
 }
 
 
