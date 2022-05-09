@@ -46,3 +46,39 @@ body {
   height: 60vh;
   background-color: var(--iceblue);
 }
+
+#destinations-container{
+  margin-left: 140px;
+}
+
+.city-box{
+    height: 240px;
+    width: 213.75px;
+    margin: 30px;
+    border-radius: 50px;
+    background-color: lightgray;
+}
+
+.city-picture{
+    height: 172.5px;
+    width: 213.75px;
+    /* background-image: url(../Images/sidney_big_2.jpg); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.country-h1{
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.city-h2{
+  text-align: center;
+  margin-top: 7%;
+}
+
+.cities-container{
+  display: flex;
+  flex-wrap: wrap;
+}
