@@ -20,16 +20,22 @@ body {
     margin-left: 140px;
     background-image: url(../Images/edinburgh_big_1.jpg);
     background-size: cover;
+    font-size: 50px;
 }
 
 .textholder {
     width: 670px;
-    height: 175px;
-    background-color: rgba(143, 196, 215, 0.358);
+    height: 120px;
+    background-color: rgba(36, 36, 36, 0.447);
+    color: whitesmoke;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 20px 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .container-top-destinations{
