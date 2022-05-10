@@ -7,14 +7,16 @@ let programmes = DB.PROGRAMMES
 
 function showProgram(id) {
     let div = document.createElement("div");
-    let program = DB.PROGRAMMES[id]; 
+    let programme = DB.PROGRAMMES[id]; 
     div.classList = "programme-box";
     div.innerHTML = `
-    <header>${program.name} - CITY, COUNTRY</header>
+    <header>${programme.name} - CITY, COUNTRY</header>
     <div id="programme-info">
-        <p>Local Students: ${program.localStudents}</p>
-        <p>Exchange Students: ${program.exchangeStudents}</p>
-        <p>${showField(program)}</p>
+        <p>Local Students: ${programme.localStudents}</p>
+        <p>Exchange Students: ${programme.exchangeStudents}</p>
+        <p>
+        ${showField(programme)}
+        </p>
         <p>kalla på showLanguage-funktionen</p>
     </div>`
 
