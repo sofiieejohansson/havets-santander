@@ -56,3 +56,30 @@ function renderCities (counter, array) {
 }
 
 renderCountries()
+
+
+let input = document.getElementById("search-input");
+
+
+function findCity() {
+    for (city of CITIES){
+        let city = CITIES.filter((city) =>
+    city.name.toLowerCase().includes(input.value.toLowerCase())
+  );
+    
+    return console.log(city); 
+    
+  }}
+
+
+
+input.addEventListener("keyup", function(){
+    let foundCity = findCity();
+
+
+})
+
+
+function renderCity() {
+
+}
