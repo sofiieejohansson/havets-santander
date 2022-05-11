@@ -4,11 +4,14 @@ let filteredProgrammes = [];
 
 
 let programmes = DB.PROGRAMMES
+let universities = DB.UNIVERSITIES
 
 function showProgram(id) {
     let div = document.createElement("div");
     let programme = DB.PROGRAMMES[id]; 
     let field = showField(programme)
+    let language = showLanguage(programme)
+    let level = showLevel(programme)
     div.classList = "programme-box";
     div.innerHTML = `
     <header>${programme.name} - CITY, COUNTRY</header>
@@ -18,7 +21,12 @@ function showProgram(id) {
         <p>
         ${field.name}
         </p>
-        <p>kalla på showLanguage-funktionen</p>
+        <p>
+        ${language.name}
+        </p>
+        <p>
+        ${level}
+        </p>
     </div>`
 
     return div;
@@ -41,9 +49,24 @@ function showField(programme) {
 }
 
 function showLanguage(programme) {
+    let languages = DB.LANGUAGES
 
+    return languages.find(language => {
+        return programme.language == language.id;
+    });
+}
 
-    return "languageInfo"
+function showLevel(programme) {
+
+}
+
+function showCity(programme, universities) {
+    let cities = DB.CITIES;
+
+    return cities.find(city => {
+        return universities.cityID == city.id;
+    });
+
 }
 
 const feildSelect = document.getElementById("field");
@@ -51,8 +74,6 @@ feildSelect.addEventListener("change", function(){
     filterFeild(feildSelect.value);
     showProgrammes(filteredProgrammes)
 });
-
-
 
 function filterFeild (fieldOption) {
     if (isFilteredEmpty()) {
@@ -74,13 +95,49 @@ function isFilteredEmpty () {
     return filteredProgrammes.length
 }
 
-function filterLanguage () {
-
+function filterLanguage (languageOption) {
+    if (isFilteredEmpty()) {
+        filteredProgrammes = filteredProgrammes.filter(programme => {
+            if (languageOption == programme.language) {
+                return programme;
+            }
+        });
+    } else {
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            if (languageOption == programme.language) {
+                return programme;
+            }
+        });
+    }
 }
 
-function filterLevel () {
+const languageSelect = document.getElementById("language");
+languageSelect.addEventListener("change", function() {
+    filterLanguage(languageSelect.value);
+    showProgrammes(filteredProgrammes);
+});
 
+function filterLevel (levelOption) {
+    if (isFilteredEmpty()) {
+        filteredProgrammes = filteredProgrammes.filter(programme => {
+            if (levelOption == programme.level) {
+                return programme;
+            }
+        });
+    } else {
+        filteredProgrammes == DB.PROGRAMMES.filter(programme => {
+            if (levelOption == programme.level) {
+                return programme;
+            }
+        });
+    }
 }
+
+const levelSelect = document.getElementById("level");
+levelSelect.addEventListener("change", function() {
+    filterLevel(levelSelect.value);
+    showProgrammes(filteredProgrammes);
+});
 
 function filterCountry () {
     //if (country is filled) {
@@ -92,9 +149,5 @@ function filterCity () {
     // endast baserat på valt land
 }
 
-function onChange () {
-    // eventlistener för klick och välj på dropdown
-    // uppdaterar listan allt eftersom man väljer olika filtreringar
-}
 
 showProgrammes(filteredProgrammes);
