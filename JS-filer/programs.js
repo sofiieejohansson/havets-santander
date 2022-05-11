@@ -58,6 +58,11 @@ function showLanguage(programme) {
 
 function showLevel(programme) {
 
+    return LEVELS.at(programme.level)
+    // return DB.LEVELS.find(level => {
+    //     return programme.level == 
+    // })
+
 }
 
 function showCity(programme, universities) {
