@@ -100,6 +100,7 @@ elementSelector("#search-input").addEventListener("keyup", getResults);
 
 
 function getResults (){
+    
 
     let input = elementSelector("#search-input").value;
 
@@ -110,14 +111,35 @@ function getResults (){
         for(let i = 0; i < CITIES.length; i++) {
             if(CITIES[i].name.toLocaleLowerCase().startsWith(input)) {
                 document.querySelector(`#destinations-container`).innerHTML += `
-                <div class="city-box">
-                    <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
-                    <h2 class="city-h2">${CITIES[i].name}</h2>
-                </div> `
+                
+                <div class="country-container">
+                    <h1 class="country-h1"> </h1>
+                    <div class="cities-container">
+                        <div class="city-box">
+                            <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
+                            <h2 class="city-h2">${CITIES[i].name}</h2>
+                        </div> 
+                    </div>
+                </div>`
 
             }
+            
         }
+        
+    }
+    else if (input.length == 0){
+        renderCountries();
     }
 }
 
 
+
+function test(){
+   
+
+
+}
+
+
+
+  
