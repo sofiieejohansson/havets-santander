@@ -53,4 +53,23 @@ body {
   height: 50px;
   border: 1px solid black;
 }
-  
+
+.programme-box {
+  margin-left: 220px;
+  border: black 1px solid;
+  display: flex;
+  width: 75vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  flex-direction: column;
+}
+
+#programme-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#programme-info > p {
+  padding-right: 10px;
+}

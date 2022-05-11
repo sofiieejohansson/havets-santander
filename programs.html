@@ -26,16 +26,35 @@
       <h1>Programs</h1>
       <p>Here you can filter programs</p>
       <div class="drop-down-buttons">
-        <div><p>Sort by:</p></div>
-        <div class="drop-down-box"><p>Field</p></div>
-        <div class="drop-down-box"><p>Language</p></div>
-        <div class="drop-down-box"><p>Level</p></div>
-        <div class="drop-down-box"><p>Country</p></div>
-        <div class="drop-down-box"><p>City</p></div>
+        <select id="field">
+          <option value="" disabled selected hidden>Field</option>
+          <option value="0">Mathematics</option>
+          <option value="1">Engineering</option>
+          <option value="2">Jurisprudence</option>
+          <option value="3">Medicine</option>
+          <option value="4">Sociology</option>
+          <option value="5">Philosophy</option>
+          <option value="6">Design</option>
+        </select>
+        <select id="language">
+          <option value="" disabled selected hidden>Language</option>
+          <option value="spanish">Spanish</option>
+          <option value="english">English</option>
+          <option value="french">French</option>
+          <option value="swedish">Swedish</option>
+        </select>
+        <select id="level">
+          <option value="" disabled selected hidden>Level</option>
+          <option value="bachelor">Bachelor</option>
+          <option value="master">Master</option>
+          <option value="doctorate">Doctorate</option>
+        </select>
       </div>
     </div>
     </div>
-
+    <div id="programme-container">
+      
+    </div>
     <footer>
       <div class="wrapper-footer">
         <div class="logotyp-div-footer">
@@ -76,9 +95,9 @@
   </div>
   <div class="picture-hidden"></div>
 
+    <script src="JS-filer/commentsProgramme.js"></script>
     <script src="JS-filer/database.js"></script>
     <script src="JS-filer/programs.js"></script>
-    <script src="JS-filer/commentsProgramme.js"></script>
     <script src="JS-filer/navBar.js"></script>
   </body>
 </html>
