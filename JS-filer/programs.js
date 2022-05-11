@@ -8,6 +8,7 @@ let programmes = DB.PROGRAMMES
 function showProgram(id) {
     let div = document.createElement("div");
     let programme = DB.PROGRAMMES[id]; 
+    let field = showField(programme)
     div.classList = "programme-box";
     div.innerHTML = `
     <header>${programme.name} - CITY, COUNTRY</header>
@@ -15,7 +16,7 @@ function showProgram(id) {
         <p>Local Students: ${programme.localStudents}</p>
         <p>Exchange Students: ${programme.exchangeStudents}</p>
         <p>
-        ${showField(programme)}
+        ${field.name}
         </p>
         <p>kalla på showLanguage-funktionen</p>
     </div>`
@@ -32,12 +33,10 @@ function showProgrammes(programmes) {
 }
 
 function showField(programme) {
-    let fieldInfo = DB.FIELDS;
+    let fields = DB.FIELDS;
 
-    return fieldInfo.find(field => { 
-        if (programme.subjectID == field.id){
-            return field.name;
-        }
+    return fields.find(field => { 
+        return programme.subjectID == field.id;
     });
 }
 
