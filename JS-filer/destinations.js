@@ -1,3 +1,4 @@
+"use strict"
 function renderCountries () {
     let countryName = COUNTRIES.filter((country) => country)
     .sort((a, b) => {
@@ -58,28 +59,65 @@ function renderCities (counter, array) {
 renderCountries()
 
 
-let input = document.getElementById("search-input");
+// let input = document.getElementById("search-input");
 
 
-function findCity() {
-    for (city of CITIES){
-        let city = CITIES.filter((city) =>
-    city.name.toLowerCase().includes(input.value.toLowerCase())
-  );
+// function findCity() {
+
+//     let destination = document.getElementById("destinations-container");
+//     destination.innerHTML = ""
+//     for (city of CITIES){
+//         let city = CITIES.filter((city) =>
+//         city.name.toLowerCase().startsWith(input.value.toLowerCase()));
+
+//         for (let country of COUNTRIES){
+//             // if (city.id == country.id) {
+//                 destination.innerHTML += `
+//                 <div class="country-container">
+//                     <h1 class= "country-h1">${country.name}</h1>
+//                     <div class="cities-container">
+//                         <div class="city-box">
+//                         <img class="city-picture" src="Images/${city[0].imagesNormal[0]}" alt="">
+//                         <h2 class="city-h2">${city.name}</h2>
+//                         </div> 
+        
+//                     </div>
+//                 </div>`
+//             // }
+
+
+
+//         }
+//     return console.log(city); 
     
-    return console.log(city); 
-    
-  }}
+//   }}
 
-
-
-input.addEventListener("keyup", function(){
-    let foundCity = findCity();
-
-
-})
-
-
-function renderCity() {
-
+let elementSelector = (select) => {
+    return document.querySelector(select);
 }
+
+elementSelector("#search-input").addEventListener("keyup", getResults);
+
+
+function getResults (){
+
+    let input = elementSelector("#search-input").value;
+
+    elementSelector("#destinations-container").innerHTML = ""
+
+    if (input.length > 0) {
+
+        for(let i = 0; i < CITIES.length; i++) {
+            if(CITIES[i].name.toLocaleLowerCase().startsWith(input)) {
+                document.querySelector(`#destinations-container`).innerHTML += `
+                <div class="city-box">
+                    <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
+                    <h2 class="city-h2">${CITIES[i].name}</h2>
+                </div> `
+
+            }
+        }
+    }
+}
+
+
