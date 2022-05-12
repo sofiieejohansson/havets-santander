@@ -1,4 +1,5 @@
-"use strict"
+"use strict";
+
 function renderCountries () {
     let countryName = COUNTRIES.filter((country) => country)
     .sort((a, b) => {

@@ -253,13 +253,13 @@ right: 960px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   visibility: hidden;
   opacity: 0%;
+  top: 317px;
+  right: 741px;
   width: 150px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128, 0.555);
   position: absolute;
-  top: 599px;
-  right: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,9 +278,9 @@ right: 960px;
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 634px;
-  right: 260px;
-  transform: rotate(26deg);
+  top: 315px;
+  right: 717px;
+  transform: rotate(-26deg);
 
 }
 
@@ -308,8 +308,8 @@ right: 1005px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128, 0.555);
   position: absolute;
-  top: 599px;
-  right: 290px;
+  top: 382px;
+  right: 805px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -322,14 +322,14 @@ right: 1005px;
 }
 
 .usa-line{
-  opacity: 0%;
   visibility: hidden;
-  width: 30px;
+  opacity: 0%;
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 634px;
-  right: 260px;
+  width: 61px;
+  top: 377px;
+  right: 950px;
   transform: rotate(26deg);
 
 }
@@ -408,8 +408,8 @@ right: 633px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128, 0.555);
   position: absolute;
-  top: 599px;
-  right: 290px;
+  top: 222px;
+  right: 691px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,14 +422,14 @@ right: 633px;
 }
 
 .sweden-line{
-  opacity: 0%;
   visibility: hidden;
+  opacity: 0%;
   width: 30px;
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 634px;
-  right: 260px;
+  top: 264px;
+  right: 664px;
   transform: rotate(26deg);
 
 }
@@ -453,13 +453,13 @@ right: 665px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   visibility: hidden;
   opacity: 0%;
+  top: 331px;
+  right: 729px;
   width: 150px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128, 0.555);
   position: absolute;
-  top: 599px;
-  right: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -472,15 +472,15 @@ right: 665px;
 }
 
 .france-line{
-  opacity: 0%;
   visibility: hidden;
+  opacity: 0%;
   width: 30px;
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 634px;
-  right: 260px;
-  transform: rotate(26deg);
+  top: 348px;
+  right: 698px;
+  transform: rotate(2deg);
 
 }
 
@@ -503,13 +503,13 @@ right: 691px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   visibility: hidden;
   opacity: 0%;
+  top: 391px;
+  right: 747px;
   width: 150px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128, 0.555);
   position: absolute;
-  top: 599px;
-  right: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -522,15 +522,15 @@ right: 691px;
 }
 
 .spain-line{
-  opacity: 0%;
   visibility: hidden;
+  opacity: 0%;
   width: 30px;
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 634px;
-  right: 260px;
-  transform: rotate(26deg);
+  top: 391px;
+  right: 722px;
+  transform: rotate(-26deg);  
 
 }
 
