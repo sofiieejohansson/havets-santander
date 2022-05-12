@@ -102,15 +102,12 @@ function getResults (){
 
 
 
-function test(){
-   
-
-
-}
-
 // document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
 elementSelector("#search-input").addEventListener("keyup", getResults);
 renderCountries()
+
+
+
 
 let ukPin = document.querySelector(".uk-pin")
 ukPin.style.cursor="pointer"
@@ -119,5 +116,94 @@ ukPin.addEventListener("click", function(){
     ukPin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
 })
+
+
+
+let usaPin = document.querySelector(".usa-pin")
+usaPin.style.cursor="pointer"
+
+usaPin.addEventListener("click", function(){
+    usaPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(8)`).scrollIntoView();
+})
+
+
+
+let swePin = document.querySelector(".sweden-pin")
+swePin.style.cursor="pointer"
+
+swePin.addEventListener("click", function(){
+    swePin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(7)`).scrollIntoView();
+})
+
+
+
+let spaPin = document.querySelector(".spain-pin")
+spaPin.style.cursor="pointer"
+
+spaPin.addEventListener("click", function(){
+    spaPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(6)`).scrollIntoView();
+})
+
+
+
+let mexPin = document.querySelector(".mexico-pin")
+mexPin.style.cursor="pointer"
+
+mexPin.addEventListener("click", function(){
+    mexPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(5)`).scrollIntoView();
+})
+
+
+
+let fraPin = document.querySelector(".france-pin")
+fraPin.style.cursor="pointer"
+
+fraPin.addEventListener("click", function(){
+    fraPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(4)`).scrollIntoView();
+})
+
+
+
+let chiPin = document.querySelector(".chile-pin")
+chiPin.style.cursor="pointer"
+
+chiPin.addEventListener("click", function(){
+    chiPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(3)`).scrollIntoView();
+})
+
+
+
+let ausPin = document.querySelector(".australia-pin")
+ausPin.style.cursor="pointer"
+
+ausPin.addEventListener("click", function(){
+    ausPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(2)`).scrollIntoView();
+})
+
+
+
+let argPin = document.querySelector(".argentina-pin")
+argPin.style.cursor="pointer"
+
+argPin.addEventListener("click", function(){
+    argPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:nth-child(1)`).scrollIntoView();
+})
+
+
+
+
+
+
+
+
+
 
   
