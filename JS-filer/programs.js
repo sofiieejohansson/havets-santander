@@ -75,23 +75,20 @@ function showCity(programme, universities) {
 }
 
 const feildSelect = document.getElementById("field");
-feildSelect.addEventListener("change", function(){
+feildSelect.addEventListener("change", function () {
+    document.querySelector("#programme-container").innerHTML = ""
     filterFeild(feildSelect.value);
     showProgrammes(filteredProgrammes)
 });
 
 function filterFeild (fieldOption) {
-    if (isFilteredEmpty()) {
+    if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            if (fieldOption == programme.subjectID) {
-                return programme;
-            } 
+            return fieldOption == programme.subjectID
         });
     } else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-            if (fieldOption == programme.subjectID) {
-                return programme;
-            } 
+            return fieldOption == programme.subjectID
         });
     }
 }
@@ -101,45 +98,43 @@ function isFilteredEmpty () {
 }
 
 function filterLanguage (languageOption) {
-    if (isFilteredEmpty()) {
+    if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            if (languageOption == programme.language) {
-                return programme;
-            }
+            return languageOption == programme.language
         });
     } else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-            if (languageOption == programme.language) {
-                return programme;
-            }
+            return languageOption == programme.language
         });
     }
+    console.log(filteredProgrammes);
 }
 
 const languageSelect = document.getElementById("language");
-languageSelect.addEventListener("change", function() {
+languageSelect.addEventListener("change", function () {
+    document.querySelector("#programme-container").innerHTML = ""
     filterLanguage(languageSelect.value);
     showProgrammes(filteredProgrammes);
 });
 
 function filterLevel (levelOption) {
-    if (isFilteredEmpty()) {
+    if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            if (levelOption == programme.level) {
-                return programme;
-            }
-        });
-    } else {
-        filteredProgrammes == DB.PROGRAMMES.filter(programme => {
-            if (levelOption == programme.level) {
-                return programme;
-            }
+            return levelOption == programme.level
         });
     }
+    else {
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            return levelOption == programme.level
+        });
+    }
+    console.log(levelOption);
+    console.log(filteredProgrammes);
 }
 
 const levelSelect = document.getElementById("level");
-levelSelect.addEventListener("change", function() {
+levelSelect.addEventListener("change", function () {
+    document.querySelector("#programme-container").innerHTML = ""
     filterLevel(levelSelect.value);
     showProgrammes(filteredProgrammes);
 });
