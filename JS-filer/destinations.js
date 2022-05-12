@@ -128,7 +128,7 @@ function getResults (){
         }
         
     }
-    else if (input.length == 0){
+    else {
         renderCountries();
     }
 }
