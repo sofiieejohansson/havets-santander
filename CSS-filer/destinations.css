@@ -159,8 +159,8 @@ right: 895px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128, 0.555);
   position: absolute;
-  top: 680px;
-right: 719px;
+  top: 709px;
+  right: 748px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,9 +179,9 @@ right: 719px;
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 694px;
-right: 869px;
-  transform: rotate(26deg);
+  top: 699px;
+  right: 873px;
+  transform: rotate(36deg);
 
 }
 
