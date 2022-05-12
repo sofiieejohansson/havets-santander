@@ -141,6 +141,14 @@ function test(){
 
 }
 
+// document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
 
+let ukPin = document.querySelector(".uk-pin")
+ukPin.style.cursor="pointer"
+
+ukPin.addEventListener("click", function(){
+    ukPin.style.cursor ="pointer"
+    document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
+})
 
   
