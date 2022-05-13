@@ -50,9 +50,9 @@ function renderCities (counter, array) {
             <div class="city-box">
                 <img class="city-picture" src="Images/${city.imagesNormal[0]}" alt="">
                 <h2 class="city-h2">${city.name}</h2>
-            </div> `
-
-
+            </div> `.addEventListener('click', (e) => {
+                console.log(city.name);
+            })
             }
     }
     appendEventListeners();
