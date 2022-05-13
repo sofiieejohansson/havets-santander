@@ -62,7 +62,6 @@ let elementSelector = (select) => {
     return document.querySelector(select);
 }
 
-
 function getResults (){
     
 
