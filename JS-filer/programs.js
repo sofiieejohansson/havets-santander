@@ -158,8 +158,8 @@ function filterCountry (countryOption) {
             return countryOption == country.languageID
         });
     } else {
-        filteredProgrammes = DB.COUNTRIES.filter(country => {
-            return countryOption == country.languageID
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            return countryOption == programme.language
         });
     }
 }
