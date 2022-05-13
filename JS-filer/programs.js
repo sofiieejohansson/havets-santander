@@ -57,12 +57,7 @@ function showLanguage(programme) {
 }
 
 function showLevel(programme) {
-
     return LEVELS.at(programme.level)
-    // return DB.LEVELS.find(level => {
-    //     return programme.level == 
-    // })
-
 }
 
 function showCity(programme, universities) {
@@ -75,10 +70,10 @@ function showCity(programme, universities) {
 }
 
 const feildSelect = document.getElementById("field");
-feildSelect.addEventListener("change", function () {
-    document.querySelector("#programme-container").innerHTML = ""
+feildSelect.addEventListener("change", function(){
+    emptyList();
     filterFeild(feildSelect.value);
-    showProgrammes(filteredProgrammes)
+    showProgrammes(filteredProgrammes);
 });
 
 function filterFeild (fieldOption) {
@@ -97,6 +92,11 @@ function isFilteredEmpty () {
     return filteredProgrammes.length
 }
 
+function emptyList () {
+    document.querySelector("#programme-container").innerHTML = ""
+
+}
+
 function filterLanguage (languageOption) {
     if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
@@ -107,12 +107,11 @@ function filterLanguage (languageOption) {
             return languageOption == programme.language
         });
     }
-    console.log(filteredProgrammes);
 }
 
 const languageSelect = document.getElementById("language");
-languageSelect.addEventListener("change", function () {
-    document.querySelector("#programme-container").innerHTML = ""
+languageSelect.addEventListener("change", function() {
+    emptyList();
     filterLanguage(languageSelect.value);
     showProgrammes(filteredProgrammes);
 });
@@ -120,7 +119,7 @@ languageSelect.addEventListener("change", function () {
 function filterLevel (levelOption) {
     if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            return levelOption == programme.level
+            return levelOption == programme.level            
         });
     }
     else {
@@ -128,13 +127,11 @@ function filterLevel (levelOption) {
             return levelOption == programme.level
         });
     }
-    console.log(levelOption);
-    console.log(filteredProgrammes);
 }
 
 const levelSelect = document.getElementById("level");
-levelSelect.addEventListener("change", function () {
-    document.querySelector("#programme-container").innerHTML = ""
+levelSelect.addEventListener("change", function() {
+    emptyList();
     filterLevel(levelSelect.value);
     showProgrammes(filteredProgrammes);
 });
