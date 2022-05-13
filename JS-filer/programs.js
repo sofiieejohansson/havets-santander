@@ -57,12 +57,7 @@ function showLanguage(programme) {
 }
 
 function showLevel(programme) {
-
     return LEVELS.at(programme.level)
-    // return DB.LEVELS.find(level => {
-    //     return programme.level == 
-    // })
-
 }
 
 function showCity(programme, universities) {
@@ -82,17 +77,13 @@ feildSelect.addEventListener("change", function(){
 });
 
 function filterFeild (fieldOption) {
-    if (isFilteredEmpty()) {
+    if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            if (fieldOption == programme.subjectID) {
-                return programme;
-            } 
+            return fieldOption == programme.subjectID
         });
     } else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-            if (fieldOption == programme.subjectID) {
-                return programme;
-            } 
+            return fieldOption == programme.subjectID
         });
     }
 }
@@ -107,24 +98,15 @@ function emptyList () {
 }
 
 function filterLanguage (languageOption) {
-    filteredProgrammes = filteredProgrammes.filter(programme => {
-        if (languageOption == programme.language) {
-            return programme;
-        }
-    })
-/*     if (isFilteredEmpty()) {
+    if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            if (languageOption == programme.language) {
-                return programme;
-            }
+            return languageOption == programme.language
         });
     } else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-            if (languageOption == programme.language) {
-                return programme;
-            }
+            return languageOption == programme.language
         });
-    } */
+    }
 }
 
 const languageSelect = document.getElementById("language");
@@ -135,18 +117,17 @@ languageSelect.addEventListener("change", function() {
 });
 
 function filterLevel (levelOption) {
-    if (isFilteredEmpty()) {
+    if (isFilteredEmpty() > 0 && filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return levelOption == programme.level            
         });
-    } else {
+    }
+    else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return levelOption == programme.level
         });
     }
 }
-
-// return LEVELS.at(programme.level)
 
 const levelSelect = document.getElementById("level");
 levelSelect.addEventListener("change", function() {
