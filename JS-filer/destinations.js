@@ -199,6 +199,26 @@ argPin.addEventListener("click", function(){
 
 
 
+let bild = document.querySelector(".popup-img")
+
+bild.style.backgroundImage = "url(Images/mexico_normal_1.jpg)";
+
+
+let texten = document.querySelector(".city-popup-text")
+
+let textish = CITIES[2].text;
+
+texten.textContent = `${textish}`
+
+let solen = document.querySelector(".sunny")
+
+let solish = CITIES[2].sun;
+
+solen.textContent = `sunny days per year: ${solish}`
+
+
+
+
 
 
 
