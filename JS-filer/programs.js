@@ -76,8 +76,9 @@ function showCity(programme, universities) {
 
 const feildSelect = document.getElementById("field");
 feildSelect.addEventListener("change", function(){
+    emptyList();
     filterFeild(feildSelect.value);
-    showProgrammes(filteredProgrammes)
+    showProgrammes(filteredProgrammes);
 });
 
 function filterFeild (fieldOption) {
@@ -100,8 +101,18 @@ function isFilteredEmpty () {
     return filteredProgrammes.length
 }
 
+function emptyList () {
+    document.querySelector("#programme-container").innerHTML = ""
+
+}
+
 function filterLanguage (languageOption) {
-    if (isFilteredEmpty()) {
+    filteredProgrammes = filteredProgrammes.filter(programme => {
+        if (languageOption == programme.language) {
+            return programme;
+        }
+    })
+/*     if (isFilteredEmpty()) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             if (languageOption == programme.language) {
                 return programme;
@@ -113,11 +124,12 @@ function filterLanguage (languageOption) {
                 return programme;
             }
         });
-    }
+    } */
 }
 
 const languageSelect = document.getElementById("language");
 languageSelect.addEventListener("change", function() {
+    emptyList();
     filterLanguage(languageSelect.value);
     showProgrammes(filteredProgrammes);
 });
@@ -125,21 +137,20 @@ languageSelect.addEventListener("change", function() {
 function filterLevel (levelOption) {
     if (isFilteredEmpty()) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            if (levelOption == programme.level) {
-                return programme;
-            }
+            return levelOption == programme.level            
         });
     } else {
-        filteredProgrammes == DB.PROGRAMMES.filter(programme => {
-            if (levelOption == programme.level) {
-                return programme;
-            }
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            return levelOption == programme.level
         });
     }
 }
 
+// return LEVELS.at(programme.level)
+
 const levelSelect = document.getElementById("level");
 levelSelect.addEventListener("change", function() {
+    emptyList();
     filterLevel(levelSelect.value);
     showProgrammes(filteredProgrammes);
 });
