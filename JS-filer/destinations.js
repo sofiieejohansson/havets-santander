@@ -54,9 +54,20 @@ function renderCities (counter, array) {
 
 
             }
-        }
+    }
+    appendEventListeners();
 }
 
+function appendEventListeners() {
+    const elements = document.querySelectorAll('.city-box');
+
+
+    elements.forEach(element => {
+        element.addEventListener('click', (e)=>{
+            console.log('someone hit me');
+        });
+    });
+}
 
 let elementSelector = (select) => {
     return document.querySelector(select);
