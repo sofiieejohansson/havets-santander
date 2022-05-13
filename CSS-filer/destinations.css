@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+ }
+
 :root {
     --iceblue: #e6f4f1;
     --red: #842700;
@@ -17,7 +21,8 @@ body {
   justify-content: center;
   width: auto;
   height: 80vh;
-  border: 1px solid black;
+  margin-bottom: 100px;
+  margin-left: 100px;
 }
 
 .search-container input {
@@ -45,4 +50,558 @@ body {
   width: 60vw;
   height: 60vh;
   background-color: var(--iceblue);
+}
+
+#destinations-container{
+  margin-left: 140px;
+}
+
+.city-box{
+    height: 240px;
+    width: 213.75px;
+    margin: 30px;
+    border-radius: 50px;
+    background-color: lightgray;
+    margin-top: 0px;
+}
+
+.city-picture{
+    height: 172.5px;
+    width: 213.75px;
+    /* background-image: url(../Images/sidney_big_2.jpg); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px 50px 0px 0px;;
+}
+
+.country-h1{
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+.city-h2{
+  text-align: center;
+  margin-top: 7%;
+}
+
+.cities-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.map{
+  border-radius: 250px;
+  height: 800px;
+  width: 1300px;
+  margin-bottom: 150px;
+}
+
+.australia-pin{
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 635px;
+  right: 220px;
+}
+
+.australia-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+  position: absolute;
+  top: 599px;
+  right: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.australia-pin:hover + .australia-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.australia-line{
+  opacity: 0%;
+  visibility: hidden;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 634px;
+  right: 260px;
+  transform: rotate(26deg);
+
+}
+
+.australia-pin:hover ~ .australia-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+.argentina-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 669px;
+right: 895px;
+}
+
+.argentina-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+  position: absolute;
+  top: 709px;
+  right: 748px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.argentina-pin:hover + .argentina-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.argentina-line{
+  opacity: 0%;
+  visibility: hidden;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 699px;
+  right: 873px;
+  transform: rotate(36deg);
+
+}
+
+.argentina-pin:hover ~ .argentina-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+.chile-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 643px;
+right: 928px;
+}
+
+.chile-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+  position: absolute;
+  top: 608px;
+  right: 990px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.chile-pin:hover + .chile-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.chile-line{
+  opacity: 0%;
+  visibility: hidden;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 643px;
+right: 960px;
+  transform: rotate(26deg);
+
+}
+
+.chile-pin:hover ~ .chile-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+
+.uk-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 290px;
+  right: 686px;
+}
+
+.uk-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  top: 317px;
+  right: 741px;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.uk-pin:hover + .uk-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.uk-line{
+  opacity: 0%;
+  visibility: hidden;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 315px;
+  right: 717px;
+  transform: rotate(-26deg);
+
+}
+
+.uk-pin:hover ~ .uk-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+
+.usa-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 344px;
+right: 1005px;
+}
+
+.usa-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+    position: absolute;
+  top: 382px;
+  right: 805px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.usa-pin:hover + .usa-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.usa-line{
+  visibility: hidden;
+  opacity: 0%;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  width: 61px;
+  top: 377px;
+  right: 950px;
+  transform: rotate(26deg);
+
+}
+
+.usa-pin:hover ~ .usa-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+
+.mexico-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 438px;
+right: 1036px;
+}
+
+.mexico-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+    position: absolute;
+  top: 479px;
+right: 1082px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.mexico-pin:hover + .mexico-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.mexico-line{
+  opacity: 0%;
+  visibility: hidden;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 470px;
+right: 1064px;
+transform: rotate(-43deg);
+
+}
+
+.mexico-pin:hover ~ .mexico-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+
+.sweden-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 262px;
+right: 633px;
+}
+
+.sweden-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+    position: absolute;
+  top: 222px;
+  right: 691px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.sweden-pin:hover + .sweden-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.sweden-line{
+  visibility: hidden;
+  opacity: 0%;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 264px;
+  right: 664px;
+  transform: rotate(26deg);
+
+}
+
+.sweden-pin:hover ~ .sweden-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+
+.france-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 335px;
+right: 665px;
+}
+
+.france-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  top: 331px;
+  right: 729px;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.france-pin:hover + .france-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.france-line{
+  visibility: hidden;
+  opacity: 0%;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 348px;
+  right: 698px;
+  transform: rotate(2deg);
+
+}
+
+.france-pin:hover ~ .france-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+
+
+.spain-pin{
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 362px;
+right: 691px;
+}
+
+.spain-hover-box{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  visibility: hidden;
+  opacity: 0%;
+  top: 391px;
+  right: 747px;
+  width: 150px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128);
+    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.spain-pin:hover + .spain-hover-box{
+  visibility: visible;
+ opacity: 100%;
+}
+
+.spain-line{
+  visibility: hidden;
+  opacity: 0%;
+  width: 30px;
+  height: 1px;
+  background-color: red;
+  position: absolute;
+  top: 391px;
+  right: 722px;
+  transform: rotate(-26deg);  
+
+}
+
+.spain-pin:hover ~ .spain-line{
+  visibility: visible;
+  opacity: 100%;
+}
+
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+  top: 89%;
+
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: black;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+.header-text{
+  text-align: center;
+  margin-left: 100px;
+ font-size: 60px;
+ margin-bottom: 0px;
+}
+
+.scroll-down-text{
+
+  position: absolute;
+	left: 49%;
+  top: 83%;
 }

@@ -10,16 +10,65 @@
     <link rel="stylesheet" href="CSS-filer/navbar.css">
   </head>
   <body>
+
+    <h3 class="scroll-down-text"> Scroll down</h3>
+  <a href="#search-input">
+    <svg class="arrows">
+      <path class="a1" d="M0 0 L30 32 L60 0"></path>
+      <path class="a2" d="M0 20 L30 52 L60 20"></path>
+      <path class="a3" d="M0 40 L30 72 L60 40"></path>
+    </svg>
+  </a>
+  
+    <h1 class="header-text">DESTINATIONS</h1>
     <header>
       <div class="header">
-        <h1>Destinations</h1>
+        <img class="map" src="Images/World_map_-_low_resolution.svg" alt="">
+
+        <img class="australia-pin" src="Images/pinpoint.png" alt="">
+        <div class="australia-hover-box">AUSTRALIA</div>
+        <div class="australia-line"></div>
+
+        <img class="argentina-pin" src="Images/pinpoint.png" alt="">
+        <div class="argentina-hover-box">ARGENTINA</div>
+        <div class="argentina-line"></div>
+
+        <img class="chile-pin" src="Images/pinpoint.png" alt="">
+        <div class="chile-hover-box">CHILE</div>
+        <div class="chile-line"></div>
+
+        <img class="spain-pin" src="Images/pinpoint.png" alt="">
+        <div class="spain-hover-box">SPAIN</div>
+        <div class="spain-line"></div>
+
+        <img class="uk-pin" src="Images/pinpoint.png" alt="">
+        <div class="uk-hover-box">UK</div>
+        <div class="uk-line"></div>
+
+        <img class="usa-pin" src="Images/pinpoint.png" alt="">
+        <div class="usa-hover-box">USA</div>
+        <div class="usa-line"></div>
+
+        <img class="mexico-pin" src="Images/pinpoint.png" alt="">
+        <div class="mexico-hover-box">MEXICO</div>
+        <div class="mexico-line"></div>
+
+        <img class="sweden-pin" src="Images/pinpoint.png" alt="">
+        <div class="sweden-hover-box">SWEDEN</div>
+        <div class="sweden-line"></div>
+
+        <img class="france-pin" src="Images/pinpoint.png" alt="">
+        <div class="france-hover-box">FRANCE</div>
+        <div class="france-line"></div>
       </div>
+      
     </header>
 
     <div class="search-container">
-      <input type="text" placeholder="Search for a city...">
-      <button type="submit">Submit</button>
+      <input id="search-input" type="text" placeholder="Search for a city...">
     </div>
+
+    <div id="destinations-container"></div>
 
     <footer>
       <div class="wrapper-footer">
@@ -61,6 +110,8 @@
       </div>
   </div>
   <div class="picture-hidden"></div>
+
+
 
     <script src="JS-filer/database.js"></script>
     <script src="JS-filer/destinations.js"></script>
