@@ -153,13 +153,13 @@ levelSelect.addEventListener("change", function() {
 });
 
 function filterCountry (countryOption) {
-    if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.language == countryOption) == true) {
-        filteredProgrammes = filteredProgrammes.filter(programme => {
-            return countryOption == programme.language
+    if (isFilteredEmpty() && filteredProgrammes.some((country) => country.languageID == countryOption) == true) {
+        filteredProgrammes = filteredProgrammes.filter(country => {
+            return countryOption == country.languageID
         });
     } else {
-        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-            return countryOption == programme.language
+        filteredProgrammes = DB.COUNTRIES.filter(country => {
+            return countryOption == country.languageID
         });
     }
 }
