@@ -13,7 +13,7 @@ function showProgram(id) {
     let language = showLanguage(programme);
     let level = showLevel(programme);
     let country = showCountry(programme);
-    let city = showCity(country);
+    let city = showCity(programme);
     div.classList = "programme-box";
     div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
@@ -62,21 +62,45 @@ function showLevel(programme) {
     return LEVELS.at(programme.level)
 }
 
-function showCity(country) {
+function showCity(programme) {
     let cities = DB.CITIES;
 
-    return cities.find(city => {
-        return country.id == city.countryID
-    });
+    for (let university of DB.UNIVERSITIES) {
+        if (programme.universityID == university.id) {
+            for (let city of cities) {
+                if (university.cityID == city.id) {
+                   return city
+                        
+                    
+                }
+            }
+        }
+    }
+    
+    // return cities.find(city => {
+    //     return country.id == city.countryID
+    // });
 
 }
 
 function showCountry(programme) {
     let countries = DB.COUNTRIES
 
-    return countries.find(country => {
-        return programme.language == country.languageID;
-    });
+    for (let university of DB.UNIVERSITIES) {
+        if (programme.universityID == university.id) {
+
+            for (let city of DB.CITIES) {
+                if (university.cityID == city.id) {
+                    
+                    for (let country of countries) {
+                        if (city.countryID == country.id) {
+                            return country
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 const feildSelect = document.getElementById("field");
