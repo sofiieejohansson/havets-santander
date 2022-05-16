@@ -25,7 +25,8 @@ function renderCountries () {
         </div>`;
         renderCities(i, countryName)
     }
-    return countryName
+
+    setEventHandler()
 }
 
 function renderCities (counter, array) {
@@ -47,15 +48,22 @@ function renderCities (counter, array) {
         if(array[counter].id == city.countryID) {
 
             document.querySelector(`#destinations-container > div:last-child > div`).innerHTML += `
-            <div class="city-box">
+            <div class="city-box" id="${city.name}">
                 <img class="city-picture" src="Images/${city.imagesNormal[0]}" alt="">
                 <h2 class="city-h2">${city.name}</h2>
             </div> `
+            
+            // setEventHandler(city.name)
         }
     }    
 }
 
-
+function setEventHandler() {
+    for(let city of DB.CITIES) {
+    let cityBox = document.getElementById(`${city.name}`);
+    cityBox.addEventListener("click", function(){renderCitiesPopup(city.name)})
+    }
+}
 
 
 let elementSelector = (select) => {
@@ -87,7 +95,11 @@ function getResults (){
                                     <h2 class="city-h2">${CITIES[i].name}</h2>
                                 </div> 
                             </div>
-                        </div>`
+                        </div>`;
+                        
+                        // document.querySelector("#destinations-container > div:last-child > div > div").addEventListener("click", function(){renderCitiesPopup(CITIES[i].name)})
+
+
 
                     }
                 }
@@ -205,13 +217,13 @@ argPin.addEventListener("click", function(){
 
 
 
-function renderCitiesPopup () {
+function renderCitiesPopup (cityName) {
 
-
+console.log("Hej");
 
     for(let i= 0; i < CITIES.length; i++ ) {
        let city = CITIES[i]
-if (city.name == "Stockholm") {
+        if (city.name == cityName) {
            document.querySelector(`#destinations-container`).innerHTML += `
            <div class="destination-popup">
            <div class="close-button"></div>
