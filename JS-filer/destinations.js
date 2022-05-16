@@ -52,16 +52,16 @@ function renderCities (counter, array) {
                 <img class="city-picture" src="Images/${city.imagesNormal[0]}" alt="">
                 <h2 class="city-h2">${city.name}</h2>
             </div> `
-            
-            // setEventHandler(city.name)
         }
     }    
 }
 
 function setEventHandler() {
     for(let city of DB.CITIES) {
-    let cityBox = document.getElementById(`${city.name}`);
-    cityBox.addEventListener("click", function(){renderCitiesPopup(city.name)})
+        let cityBox = document.getElementById(`${city.name}`);
+        if (cityBox != null) {
+            cityBox.addEventListener("click", function(){renderCitiesPopup(city.name)})
+        }
     }
 }
 
@@ -90,16 +90,13 @@ function getResults (){
                         <div class="country-container">
                             <h1 class="country-h1">${country.name}</h1>
                             <div class="cities-container">
-                                <div class="city-box">
+                                <div class="city-box" id="${CITIES[i].name}">
                                     <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
                                     <h2 class="city-h2">${CITIES[i].name}</h2>
                                 </div> 
                             </div>
                         </div>`;
                         
-                        // document.querySelector("#destinations-container > div:last-child > div > div").addEventListener("click", function(){renderCitiesPopup(CITIES[i].name)})
-
-
 
                     }
                 }
@@ -109,6 +106,7 @@ function getResults (){
     else {
         renderCountries();
     }
+    setEventHandler()
 }
 
 
@@ -207,14 +205,6 @@ argPin.addEventListener("click", function(){
     argPin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:nth-child(1)`).scrollIntoView();
 })
-
-
-
-
-
-
-
-
 
 
 function renderCitiesPopup (cityName) {
