@@ -117,7 +117,8 @@ function filterFeild(fieldOption) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return fieldOption == programme.subjectID
         });
-    } else {
+    } 
+    else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return fieldOption == programme.subjectID
         })
@@ -149,7 +150,8 @@ function filterLanguage (languageOption) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return languageOption == programme.language
         });
-    } else {
+    } 
+    else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return languageOption == programme.language
         })
@@ -182,7 +184,8 @@ function filterLevel(levelOption) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return levelOption == programme.level
         });
-    } else {
+    } 
+    else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return levelOption == programme.level
         })
@@ -210,7 +213,34 @@ levelSelect.addEventListener("change", function() {
 });
 
 function filterCountry (countryOption) {
+    if(filteredProgrammes.some((programme) => showCountry(programme).id == countryOption) == true){
+        filteredProgrammes = filteredProgrammes.filter(programme => {
+            return showCountry(programme).id == countryOption
+        })
+    } 
+    else {
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            return showCountry(programme).id == countryOption
+        })
+    
+        if (levelSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return levelSelect.value == programme.level
+        })
+        }
 
+        if (feildSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return feildSelect.value == programme.subjectID
+            })
+        }
+
+        if (languageSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return languageSelect.value == programme.language
+                });
+        }
+    }
 }
 
 const countrySelect = document.getElementById("country");
