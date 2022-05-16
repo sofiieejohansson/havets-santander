@@ -103,14 +103,14 @@ function showCountry(programme) {
     }
 }
 
-const feildSelect = document.getElementById("field");
-feildSelect.addEventListener("change", function(){
-    emptyList();
-    filterFeild(feildSelect.value);
-    showProgrammes(filteredProgrammes);
-});
+function isFilteredEmpty () {
+    return filteredProgrammes.length
+}
 
-// > 0 && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true
+function emptyList () {
+    document.querySelector("#programme-container").innerHTML = ""
+
+}
 
 function filterFeild(fieldOption) {
     if (filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true) {
@@ -135,40 +135,14 @@ function filterFeild(fieldOption) {
         
     }
 
-
-    // if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == false) {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return fieldOption == programme.subjectID
-    //     })
-    //     .filter(programme => {
-    //         return languageSelect.value == programme.language    
-    //     })
-    //     .filter(programme => {
-    //         return levelSelect.value == programme.level
-    //     });
-    // }
-    // else if (isFilteredEmpty()) {
-    //     filteredProgrammes = filteredProgrammes.filter(programme => {
-    //         return fieldOption == programme.subjectID
-    //     });
-    // }
-    // else {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return fieldOption == programme.subjectID
-    //     });
-    // }
 }
 
-function isFilteredEmpty () {
-    return filteredProgrammes.length
-}
-
-function emptyList () {
-    document.querySelector("#programme-container").innerHTML = ""
-
-}
-
-// > 0 && filteredProgrammes.some((programme) => programme.language == languageOption) == true
+const feildSelect = document.getElementById("field");
+feildSelect.addEventListener("change", function(){
+    emptyList();
+    filterFeild(feildSelect.value);
+    showProgrammes(filteredProgrammes);
+});
 
 function filterLanguage (languageOption) {
     if (filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
@@ -193,27 +167,6 @@ function filterLanguage (languageOption) {
         
     }
 
-    // if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.language == languageOption) == false) {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return feildSelect.value == programme.subjectID
-    //     })
-    //     .filter(programme => {
-    //         return languageOption == programme.language    
-    //     })
-    //     .filter(programme => {
-    //         return levelSelect.value == programme.level
-    //     });
-    // }
-    // else if (isFilteredEmpty()) {
-    //     filteredProgrammes = filteredProgrammes.filter(programme => {
-    //         return languageOption == programme.language
-    //     });
-    // }
-    // else {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return languageOption == programme.language
-    //     });
-    // }
 }
 
 const languageSelect = document.getElementById("language");
@@ -223,7 +176,6 @@ languageSelect.addEventListener("change", function() {
     showProgrammes(filteredProgrammes);
 });
 
-// > 0 && filteredProgrammes.some((programme) => programme.level == levelOption) == true
 
 function filterLevel(levelOption) {
     if (filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
@@ -248,38 +200,6 @@ function filterLevel(levelOption) {
         
     }
 
-    // if (isFilteredEmpty() /* && filteredProgrammes.some((programme) => programme.level == levelOption) == true */) {
-    //     filteredProgrammes = filteredProgrammes.filter(programme => {
-    //         return levelOption == programme.level            
-    //     });
-    // }
-    // else {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return levelOption == programme.level
-    //     });
-    // }
-
-    // if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.level == levelOption) == false) {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return feildSelect.value == programme.subjectID
-    //     })
-    //     .filter(programme => {
-    //         return languageSelect.value == programme.language    
-    //     })
-    //     .filter(programme => {
-    //         return levelOption == programme.level
-    //     });
-    // }
-    // else if (isFilteredEmpty()) {
-    //     filteredProgrammes = filteredProgrammes.filter(programme => {
-    //         return levelOption == programme.level
-    //     });
-    // }
-    // else {
-    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
-    //         return levelOption == programme.level
-    //     });
-    // }
 }
 
 const levelSelect = document.getElementById("level");
@@ -289,24 +209,16 @@ levelSelect.addEventListener("change", function() {
     showProgrammes(filteredProgrammes);
 });
 
-// function filterCountry (countryOption) {
-//     if (isFilteredEmpty() && filteredProgrammes.some((country) => country.id == countryOption) == true) {
-//         filteredProgrammes = filteredProgrammes.filter(country => {
-//             return countryOption == country.id
-//         });
-//     } else {
-//         filteredProgrammes = DB.COUNTRIES.filter(country => {
-//             return countryOption == country.id
-//         });
-//     }
-// }
+function filterCountry (countryOption) {
 
-// const countrySelect = document.getElementById("country");
-// countrySelect.addEventListener("change", function () {
-//     emptyList();
-//     filterCountry(countrySelect.value);
-//     showProgrammes(filteredProgrammes);
-// })
+}
+
+const countrySelect = document.getElementById("country");
+countrySelect.addEventListener("change", function () {
+    emptyList();
+    filterCountry(countrySelect.value);
+    showProgrammes(filteredProgrammes);
+})
 
 function filterCity () {
     // endast baserat på valt land
