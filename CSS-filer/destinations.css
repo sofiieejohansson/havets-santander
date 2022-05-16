@@ -620,11 +620,11 @@ right: 691px;
   margin-left: 200px;
 }
 
-.popup-img{
+.city-picture-popup{
   width: 100%;
   height: 200px;
   background-color: blue;
-  background-size: cover;
+  background-size: contain;
 }
 
 .left-container{
@@ -675,3 +675,37 @@ height: 100px;
 margin: 10px;
 margin-top: 30px;
   }
+
+  .close-button{
+    height: 50px;
+    width: 50px;
+    background-color: darkred;
+    border-radius: 100%;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    background-color: #2a2a35;
+  opacity: 1;
+  background: repeating-linear-gradient( -45deg, #a1a1b9, #a1a1b9 2px, #2a2a35 2px, #2a2a35 10px );
+
+}
+
+.sun-img {
+  position: absolute;
+  right: 52px;
+  top: 267px;
+ }
+
+ .sun-days {
+  position: absolute;
+  right: 128px;
+  top: 330px;
+ }
+
+ .sunny p{
+  margin-top: 0px;
+ }
+ 
+
+
+

@@ -51,11 +51,11 @@ function renderCities (counter, array) {
                 <img class="city-picture" src="Images/${city.imagesNormal[0]}" alt="">
                 <h2 class="city-h2">${city.name}</h2>
             </div> `
-
-
-            }
         }
+    }    
 }
+
+
 
 
 let elementSelector = (select) => {
@@ -199,23 +199,53 @@ argPin.addEventListener("click", function(){
 
 
 
-let bild = document.querySelector(".popup-img")
-
-bild.style.backgroundImage = "url(Images/mexico_normal_1.jpg)";
 
 
-let texten = document.querySelector(".city-popup-text")
 
-let textish = CITIES[2].text;
 
-texten.textContent = `${textish}`
 
-let solen = document.querySelector(".sunny")
 
-let solish = CITIES[2].sun;
+function renderCitiesPopup () {
 
-solen.textContent = `sunny days per year: ${solish}`
 
+
+    for(let i= 0; i < CITIES.length; i++ ) {
+       let city = CITIES[i]
+if (city.name == "Stockholm") {
+           document.querySelector(`#destinations-container`).innerHTML += `
+           <div class="destination-popup">
+           <div class="close-button"></div>
+     
+           <img
+             class="city-picture-popup"
+             src="Images/${city.imagesBig[0]}"
+             alt=""/>
+     
+           <div class="div-container">
+             <div class="left-container">
+               <h2 class="popup-h2">${city.name}</h2>
+               <div class="city-popup-text">${city.text}</div>
+               <div class="popup-comments">js fil comments</div>
+             </div>
+     
+             <div class="right-container">
+               <div class="sunny"> <p> Days of sun per year:</p>
+                 <img class="sun-img" src="Images/royalty-free-transparent-images-20.png" alt="" width="180px" height="180px">
+                 <h3 class="sun-days">${city.sun}</h3>
+               
+               </div>
+               <div class="programs-in-city">programmen i staden</div>
+             </div>
+           </div>
+         </div>`
+        }
+    }
+    
+}   
+
+
+
+   
 
 
 
