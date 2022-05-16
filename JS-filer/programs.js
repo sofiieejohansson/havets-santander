@@ -13,7 +13,7 @@ function showProgram(id) {
     let language = showLanguage(programme);
     let level = showLevel(programme);
     let country = showCountry(programme);
-    let city = showCity(country);
+    let city = showCity(programme);
     div.classList = "programme-box";
     div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
@@ -62,21 +62,45 @@ function showLevel(programme) {
     return LEVELS.at(programme.level)
 }
 
-function showCity(country) {
+function showCity(programme) {
     let cities = DB.CITIES;
 
-    return cities.find(city => {
-        return country.id == city.countryID
-    });
+    for (let university of DB.UNIVERSITIES) {
+        if (programme.universityID == university.id) {
+            for (let city of cities) {
+                if (university.cityID == city.id) {
+                   return city
+                        
+                    
+                }
+            }
+        }
+    }
+    
+    // return cities.find(city => {
+    //     return country.id == city.countryID
+    // });
 
 }
 
 function showCountry(programme) {
     let countries = DB.COUNTRIES
 
-    return countries.find(country => {
-        return programme.language == country.languageID;
-    });
+    for (let university of DB.UNIVERSITIES) {
+        if (programme.universityID == university.id) {
+
+            for (let city of DB.CITIES) {
+                if (university.cityID == city.id) {
+                    
+                    for (let country of countries) {
+                        if (city.countryID == country.id) {
+                            return country
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 const feildSelect = document.getElementById("field");
@@ -88,16 +112,51 @@ feildSelect.addEventListener("change", function(){
 
 // > 0 && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true
 
-function filterFeild (fieldOption) {
-    if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true) {
+function filterFeild(fieldOption) {
+    if (filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return fieldOption == programme.subjectID
         });
     } else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return fieldOption == programme.subjectID
-        });
+        })
+
+        if (languageSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return languageSelect.value == programme.language
+            })
+        }
+        if (levelSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return levelSelect.value == programme.level
+                });
+        }
+        
     }
+
+
+    // if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == false) {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return fieldOption == programme.subjectID
+    //     })
+    //     .filter(programme => {
+    //         return languageSelect.value == programme.language    
+    //     })
+    //     .filter(programme => {
+    //         return levelSelect.value == programme.level
+    //     });
+    // }
+    // else if (isFilteredEmpty()) {
+    //     filteredProgrammes = filteredProgrammes.filter(programme => {
+    //         return fieldOption == programme.subjectID
+    //     });
+    // }
+    // else {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return fieldOption == programme.subjectID
+    //     });
+    // }
 }
 
 function isFilteredEmpty () {
@@ -112,15 +171,49 @@ function emptyList () {
 // > 0 && filteredProgrammes.some((programme) => programme.language == languageOption) == true
 
 function filterLanguage (languageOption) {
-    if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
+    if (filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return languageOption == programme.language
         });
     } else {
         filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return languageOption == programme.language
-        });
+        })
+
+        if (feildSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return feildSelect.value == programme.subjectID
+            })
+        }
+        if (levelSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return levelSelect.value == programme.level
+                });
+        }
+        
     }
+
+    // if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.language == languageOption) == false) {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return feildSelect.value == programme.subjectID
+    //     })
+    //     .filter(programme => {
+    //         return languageOption == programme.language    
+    //     })
+    //     .filter(programme => {
+    //         return levelSelect.value == programme.level
+    //     });
+    // }
+    // else if (isFilteredEmpty()) {
+    //     filteredProgrammes = filteredProgrammes.filter(programme => {
+    //         return languageOption == programme.language
+    //     });
+    // }
+    // else {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return languageOption == programme.language
+    //     });
+    // }
 }
 
 const languageSelect = document.getElementById("language");
@@ -132,17 +225,61 @@ languageSelect.addEventListener("change", function() {
 
 // > 0 && filteredProgrammes.some((programme) => programme.level == levelOption) == true
 
-function filterLevel (levelOption) {
-    if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
+function filterLevel(levelOption) {
+    if (filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
-            return levelOption == programme.level            
-        });
-    }
-    else {
-        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
             return levelOption == programme.level
         });
+    } else {
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            return levelOption == programme.level
+        })
+
+        if (feildSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return feildSelect.value == programme.subjectID
+            })
+        }
+        if (languageSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return languageSelect.value == programme.language
+                });
+        }
+        
     }
+
+    // if (isFilteredEmpty() /* && filteredProgrammes.some((programme) => programme.level == levelOption) == true */) {
+    //     filteredProgrammes = filteredProgrammes.filter(programme => {
+    //         return levelOption == programme.level            
+    //     });
+    // }
+    // else {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return levelOption == programme.level
+    //     });
+    // }
+
+    // if (isFilteredEmpty() && filteredProgrammes.some((programme) => programme.level == levelOption) == false) {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return feildSelect.value == programme.subjectID
+    //     })
+    //     .filter(programme => {
+    //         return languageSelect.value == programme.language    
+    //     })
+    //     .filter(programme => {
+    //         return levelOption == programme.level
+    //     });
+    // }
+    // else if (isFilteredEmpty()) {
+    //     filteredProgrammes = filteredProgrammes.filter(programme => {
+    //         return levelOption == programme.level
+    //     });
+    // }
+    // else {
+    //     filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+    //         return levelOption == programme.level
+    //     });
+    // }
 }
 
 const levelSelect = document.getElementById("level");
@@ -152,24 +289,24 @@ levelSelect.addEventListener("change", function() {
     showProgrammes(filteredProgrammes);
 });
 
-function filterCountry (countryOption) {
-    if (isFilteredEmpty() && filteredProgrammes.some((country) => country.id == countryOption) == true) {
-        filteredProgrammes = filteredProgrammes.filter(country => {
-            return countryOption == country.id
-        });
-    } else {
-        filteredProgrammes = DB.COUNTRIES.filter(country => {
-            return countryOption == country.id
-        });
-    }
-}
+// function filterCountry (countryOption) {
+//     if (isFilteredEmpty() && filteredProgrammes.some((country) => country.id == countryOption) == true) {
+//         filteredProgrammes = filteredProgrammes.filter(country => {
+//             return countryOption == country.id
+//         });
+//     } else {
+//         filteredProgrammes = DB.COUNTRIES.filter(country => {
+//             return countryOption == country.id
+//         });
+//     }
+// }
 
-const countrySelect = document.getElementById("country");
-countrySelect.addEventListener("change", function () {
-    emptyList();
-    filterCountry(countrySelect.value);
-    showProgrammes(filteredProgrammes);
-})
+// const countrySelect = document.getElementById("country");
+// countrySelect.addEventListener("change", function () {
+//     emptyList();
+//     filterCountry(countrySelect.value);
+//     showProgrammes(filteredProgrammes);
+// })
 
 function filterCity () {
     // endast baserat på valt land
