@@ -5,6 +5,7 @@ let filteredProgrammes = [];
 let programmes = DB.PROGRAMMES
 let universities = DB.UNIVERSITIES
 let countries = DB.COUNTRIES
+let cities = DB.CITIES
 
 function showProgram(id) {
     let div = document.createElement("div");
@@ -133,6 +134,16 @@ function filterFeild(fieldOption) {
                 return levelSelect.value == programme.level
                 });
         }
+        if (countrySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return countrySelect.value == showCountry(programme).id
+            });
+        }
+        if (citySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return citySelect.value == showCity(programme).id
+            });
+        }
         
     }
 
@@ -165,6 +176,16 @@ function filterLanguage (languageOption) {
             filteredProgrammes = filteredProgrammes.filter(programme => {
                 return levelSelect.value == programme.level
                 });
+        }
+        if (countrySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return countrySelect.value == showCountry(programme).id
+            });
+        }
+        if (citySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return citySelect.value == showCity(programme).id
+            });
         }
         
     }
@@ -200,9 +221,17 @@ function filterLevel(levelOption) {
                 return languageSelect.value == programme.language
                 });
         }
-        
+        if (countrySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return countrySelect.value == showCountry(programme).id
+            });
+        }
+        if (citySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return citySelect.value == showCity(programme).id
+            });
+        }
     }
-
 }
 
 const levelSelect = document.getElementById("level");
@@ -240,6 +269,12 @@ function filterCountry (countryOption) {
                 return languageSelect.value == programme.language
                 });
         }
+        if (citySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return citySelect.value == showCity(programme).id
+            });
+        }
+
     }
 }
 
@@ -250,9 +285,58 @@ countrySelect.addEventListener("change", function () {
     showProgrammes(filteredProgrammes);
 })
 
-function filterCity () {
-    // endast baserat på valt land
+function filterCity (cityOption) {
+    if(filteredProgrammes.some((programme) => showCity(programme).id == cityOption) == true){
+        filteredProgrammes = filteredProgrammes.filter(programme => {
+            return showCity(programme).id == cityOption
+        })
+    } 
+    else {
+        filteredProgrammes = DB.PROGRAMMES.filter(programme => {
+            return showCity(programme).id == cityOption
+        })
+    
+        if (levelSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return levelSelect.value == programme.level
+        })
+        }
+
+        if (feildSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return feildSelect.value == programme.subjectID
+            })
+        }
+
+        if (languageSelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return languageSelect.value == programme.language
+                });
+        }
+        if (countrySelect.value >= 0) {
+            filteredProgrammes = filteredProgrammes.filter(programme => {
+                return countrySelect.value == showCountry(programme).id
+            });
+        }
+    }
+}
+const citySelect = document.getElementById("city");
+citySelect.addEventListener("change", function () {
+    emptyList();
+    filterCity(citySelect.value);
+    showProgrammes(filteredProgrammes);
+})
+
+function createOption () {
+    let select = document.getElementById("city");
+    for (let i = 0; i < cities.length; i++) {
+        let option = document.createElement("option");
+        option.text = cities[i].name;
+        option.value = i;
+        select.add(option); 
+    }
 }
 
+createOption()
 
 showProgrammes(filteredProgrammes);
