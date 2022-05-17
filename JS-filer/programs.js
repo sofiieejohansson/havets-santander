@@ -283,6 +283,7 @@ countrySelect.addEventListener("change", function () {
     emptyList();
     filterCountry(countrySelect.value);
     showProgrammes(filteredProgrammes);
+    createOption(countrySelect.value)
 })
 
 function filterCity (cityOption) {
@@ -327,13 +328,33 @@ citySelect.addEventListener("change", function () {
     showProgrammes(filteredProgrammes);
 })
 
-function createOption () {
-    let select = document.getElementById("city");
-    for (let i = 0; i < cities.length; i++) {
-        let option = document.createElement("option");
-        option.text = cities[i].name;
-        option.value = i;
-        select.add(option); 
+function createOption (countryId = -1) {
+    citySelect.innerHTML = "";
+    let defaultOption = document.createElement("option");
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.hidden = true;
+    defaultOption.value = -1;
+    defaultOption.innerText = "City";
+    citySelect.appendChild(defaultOption);
+    if (countryId == -1) {
+        //for (let i = 0; i < cities.length; i++) {
+        //    let option = document.createElement("option");
+        //    option.text = cities[i].name;
+        //    option.value = i;
+        //    citySelect.add(option); 
+        //}
+
+    } else {
+        
+        for (let i = 0; i < cities.length; i++) {
+            if (cities[i].countryID == countryId) {
+                let option = document.createElement("option");
+                option.text = cities[i].name;
+                option.value = i;
+                citySelect.add(option); 
+            }
+        }
     }
 }
 
