@@ -1,7 +1,6 @@
 "use strict";
 
 let filteredProgrammes = [];
-
 let programmes = DB.PROGRAMMES
 let universities = DB.UNIVERSITIES
 let countries = DB.COUNTRIES
@@ -70,18 +69,11 @@ function showCity(programme) {
         if (programme.universityID == university.id) {
             for (let city of cities) {
                 if (university.cityID == city.id) {
-                   return city
-                        
-                    
+                   return city                    
                 }
             }
         }
     }
-    
-    // return cities.find(city => {
-    //     return country.id == city.countryID
-    // });
-
 }
 
 function showCountry(programme) {
@@ -110,7 +102,6 @@ function isFilteredEmpty () {
 
 function emptyList () {
     document.querySelector("#programme-container").innerHTML = ""
-
 }
 
 function filterFeild(fieldOption) {
@@ -143,10 +134,8 @@ function filterFeild(fieldOption) {
             filteredProgrammes = filteredProgrammes.filter(programme => {
                 return citySelect.value == showCity(programme).id
             });
-        }
-        
+        }        
     }
-
 }
 
 const feildSelect = document.getElementById("field");
@@ -186,10 +175,8 @@ function filterLanguage (languageOption) {
             filteredProgrammes = filteredProgrammes.filter(programme => {
                 return citySelect.value == showCity(programme).id
             });
-        }
-        
+        }        
     }
-
 }
 
 const languageSelect = document.getElementById("language");
@@ -321,6 +308,7 @@ function filterCity (cityOption) {
         }
     }
 }
+
 const citySelect = document.getElementById("city");
 citySelect.addEventListener("change", function () {
     emptyList();
@@ -344,9 +332,7 @@ function createOption (countryId = -1) {
         //    option.value = i;
         //    citySelect.add(option); 
         //}
-
-    } else {
-        
+    } else {        
         for (let i = 0; i < cities.length; i++) {
             if (cities[i].countryID == countryId) {
                 let option = document.createElement("option");
