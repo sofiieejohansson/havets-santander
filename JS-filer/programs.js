@@ -15,6 +15,7 @@ function showProgram(id) {
     let country = showCountry(programme);
     let city = showCity(programme);
     div.classList = "programme-box";
+    div.setAttribute("id", `${programme.name}`)
     div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
     <div id="programme-info">
@@ -30,6 +31,10 @@ function showProgram(id) {
         ${level}
         </p>
     </div>`
+
+    div.addEventListener('click', function(){
+        console.log(showProgrammePopup());
+    }); 
 
     return div;
 }
@@ -345,24 +350,25 @@ function createOption (countryId = -1) {
     }
 }
 
-function renderProgrammePopup (programmeName) {
+function showProgrammePopup (programmeName) {
     let level = showLevel(programmes);
     let field = showField(programmes);
 
     for(let i= 0; i < PROGRAMMES.length; i++ ) {
-       let programme = PROGRAMMES[i]
+        let programme = PROGRAMMES[i]
+        
        
         if (programme.name == programmeName) {
            document.querySelector(`#programme-container`).innerHTML += `
            <div class="programme-popup">
-                <div class="close-button">X</div>
+                <div class="close-button">&times;</div>
      
                 <div class="popup-color">
                     <h2 class="programme-name">${programme.name}</h2>
                 </div>
-
+                
                 <div class="university-info">
-                    <h4 class="university-name">UNIVERSITY NAME - ${field.name}</h4>
+                    <h4 class="university-name">UNIVERSITY NAME - FIELD</h4>
                     <p class="local-students">${programme.localStudents}</p>
                     <p class="exchange-students>${programme.exchangeStudents}</p>
                 </div>
@@ -383,30 +389,46 @@ function renderProgrammePopup (programmeName) {
         }
     }  
 } 
+/*
+const programmeBox = document.querySelectorAll(".programme-box");
 
-let programmePopUp = document.getElementsByClassName("programme-popup");
-let programmeBox = document.getElementsByClassName("programme-box");
-let closeButton = document.getElementsByClassName("close-button");
+programmeBox.addEventListener('click', e => {
+    console.log(e);
+}) 
 
-programmeBox.onclick = function () {
-    programmePopUp.style.display = "block";
-}
 
-closeButton.onclick = function () {
+closeButton.addEventListener("click", function () {
     programmePopUp.style.display = "none";
-}
+});
 
-window.onclick = function (event) {
+window.addEventListener("click", function (event) {
     if (event.target == programmePopUp) {
         programmePopUp.style.display = "none";
     }
-}
+}); 
+*/
+
 
 createOption()
 
 showProgrammes(filteredProgrammes);
 
+/*
 let countryChoice = window.localStorage.getItem("countryChoice");
 if (countryChoice != null) {
     console.log(countryChoice);
 }
+*/
+
+/*
+function setEventHandler() {
+    for (let programme of programmes) {
+        let programmeBox = document.getElementById(`${programme.name}`)
+        if (programmeBox != null) {
+            programmeBox.addEventListener("click", function() {
+                renderProgrammePopup(programme.name)
+            })
+        }
+    }
+}
+*/
