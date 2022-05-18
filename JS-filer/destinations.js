@@ -158,15 +158,17 @@ function renderCitiesPopup (cityName) {
 }  
 
 function closeButton() {
-    document.querySelector(".close-button").addEventListener("click", function(){
+
+    document.querySelector(".close-button").addEventListener("click", function () {
         document.querySelector(".destination-popup").remove();
+        setEventHandler()
     })
 
-    if (document.querySelector(".close-button") != null){
-        document.querySelector(".close-button").addEventListener("click", function(){
-            document.querySelector(".destination-popup").remove();
-        })
-    }
+    // if (document.querySelector(".close-button") != null){
+    //     document.querySelector(".close-button").addEventListener("click", function(){
+    //         document.querySelector(".destination-popup").remove();
+    //     })
+    // }
 }
 
 
