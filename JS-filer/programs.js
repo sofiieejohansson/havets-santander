@@ -267,6 +267,7 @@ function filterCountry (countryOption) {
 
 const countrySelect = document.getElementById("country");
 countrySelect.addEventListener("change", function () {
+    citySelect.disabled = false;
     emptyList();
     filterCountry(countrySelect.value);
     showProgrammes(filteredProgrammes);
@@ -347,3 +348,8 @@ function createOption (countryId = -1) {
 createOption()
 
 showProgrammes(filteredProgrammes);
+
+let countryChoice = window.localStorage.getItem("countryChoice");
+if (countryChoice != null) {
+    console.log(countryChoice);
+}
