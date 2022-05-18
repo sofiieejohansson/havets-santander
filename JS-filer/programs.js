@@ -345,6 +345,63 @@ function createOption (countryId = -1) {
     }
 }
 
+function renderProgrammePopup (programmeName) {
+    let level = showLevel(programmes);
+    let field = showField(programmes);
+
+    for(let i= 0; i < PROGRAMMES.length; i++ ) {
+       let programme = PROGRAMMES[i]
+       
+        if (programme.name == programmeName) {
+           document.querySelector(`#programme-container`).innerHTML += `
+           <div class="programme-popup">
+                <div class="close-button">X</div>
+     
+                <div class="popup-color">
+                    <h2 class="programme-name">${programme.name}</h2>
+                </div>
+
+                <div class="university-info">
+                    <h4 class="university-name">UNIVERSITY NAME - ${field.name}</h4>
+                    <p class="local-students">${programme.localStudents}</p>
+                    <p class="exchange-students>${programme.exchangeStudents}</p>
+                </div>
+     
+                <div class="div-container">
+                    <div class="left-container">
+                        <h6 class="level">${level}</h2>
+                        <div class="student-comments">js fil comments</div>
+                    </div>
+     
+                    <div class="right-container">               
+                        <div class="entry-grade">${programme.entryGrades[0]}</div>
+                        <div class="success-rate">${programme.successRate[0]}</div>
+                        <div class="programs-in-city">STADEN</div>
+                    </div>
+                </div>        
+            </div>`
+        }
+    }  
+} 
+
+let programmePopUp = document.getElementsByClassName("programme-popup");
+let programmeBox = document.getElementsByClassName("programme-box");
+let closeButton = document.getElementsByClassName("close-button");
+
+programmeBox.onclick = function () {
+    programmePopUp.style.display = "block";
+}
+
+closeButton.onclick = function () {
+    programmePopUp.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == programmePopUp) {
+        programmePopUp.style.display = "none";
+    }
+}
+
 createOption()
 
 showProgrammes(filteredProgrammes);
