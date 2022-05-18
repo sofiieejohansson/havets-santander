@@ -127,7 +127,9 @@ function renderCitiesPopup (cityName) {
         if (city.name == cityName) {
            document.querySelector(`#destinations-container`).innerHTML += `
            <div class="destination-popup">
-           <div class="close-button"></div>
+           <div class="close">
+            
+           </div>
      
            <img
              class="city-picture-popup"
@@ -159,7 +161,7 @@ function renderCitiesPopup (cityName) {
 
 function closeButton() {
 
-    document.querySelector(".close-button").addEventListener("click", function () {
+    document.querySelector(".close").addEventListener("click", function () {
         document.querySelector(".destination-popup").remove();
         setEventHandler()
     })
