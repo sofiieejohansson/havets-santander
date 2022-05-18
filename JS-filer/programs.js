@@ -15,6 +15,7 @@ function showProgram(id) {
     let country = showCountry(programme);
     let city = showCity(programme);
     div.classList = "programme-box";
+    div.setAttribute("id", `${programme.name}`)
     div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
     <div id="programme-info">
@@ -30,6 +31,10 @@ function showProgram(id) {
         ${level}
         </p>
     </div>`
+
+    div.addEventListener('click', function(){
+        console.log(showProgrammePopup());
+    }); 
 
     return div;
 }
@@ -345,11 +350,85 @@ function createOption (countryId = -1) {
     }
 }
 
+function showProgrammePopup (programmeName) {
+    let level = showLevel(programmes);
+    let field = showField(programmes);
+
+    for(let i= 0; i < PROGRAMMES.length; i++ ) {
+        let programme = PROGRAMMES[i]
+        
+       
+        if (programme.name == programmeName) {
+           document.querySelector(`#programme-container`).innerHTML += `
+           <div class="programme-popup">
+                <div class="close-button">&times;</div>
+     
+                <div class="popup-color">
+                    <h2 class="programme-name">${programme.name}</h2>
+                </div>
+                
+                <div class="university-info">
+                    <h4 class="university-name">UNIVERSITY NAME - FIELD</h4>
+                    <p class="local-students">${programme.localStudents}</p>
+                    <p class="exchange-students>${programme.exchangeStudents}</p>
+                </div>
+     
+                <div class="div-container">
+                    <div class="left-container">
+                        <h6 class="level">${level}</h2>
+                        <div class="student-comments">js fil comments</div>
+                    </div>
+     
+                    <div class="right-container">               
+                        <div class="entry-grade">${programme.entryGrades[0]}</div>
+                        <div class="success-rate">${programme.successRate[0]}</div>
+                        <div class="programs-in-city">STADEN</div>
+                    </div>
+                </div>        
+            </div>`
+        }
+    }  
+} 
+/*
+const programmeBox = document.querySelectorAll(".programme-box");
+
+programmeBox.addEventListener('click', e => {
+    console.log(e);
+}) 
+
+
+closeButton.addEventListener("click", function () {
+    programmePopUp.style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+    if (event.target == programmePopUp) {
+        programmePopUp.style.display = "none";
+    }
+}); 
+*/
+
+
 createOption()
 
 showProgrammes(filteredProgrammes);
 
+/*
 let countryChoice = window.localStorage.getItem("countryChoice");
 if (countryChoice != null) {
     console.log(countryChoice);
 }
+*/
+
+/*
+function setEventHandler() {
+    for (let programme of programmes) {
+        let programmeBox = document.getElementById(`${programme.name}`)
+        if (programmeBox != null) {
+            programmeBox.addEventListener("click", function() {
+                renderProgrammePopup(programme.name)
+            })
+        }
+    }
+}
+*/
