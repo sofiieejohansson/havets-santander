@@ -63,6 +63,7 @@ body {
     border-radius: 50px;
     background-color: lightgray;
     margin-top: 0px;
+    cursor: pointer;
 }
 
 .city-picture{
@@ -611,7 +612,7 @@ right: 691px;
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 20vh;
+  bottom: 12.5vh;
   left: 10vw;
   background-color: var(--iceblue);
   width: 900px;
@@ -640,16 +641,20 @@ height: 350px;
 }
 
 .city-popup-text{
-  background-color: yellow;
+  background-color: #F3F3F3;
   height: 130px;
   margin: 10px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
 }
 
 .popup-comments{
-  background-color: darkcyan;
+  background-color: white;
   height: 171px;
   margin: 10px;
   margin-top: 30px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
 }
 
 .right-container{
@@ -663,17 +668,21 @@ height: 350px;
   }
 
   .sunny{
-    background-color: grey;
     height: 200px;
     margin: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: white;
+
   }
 
   .programs-in-city{
     margin-top: 50px;
-background-color: khaki;
+background-color: #A5BCC4;
 height: 100px;
 margin: 10px;
 margin-top: 30px;
+box-shadow: 0px 4px 4px 0px #00000040;
+
   }
 
   .close-button{
@@ -687,6 +696,7 @@ margin-top: 30px;
     background-color: #2a2a35;
   opacity: 1;
   background: repeating-linear-gradient( -45deg, #a1a1b9, #a1a1b9 2px, #2a2a35 2px, #2a2a35 10px );
+  cursor: pointer;
 
 }
 
@@ -700,12 +710,18 @@ margin-top: 30px;
   position: absolute;
   right: 128px;
   top: 330px;
+
+
+
  }
 
  .sunny p{
   margin-top: 0px;
+  text-align: center;
  }
  
+
+
 
 
 

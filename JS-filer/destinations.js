@@ -53,6 +53,7 @@ function renderCities (counter, array) {
                 <h2 class="city-h2">${city.name}</h2>
             </div> `
         }
+        
     }    
 }
 
@@ -114,6 +115,60 @@ function getResults (){
 // document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
 elementSelector("#search-input").addEventListener("keyup", getResults);
 renderCountries()
+
+
+
+
+function renderCitiesPopup (cityName) {
+
+    for(let i= 0; i < CITIES.length; i++ ) {
+       let city = CITIES[i]
+       
+        if (city.name == cityName) {
+           document.querySelector(`#destinations-container`).innerHTML += `
+           <div class="destination-popup">
+           <div class="close-button"></div>
+     
+           <img
+             class="city-picture-popup"
+             src="Images/${city.imagesBig[0]}"
+             alt=""/>
+     
+           <div class="div-container">
+             <div class="left-container">
+               <h2 class="popup-h2">${city.name}</h2>
+               <div class="city-popup-text">${city.text}</div>
+               <div class="popup-comments">js fil comments</div>
+             </div>
+     
+             <div class="right-container">
+               <div class="sunny"> <p> Sunny days per year:</p>
+                 <img class="sun-img" src="Images/royalty-free-transparent-images-20.png" alt="" width="180px" height="180px">
+                 <h3 class="sun-days">${city.sun}</h3>
+               
+               </div>
+               <div class="programs-in-city">programmen i staden</div>
+             </div>
+           </div>
+         </div>`
+        }
+    }
+    closeButton();
+    
+}  
+
+function closeButton() {
+    document.querySelector(".close-button").addEventListener("click", function(){
+        document.querySelector(".destination-popup").remove();
+    })
+
+    if (document.querySelector(".close-button") != null){
+        document.querySelector(".close-button").addEventListener("click", function(){
+            document.querySelector(".destination-popup").remove();
+        })
+    }
+}
+
 
 
 
@@ -205,50 +260,14 @@ argPin.addEventListener("click", function(){
     argPin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:nth-child(1)`).scrollIntoView();
 })
-
-
-function renderCitiesPopup (cityName) {
-
-console.log("Hej");
-
-    for(let i= 0; i < CITIES.length; i++ ) {
-       let city = CITIES[i]
-        if (city.name == cityName) {
-           document.querySelector(`#destinations-container`).innerHTML += `
-           <div class="destination-popup">
-           <div class="close-button"></div>
-     
-           <img
-             class="city-picture-popup"
-             src="Images/${city.imagesBig[0]}"
-             alt=""/>
-     
-           <div class="div-container">
-             <div class="left-container">
-               <h2 class="popup-h2">${city.name}</h2>
-               <div class="city-popup-text">${city.text}</div>
-               <div class="popup-comments">js fil comments</div>
-             </div>
-     
-             <div class="right-container">
-               <div class="sunny"> <p> Days of sun per year:</p>
-                 <img class="sun-img" src="Images/royalty-free-transparent-images-20.png" alt="" width="180px" height="180px">
-                 <h3 class="sun-days">${city.sun}</h3>
-               
-               </div>
-               <div class="programs-in-city">programmen i staden</div>
-             </div>
-           </div>
-         </div>`
-        }
-    }
-    
-}   
-
-
-
    
 
+function test() {
+    for(let i = 0; i < CITIES.length; i++) { 
+            
+        
+    }
+}
 
 
 
