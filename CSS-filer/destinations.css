@@ -90,12 +90,14 @@ body {
   flex-wrap: wrap;
 }
 
-.map {
-  border-radius: 250px;
-  height: 800px;
-  width: 1300px;
-  margin-bottom: 150px;
+.map{
+  background-image: url(../Images/World_map_-_low_resolution.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 87vw;
+  height: 100vh;
 }
+
 
 .australia-pin {
   width: 46px;
@@ -484,9 +486,9 @@ body {
 .spain-pin {
   width: 36px;
   height: 36px;
-  position: fixed;
+  position: absolute;
   top: 44vh;
-right: 48vw;
+  right: 51.5vw;
 }
 
 .spain-hover-box {
