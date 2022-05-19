@@ -103,11 +103,11 @@ function getResults (){
                 }
             }
         } 
+    setEventHandler()
     }
     else {
         renderCountries();
     }
-    setEventHandler()
 }
 
 
@@ -137,6 +137,8 @@ function renderCitiesPopup (cityName) {
              <div class="left-container">
                <h2 class="popup-h2">${city.name}</h2>
                <div class="city-popup-text">${city.text}</div>
+               <button class="left-button"><</button>
+               <button class="right-button">></button>
                <div class="popup-comments">js fil comments</div>
              </div>
      
@@ -153,6 +155,8 @@ function renderCitiesPopup (cityName) {
            </div>
          </div>
          <div class="background-white"></div>`
+         popupCommentHandler(city.id)
+         commentButtonHandler(city.id)
         }
     }
     closeButton();
@@ -173,6 +177,46 @@ function closeButton() {
     //     })
     // }
 }
+
+let index = 0;
+
+
+function popupCommentHandler(cityID){
+    let cityComments = COMMENTS_CITY.filter((comment) => {
+        return comment.cityID == cityID
+    })
+
+
+    console.log(cityComments);
+
+    if(cityComments.length > 0){
+        if(index == cityComments.length){
+            index = 0
+        }
+        let comments = cityComments[index]
+        document.querySelector(".popup-comments").innerHTML = `
+        <h3 class="comment-alias">${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}</h3>
+        <h3 class="comment-text">${comments.text}</h3>
+        <h4 class="comment-ratings">Out: ${comments.stars.out}/5</h4>
+        <h4 class="comment-ratings">Food: ${comments.stars.food}/5</h4>
+        <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5</h4>`
+    }
+    else {
+        document.querySelector(".popup-comments").innerHTML = `
+        <h3 class="no-comments">Inga kommentarer</h3>`
+
+    }
+}
+
+function commentButtonHandler(cityID) {
+    document.querySelector(".left-button").addEventListener("click", function() {
+        index--; 
+        popupCommentHandler(cityID)})
+    document.querySelector(".right-button").addEventListener("click", function() {
+        index++; 
+        popupCommentHandler(cityID);})
+}
+
 
 
 
