@@ -259,12 +259,6 @@ function filterCountry (countryOption) {
                 return languageSelect.value == programme.language
                 });
         }
-        if (citySelect.value >= 0) {
-            filteredProgrammes = filteredProgrammes.filter(programme => {
-                return citySelect.value == showCity(programme).id
-            });
-        }
-
     }
 }
 
@@ -395,6 +389,14 @@ function showProgrammePopup(event) {
         }
     }
 } 
+
+function preFilterFromDesti(){
+    if(localStorage.length > 0){
+    let cityId = localStorage.getItem("cityID");
+    filterCity(cityId);
+    localStorage.clear()
+    }
+}
 /*
 const programmeBox = document.querySelectorAll(".programme-box");
 
@@ -414,6 +416,7 @@ window.addEventListener("click", function (event) {
 }); 
 */
 
+preFilterFromDesti()
 
 createOption()
 

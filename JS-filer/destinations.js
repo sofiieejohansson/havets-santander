@@ -1,4 +1,5 @@
 "use strict";
+localStorage.clear()
 
 function renderCountries () {
     let countryName = COUNTRIES.filter((country) => country)
@@ -157,16 +158,17 @@ function renderCitiesPopup (cityName) {
          <div class="background-white"></div>`
          popupCommentHandler(city.id)
          commentButtonHandler(city.id)
-         sendToPrograms(city.id)
+         sendToPrograms(city.id, city.countryID)
         }
     }
     closeButton();
     
 }  
 
-function sendToPrograms(cityID){
+function sendToPrograms(cityID, cityCountry){
     document.querySelector(".programs-in-city").onclick = function() {
-        window.localStorage.setItem("city", cityID);
+        window.localStorage.setItem("cityID", cityID);
+        window.localStorage.setItem("cityCountry", cityCountry)
         window.location.href = "programs.html"
     }
 }
