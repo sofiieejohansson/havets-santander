@@ -1,6 +1,7 @@
 "use strict";
 
 let filteredProgrammes = [];
+let comments = COMMENTS_PROGRAMME
 let programmes = DB.PROGRAMMES
 let universities = DB.UNIVERSITIES
 let countries = DB.COUNTRIES
@@ -53,11 +54,27 @@ function showField(programme) {
     });
 }
 
+function showComments(programme) {
+    let comments = COMMENTS_PROGRAMME;
+
+    return comments.filter(comment => {
+        return programme.id == comment.programmeID;
+    })
+}
+
 function showLanguage(programme) {
     let languages = DB.LANGUAGES
 
     return languages.find(language => {
         return programme.language == language.id;
+    });
+}
+
+function showUniversity(programme) {
+    let universities = DB.UNIVERSITIES;
+
+    return universities.find(university => {
+        return programme.universityID == university.id;
     });
 }
 
@@ -350,7 +367,6 @@ function createOption (countryId = -1) {
 
 function showProgrammePopup(event) {
     let level = showLevel(programmes);
-    let field = showField(programmes);
     console.log(event.target);
     for (let i = 0; i < PROGRAMMES.length; i++) {
         let programme = PROGRAMMES[i]
@@ -358,38 +374,60 @@ function showProgrammePopup(event) {
 
         if (programme.id == event.target.id) {
             document.querySelector(`#popup`).innerHTML += `
-            <div class="programme-popup">
-                    
                 <div class="popup-color">
-                    <div class="close-button">&times;</div>
                     <h2 class="programme-name">${programme.name}</h2>
                 </div>
                 
                 <div class="university-info">
-                    <h4 class="university-name">UNIVERSITY NAME - FIELD</h4>
-                    <p class="local-students">${programme.localStudents}</p>
-                    <p class="exchange-students">${programme.exchangeStudents}</p>
+                    <h4 class="university-name">${showUniversity(programme).name} - ${showField(programme).name}</h4>
+                    <div class="student-info">
+                        <p class="local-students">Local Students: ${programme.localStudents}</p>
+                        <p class="exchange-students">Exchange Students: ${programme.exchangeStudents}</p>
+                    </div>
                 </div>
 
                 <div class="div-container">
                     <div class="left-container">
-                        <h6 class="level">${level}</h2>
-                        <div class="student-comments">js fil comments</div>
+
+                        <div class="level">&cir; Level: ${level}</div>
+                        <div class="student-comments">
+                        <div>${showComments(programme)[0].alias}, ${showComments(programme)[0].date.year}-${showComments(programme)[0].date.month}-${showComments(programme)[0].date.day}:</div>
+                        <div class ="comment-container">
+                            <button class="left-button">&larr;</button>
+                            <div>${showComments(programme)[0].text}</div>
+                            <button class="right-button">&rarr;</button>
+                        </div>
+                            <div class="stars"> 
+                                <p>Teachers: ${showComments(programme)[0].stars.teachers}/5</p> 
+                                <p>Students: ${showComments(programme)[0].stars.students}/5</p>
+                                <p>Courses: ${showComments(programme)[0].stars.courses}/5<p>
+                            </div>
+                        </div>
                     </div>
      
                     <div class="right-container">               
-                        <div class="entry-grade">${programme.entryGrades[0]}</div>
-                        <div class="success-rate">${programme.successRate[0]}</div>
-                        <div class="programs-in-city">STADEN</div>
+                        <div class="entry-grade">Entry Grade: ${programme.entryGrades[0]}</div>
+                        <div class="success-rate">Success Rate: ${programme.successRate[0]}</div>
+                        <div class="programs-in-city">
+                            <div>${showCity(programme).name}</div> 
+                            <div>&rang;</div>
+                        </div>
                     </div>
-                </div>        
-            </div>`
+                </div>`
 
             document.querySelector(`#popup`).style.display = "flex";
+            document.querySelector(`.close-button`).style.display = "block";
+            document.querySelector(`.background-white`).style.display = "block";
+            document.querySelector(`.seethrou`).style.display = "block";
             document.querySelector(`.close-button`).addEventListener("click", function () {
+                document.querySelector(`.close-button`).style.display = "none";
+                document.querySelector(`.background-white`).style.display = "none";
+                document.querySelector(`.seethrou`).style.display = "none";
                 document.querySelector(`#popup`).style.display = "none";
                 document.querySelector(`#popup`).innerHTML = "";
-            })
+
+
+            });
 
             return;
         }
