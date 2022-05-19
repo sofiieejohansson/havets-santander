@@ -150,13 +150,14 @@ function renderCitiesPopup (cityName) {
              </div>
                
                
-               <div class="programs-in-city">View programs in ${city.name}</div>
+               <button type="button" class="programs-in-city">View programs in ${city.name}</button>
              </div>
            </div>
          </div>
          <div class="background-white"></div>`
          popupCommentHandler(city.id)
          commentButtonHandler(city.id)
+         sendToPrograms(city.id)
         }
     }
     closeButton();
@@ -165,7 +166,8 @@ function renderCitiesPopup (cityName) {
 
 function sendToPrograms(cityID){
     document.querySelector(".programs-in-city").onclick = function() {
-        location.href = "programs.html"
+        window.localStorage.setItem("city", cityID);
+        window.location.href = "programs.html"
     }
 }
 
@@ -191,10 +193,16 @@ function popupCommentHandler(cityID){
     let cityComments = COMMENTS_CITY.filter((comment) => {
         return comment.cityID == cityID
     })
+    if(index < 0){
+        index = cityComments.length - 1
+    }
+    if(index > cityComments.length - 1){
+        index = 0
+    }
 
     let comments = cityComments[index];
     console.log(cityComments);
-
+    
     if(cityComments.length > 0){
         if(index == cityComments.length){
             index = 0
