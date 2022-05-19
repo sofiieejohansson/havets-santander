@@ -15,7 +15,7 @@ function showProgram(id) {
     let country = showCountry(programme);
     let city = showCity(programme);
     div.classList = "programme-box";
-    div.setAttribute("id", `${programme.name}`)
+    div.setAttribute("id", `${programme.id}`)
     div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
     <div id="programme-info">
@@ -32,9 +32,7 @@ function showProgram(id) {
         </p>
     </div>`
 
-    div.addEventListener('click', function(){
-        console.log(showProgrammePopup());
-    }); 
+    div.addEventListener('click', showProgrammePopup); 
 
     return div;
 }
@@ -350,29 +348,29 @@ function createOption (countryId = -1) {
     }
 }
 
-function showProgrammePopup (programmeName) {
+function showProgrammePopup(event) {
     let level = showLevel(programmes);
     let field = showField(programmes);
-
-    for(let i= 0; i < PROGRAMMES.length; i++ ) {
+    console.log(event.target);
+    for (let i = 0; i < PROGRAMMES.length; i++) {
         let programme = PROGRAMMES[i]
-        
-       
-        if (programme.name == programmeName) {
-           document.querySelector(`#programme-container`).innerHTML += `
-           <div class="programme-popup">
-                <div class="close-button">&times;</div>
-     
+
+
+        if (programme.id == event.target.id) {
+            document.querySelector(`#popup`).innerHTML += `
+            <div class="programme-popup">
+                    
                 <div class="popup-color">
+                    <div class="close-button">&times;</div>
                     <h2 class="programme-name">${programme.name}</h2>
                 </div>
                 
                 <div class="university-info">
                     <h4 class="university-name">UNIVERSITY NAME - FIELD</h4>
                     <p class="local-students">${programme.localStudents}</p>
-                    <p class="exchange-students>${programme.exchangeStudents}</p>
+                    <p class="exchange-students">${programme.exchangeStudents}</p>
                 </div>
-     
+
                 <div class="div-container">
                     <div class="left-container">
                         <h6 class="level">${level}</h2>
@@ -386,8 +384,16 @@ function showProgrammePopup (programmeName) {
                     </div>
                 </div>        
             </div>`
+
+            document.querySelector(`#popup`).style.display = "flex";
+            document.querySelector(`.close-button`).addEventListener("click", function () {
+                document.querySelector(`#popup`).style.display = "none";
+                document.querySelector(`#popup`).innerHTML = "";
+            })
+
+            return;
         }
-    }  
+    }
 } 
 /*
 const programmeBox = document.querySelectorAll(".programme-box");

@@ -70,21 +70,28 @@ body {
 #programme-info {
   display: flex;
   flex-direction: row;
+  pointer-events: none;
 }
 
 #programme-info > p {
   padding-right: 10px;
+  pointer-events: none;
 }
 
-.programme-popup {
+.programme-box > header {
+  pointer-events: none;
+}
+
+#popup {
   display: none; 
   position: fixed; 
   z-index: 10; 
-  left: 50%;
+  left: 55%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; 
-  height: 100%; 
+  width: 900px; 
+  height: 620px; 
   overflow: auto; 
   background-color: white; 
+  border: solid 1px grey;
 }
