@@ -484,7 +484,7 @@ body {
 .spain-pin {
   width: 36px;
   height: 36px;
-  position: absolute;
+  position: fixed;
   top: 362px;
   right: 691px;
 }
