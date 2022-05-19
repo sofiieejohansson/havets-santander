@@ -103,11 +103,11 @@ function getResults (){
                 }
             }
         } 
+    setEventHandler()
     }
     else {
         renderCountries();
     }
-    setEventHandler()
 }
 
 
@@ -125,49 +125,113 @@ function renderCitiesPopup (cityName) {
        let city = CITIES[i]
        
         if (city.name == cityName) {
+            
            document.querySelector(`#destinations-container`).innerHTML += `
            <div class="destination-popup">
-           <div class="close-button"></div>
+           <div class="close"></div>
      
-           <img
-             class="city-picture-popup"
-             src="Images/${city.imagesBig[0]}"
-             alt=""/>
+           <div class="city-picture-popup" style="background-image:url(Images/${city.imagesBig[0]});">
+            </div>
      
            <div class="div-container">
              <div class="left-container">
                <h2 class="popup-h2">${city.name}</h2>
                <div class="city-popup-text">${city.text}</div>
+               <button class="left-button"><</button>
+               <button class="right-button">></button>
                <div class="popup-comments">js fil comments</div>
              </div>
      
              <div class="right-container">
-               <div class="sunny"> <p> Sunny days per year:</p>
-                 <img class="sun-img" src="Images/royalty-free-transparent-images-20.png" alt="" width="180px" height="180px">
-                 <h3 class="sun-days">${city.sun}</h3>
+
+             <div class="sun-days">
+             <p>Sunny days per year:</p>
+             ${city.sun}
+             </div>
                
-               </div>
-               <div class="programs-in-city">programmen i staden</div>
+               
+               <button type="button" class="programs-in-city">View programs in ${city.name}</button>
              </div>
            </div>
-         </div>`
+         </div>
+         <div class="background-white"></div>`
+         popupCommentHandler(city.id)
+         commentButtonHandler(city.id)
+         sendToPrograms(city.id)
         }
     }
     closeButton();
     
 }  
 
-function closeButton() {
-    document.querySelector(".close-button").addEventListener("click", function(){
-        document.querySelector(".destination-popup").remove();
-    })
-
-    if (document.querySelector(".close-button") != null){
-        document.querySelector(".close-button").addEventListener("click", function(){
-            document.querySelector(".destination-popup").remove();
-        })
+function sendToPrograms(cityID){
+    document.querySelector(".programs-in-city").onclick = function() {
+        window.localStorage.setItem("city", cityID);
+        window.location.href = "programs.html"
     }
 }
+
+function closeButton() {
+
+    document.querySelector(".close").addEventListener("click", function () {
+        document.querySelector(".destination-popup").remove();
+        setEventHandler()
+        document.querySelector(".background-white").remove();
+    })
+
+    // if (document.querySelector(".close-button") != null){
+    //     document.querySelector(".close-button").addEventListener("click", function(){
+    //         document.querySelector(".destination-popup").remove();
+    //     })
+    // }
+}
+
+let index = 0;
+
+
+function popupCommentHandler(cityID){
+    let cityComments = COMMENTS_CITY.filter((comment) => {
+        return comment.cityID == cityID
+    })
+    if(index < 0){
+        index = cityComments.length - 1
+    }
+    if(index > cityComments.length - 1){
+        index = 0
+    }
+
+    let comments = cityComments[index];
+    console.log(cityComments);
+    
+    if(cityComments.length > 0){
+        if(index == cityComments.length){
+            index = 0
+        }
+        let comments = cityComments[index]
+        document.querySelector(".popup-comments").innerHTML = `
+        <h3 class="comment-alias">${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}</h3>
+        <h3 class="comment-text">${comments.text}</h3>
+        <h4 class="comment-ratings">Out: ${comments.stars.out}/5</h4>
+        <h4 class="comment-ratings">Food: ${comments.stars.food}/5</h4>
+        <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5</h4>`
+    }
+    else {
+        document.querySelector(".popup-comments").innerHTML = `
+        <h3 class="no-comments">Inga kommentarer</h3>`
+
+    }
+}
+
+function commentButtonHandler(cityID) {
+    document.querySelector(".left-button").addEventListener("click", function() {
+        index--; 
+        popupCommentHandler(cityID)})
+    document.querySelector(".right-button").addEventListener("click", function() {
+        index++; 
+        popupCommentHandler(cityID);})
+}
+
+
 
 
 

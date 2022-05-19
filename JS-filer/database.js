@@ -627,7 +627,7 @@ const CITIES = [
             "mexico city_normal_2.jpg"
         ],
         "imagesBig": [
-            "mexico city_big_1.jpg"
+            "mexicocity_big_1.jpg"
         ]
     },
     {
@@ -669,7 +669,7 @@ const CITIES = [
             "san francisco_normal_2.jpg"
         ],
         "imagesBig": [
-            "san francisco_big_1.jpg"
+            "sanfrancisco_big_1.jpg"
         ]
     },
     {
@@ -697,7 +697,7 @@ const CITIES = [
             "new york_normal_2.jpg"
         ],
         "imagesBig": [
-            "new york_big_1.jpg"
+            "newyork_big_1.jpg"
         ]
     },
     {
@@ -739,7 +739,7 @@ const CITIES = [
             "buenos aires_normal_2.jpg"
         ],
         "imagesBig": [
-            "buenos aires_big_1.jpg"
+            "buenosaires_big_1.jpg"
         ]
     },
     {
