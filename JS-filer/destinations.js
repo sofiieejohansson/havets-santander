@@ -150,7 +150,7 @@ function renderCitiesPopup (cityName) {
              </div>
                
                
-               <div class="programs-in-city">programmen i staden</div>
+               <div class="programs-in-city">View programs in ${city.name}</div>
              </div>
            </div>
          </div>
@@ -162,6 +162,12 @@ function renderCitiesPopup (cityName) {
     closeButton();
     
 }  
+
+function sendToPrograms(cityID){
+    document.querySelector(".programs-in-city").onclick = function() {
+        location.href = "programs.html"
+    }
+}
 
 function closeButton() {
 
@@ -186,7 +192,7 @@ function popupCommentHandler(cityID){
         return comment.cityID == cityID
     })
 
-
+    let comments = cityComments[index];
     console.log(cityComments);
 
     if(cityComments.length > 0){
@@ -216,6 +222,7 @@ function commentButtonHandler(cityID) {
         index++; 
         popupCommentHandler(cityID);})
 }
+
 
 
 
