@@ -125,16 +125,13 @@ function renderCitiesPopup (cityName) {
        let city = CITIES[i]
        
         if (city.name == cityName) {
+            
            document.querySelector(`#destinations-container`).innerHTML += `
            <div class="destination-popup">
-           <div class="close">
-            
-           </div>
+           <div class="close"></div>
      
-           <img
-             class="city-picture-popup"
-             src="Images/${city.imagesBig[0]}"
-             alt=""/>
+           <div class="city-picture-popup" style="background-image:url(Images/${city.imagesBig[0]});">
+            </div>
      
            <div class="div-container">
              <div class="left-container">
@@ -144,15 +141,18 @@ function renderCitiesPopup (cityName) {
              </div>
      
              <div class="right-container">
-               <div class="sunny"> <p> Sunny days per year:</p>
-                 <img class="sun-img" src="Images/royalty-free-transparent-images-20.png" alt="" width="180px" height="180px">
-                 <h3 class="sun-days">${city.sun}</h3>
+
+             <div class="sun-days">
+             <p>Sunny days per year:</p>
+             ${city.sun}
+             </div>
                
-               </div>
+               
                <div class="programs-in-city">programmen i staden</div>
              </div>
            </div>
-         </div>`
+         </div>
+         <div class="background-white"></div>`
         }
     }
     closeButton();
@@ -164,6 +164,7 @@ function closeButton() {
     document.querySelector(".close").addEventListener("click", function () {
         document.querySelector(".destination-popup").remove();
         setEventHandler()
+        document.querySelector(".background-white").remove();
     })
 
     // if (document.querySelector(".close-button") != null){

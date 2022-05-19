@@ -1,20 +1,18 @@
 html {
   scroll-behavior: smooth;
- }
+}
 
 :root {
-    --iceblue: #e6f4f1;
-    --red: #842700;
-    --darkblue: #005c84;
-    --lightblue: #8ccbd6;
+  --iceblue: #e6f4f1;
+  --red: #842700;
+  --darkblue: #005c84;
+  --lightblue: #8ccbd6;
 }
 
 body {
-    height: 100vh;
-    margin: 0;
-  }
-  
-  
+  height: 100vh;
+  margin: 0;
+}
 
 .header {
   display: flex;
@@ -52,54 +50,54 @@ body {
   background-color: var(--iceblue);
 }
 
-#destinations-container{
+#destinations-container {
   margin-left: 140px;
 }
 
-.city-box{
-    height: 240px;
-    width: 213.75px;
-    margin: 30px;
-    border-radius: 50px;
-    background-color: lightgray;
-    margin-top: 0px;
-    cursor: pointer;
+.city-box {
+  height: 240px;
+  width: 213.75px;
+  margin: 30px;
+  border-radius: 50px;
+  background-color: lightgray;
+  margin-top: 0px;
+  cursor: pointer;
 }
 
-.city-picture{
-    height: 172.5px;
-    width: 213.75px;
-    /* background-image: url(../Images/sidney_big_2.jpg); */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50px 50px 0px 0px;;
+.city-picture {
+  height: 172.5px;
+  width: 213.75px;
+  /* background-image: url(../Images/sidney_big_2.jpg); */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px 50px 0px 0px;
 }
 
-.country-h1{
+.country-h1 {
   margin-left: 40px;
   margin-top: 40px;
   font-size: 45px;
   margin-bottom: 30px;
 }
 
-.city-h2{
+.city-h2 {
   text-align: center;
   margin-top: 7%;
 }
 
-.cities-container{
+.cities-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.map{
+.map {
   border-radius: 250px;
   height: 800px;
   width: 1300px;
   margin-bottom: 150px;
 }
 
-.australia-pin{
+.australia-pin {
   width: 46px;
   height: 46px;
   position: absolute;
@@ -107,8 +105,9 @@ body {
   right: 220px;
 }
 
-.australia-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.australia-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   width: 150px;
@@ -124,12 +123,12 @@ body {
   font-weight: bold;
 }
 
-.australia-pin:hover + .australia-hover-box{
+.australia-pin:hover + .australia-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.australia-line{
+.australia-line {
   opacity: 0%;
   visibility: hidden;
   width: 30px;
@@ -139,24 +138,24 @@ body {
   top: 634px;
   right: 260px;
   transform: rotate(26deg);
-
 }
 
-.australia-pin:hover ~ .australia-line{
+.australia-pin:hover ~ .australia-line {
   visibility: visible;
   opacity: 100%;
 }
 
-.argentina-pin{
+.argentina-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 669px;
-right: 895px;
+  right: 895px;
 }
 
-.argentina-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.argentina-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   width: 150px;
@@ -172,12 +171,12 @@ right: 895px;
   font-weight: bold;
 }
 
-.argentina-pin:hover + .argentina-hover-box{
+.argentina-pin:hover + .argentina-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.argentina-line{
+.argentina-line {
   opacity: 0%;
   visibility: hidden;
   width: 30px;
@@ -187,25 +186,24 @@ right: 895px;
   top: 699px;
   right: 873px;
   transform: rotate(36deg);
-
 }
 
-.argentina-pin:hover ~ .argentina-line{
+.argentina-pin:hover ~ .argentina-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-.chile-pin{
+.chile-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 643px;
-right: 928px;
+  right: 928px;
 }
 
-.chile-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.chile-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   width: 150px;
@@ -221,12 +219,12 @@ right: 928px;
   font-weight: bold;
 }
 
-.chile-pin:hover + .chile-hover-box{
+.chile-pin:hover + .chile-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.chile-line{
+.chile-line {
   opacity: 0%;
   visibility: hidden;
   width: 30px;
@@ -234,19 +232,16 @@ right: 928px;
   background-color: red;
   position: absolute;
   top: 643px;
-right: 960px;
+  right: 960px;
   transform: rotate(26deg);
-
 }
 
-.chile-pin:hover ~ .chile-line{
+.chile-pin:hover ~ .chile-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-
-.uk-pin{
+.uk-pin {
   width: 36px;
   height: 36px;
   position: absolute;
@@ -254,8 +249,9 @@ right: 960px;
   right: 686px;
 }
 
-.uk-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.uk-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   top: 317px;
@@ -264,19 +260,19 @@ right: 960px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
-    position: absolute;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 
-.uk-pin:hover + .uk-hover-box{
+.uk-pin:hover + .uk-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.uk-line{
+.uk-line {
   opacity: 0%;
   visibility: hidden;
   width: 30px;
@@ -286,33 +282,31 @@ right: 960px;
   top: 315px;
   right: 717px;
   transform: rotate(-26deg);
-
 }
 
-.uk-pin:hover ~ .uk-line{
+.uk-pin:hover ~ .uk-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-
-.usa-pin{
+.usa-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 344px;
-right: 1005px;
+  right: 1005px;
 }
 
-.usa-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.usa-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   width: 150px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
-    position: absolute;
+  position: absolute;
   top: 382px;
   right: 805px;
   display: flex;
@@ -321,12 +315,12 @@ right: 1005px;
   font-weight: bold;
 }
 
-.usa-pin:hover + .usa-hover-box{
+.usa-pin:hover + .usa-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.usa-line{
+.usa-line {
   visibility: hidden;
   opacity: 0%;
   height: 1px;
@@ -336,47 +330,45 @@ right: 1005px;
   top: 377px;
   right: 950px;
   transform: rotate(26deg);
-
 }
 
-.usa-pin:hover ~ .usa-line{
+.usa-pin:hover ~ .usa-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-
-.mexico-pin{
+.mexico-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 438px;
-right: 1036px;
+  right: 1036px;
 }
 
-.mexico-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.mexico-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   width: 150px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
-    position: absolute;
+  position: absolute;
   top: 479px;
-right: 1082px;
+  right: 1082px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 
-.mexico-pin:hover + .mexico-hover-box{
+.mexico-pin:hover + .mexico-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.mexico-line{
+.mexico-line {
   opacity: 0%;
   visibility: hidden;
   width: 30px;
@@ -384,35 +376,33 @@ right: 1082px;
   background-color: red;
   position: absolute;
   top: 470px;
-right: 1064px;
-transform: rotate(-43deg);
-
+  right: 1064px;
+  transform: rotate(-43deg);
 }
 
-.mexico-pin:hover ~ .mexico-line{
+.mexico-pin:hover ~ .mexico-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-
-.sweden-pin{
+.sweden-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 262px;
-right: 633px;
+  right: 633px;
 }
 
-.sweden-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.sweden-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   width: 150px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
-    position: absolute;
+  position: absolute;
   top: 222px;
   right: 691px;
   display: flex;
@@ -421,12 +411,12 @@ right: 633px;
   font-weight: bold;
 }
 
-.sweden-pin:hover + .sweden-hover-box{
+.sweden-pin:hover + .sweden-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.sweden-line{
+.sweden-line {
   visibility: hidden;
   opacity: 0%;
   width: 30px;
@@ -436,26 +426,24 @@ right: 633px;
   top: 264px;
   right: 664px;
   transform: rotate(26deg);
-
 }
 
-.sweden-pin:hover ~ .sweden-line{
+.sweden-pin:hover ~ .sweden-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-
-.france-pin{
+.france-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 335px;
-right: 665px;
+  right: 665px;
 }
 
-.france-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.france-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   top: 331px;
@@ -464,19 +452,19 @@ right: 665px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
-    position: absolute;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 
-.france-pin:hover + .france-hover-box{
+.france-pin:hover + .france-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.france-line{
+.france-line {
   visibility: hidden;
   opacity: 0%;
   width: 30px;
@@ -486,26 +474,24 @@ right: 665px;
   top: 348px;
   right: 698px;
   transform: rotate(2deg);
-
 }
 
-.france-pin:hover ~ .france-line{
+.france-pin:hover ~ .france-line {
   visibility: visible;
   opacity: 100%;
 }
 
-
-
-.spain-pin{
+.spain-pin {
   width: 36px;
   height: 36px;
   position: absolute;
   top: 362px;
-right: 691px;
+  right: 691px;
 }
 
-.spain-hover-box{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.spain-hover-box {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
   top: 391px;
@@ -514,19 +500,20 @@ right: 691px;
   height: 46px;
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
-    position: absolute;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 
-.spain-pin:hover + .spain-hover-box{
+.spain-pin:hover + .spain-hover-box {
   visibility: visible;
- opacity: 100%;
+  opacity: 100%;
 }
 
-.spain-line{
+.spain-line {
+  background-image: url(/Images/san\ francisco_normal_1.jpg);
   visibility: hidden;
   opacity: 0%;
   width: 30px;
@@ -535,80 +522,91 @@ right: 691px;
   position: absolute;
   top: 391px;
   right: 722px;
-  transform: rotate(-26deg);  
-
+  transform: rotate(-26deg);
 }
 
-.spain-pin:hover ~ .spain-line{
+.spain-pin:hover ~ .spain-line {
   visibility: visible;
   opacity: 100%;
 }
 
 .arrows {
-	width: 60px;
-	height: 72px;
-	position: absolute;
-	left: 50%;
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
   top: 89%;
 
-	bottom: 20px;
+  bottom: 20px;
 }
 
 .arrows path {
-	stroke: black;
-	fill: transparent;
-	stroke-width: 1px;	
-	animation: arrow 2s infinite;
-	-webkit-animation: arrow 2s infinite; 
+  stroke: black;
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
 }
 
-@keyframes arrow
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-@-webkit-keyframes arrow /*Safari and Chrome*/
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .arrows path.a1 {
-	animation-delay:-1s;
-	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
 }
 
 .arrows path.a2 {
-	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
 }
 
-.arrows path.a3 {	
-	animation-delay:0s;
-	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
 
-.header-text{
+.header-text {
   text-align: center;
   margin-left: 100px;
- font-size: 60px;
- margin-bottom: 0px;
+  font-size: 60px;
+  margin-bottom: 0px;
 }
 
-.scroll-down-text{
-
+.scroll-down-text {
   position: absolute;
-	left: 49%;
+  left: 49%;
   top: 83%;
 }
 
-
-.destination-popup{
+.destination-popup {
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -616,137 +614,119 @@ right: 691px;
   left: 10vw;
   background-color: var(--iceblue);
   width: 900px;
-  height: 620px;
-  border: solid 1px black;
+  height: 635px;
   margin-left: 200px;
+  filter: drop-shadow(0px 4px 4px #8F8F8F);
+  z-index: 50;
 }
 
-.city-picture-popup{
+.city-picture-popup {
   width: 100%;
   height: 200px;
-  background-color: blue;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
 }
 
-.left-container{
-width: 75%;
-height: 350px;
+.left-container {
+  width: 75%;
+  height: 350px;
 }
 
-
-
-.popup-h2{
+.popup-h2 {
   margin: 0px;
   margin: 10px;
 }
 
-.city-popup-text{
-  background-color: #F3F3F3;
- height: 153px;
+.city-popup-text {
+  background-color: #f3f3f3;
+  height: 153px;
   margin: 10px;
   box-shadow: 0px 4px 4px 0px #00000040;
-
+  padding: 5px;
 }
 
-.popup-comments{
+.popup-comments {
   background-color: white;
   height: 171px;
   margin: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
   box-shadow: 0px 4px 4px 0px #00000040;
-
 }
 
-.right-container{
+.right-container {
   width: 35%;
   height: 350px;
   margin-top: 38px;
-  }
-
-  .div-container{
-    display: flex;
-  }
-
-  .sunny{
-    height: 223px;
-    margin: 10px;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    background-color: white;
-
-  }
-
-  .programs-in-city{
-    margin-top: 50px;
-background-color: #A5BCC4;
-height: 100px;
-margin: 10px;
-margin-top: 30px;
-box-shadow: 0px 4px 4px 0px #00000040;
-
-  }
-
-  .close-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    background-color: darkred;
-    border-radius: 100%;
-    position: absolute;
-    right: -20px;
-    top: -20px;
-    background-color: #2a2a35;
-    opacity: 1;
-    background: repeating-linear-gradient( -45deg, #a1a1b9, #a1a1b9 2px, #2a2a35 2px, #2a2a35 10px );
-    cursor: pointer;
 }
 
+.div-container {
+  display: flex;
+}
 
+.sunny {
+  height: 223px;
+  margin: 10px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: white;
+}
 
-.sun-img {
-  position: absolute;
-  right: 52px;
-  top: 267px;
- }
+.programs-in-city {
+  margin-top: 50px;
+  background-color: #a5bcc4;
+  height: 100px;
+  margin: 10px;
+  margin-top: 30px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
 
- .sun-days {
-  position: absolute;
-  right: 128px;
-  top: 330px;
-
-
-
- }
-
- .sunny p{
-  margin-top: 0px;
-  text-align: center;
- }
- 
-
-
-
-
-
-/* .cont{
-  position: fixed;
-  left: 50%;
-  top: 30%;
-  width: 500px;
-  height: 500px;
-  border: solid black;
+.close-button {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+  height: 50px;
+  width: 50px;
+  background-color: darkred;
+  border-radius: 100%;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  background-color: #2a2a35;
+  opacity: 1;
+  background: repeating-linear-gradient(
+    -45deg,
+    #a1a1b9,
+    #a1a1b9 2px,
+    #2a2a35 2px,
+    #2a2a35 10px
+  );
+  cursor: pointer;
+}
+
+.sun-days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../Images/royalty-free-transparent-images-20.png);
+  background-size: 175px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 223px;
+  margin: 10px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: white;
+}
+
+.sun-days > p:nth-child(1) {
+  position: absolute;
+  top: 240px;
+}
 
 .close {
   position: absolute;
-  right: -23px;
-top: -21px;
+  right: -25px;
+  top: -24px;
   width: 50px;
-height: 50px;
+  height: 50px;
   background-color: white;
   border-radius: 100%;
   box-shadow: 0px 4px 4px 0px #00000040;
@@ -758,7 +738,7 @@ height: 50px;
 }
 .close:before, .close:after {
   position: absolute;
-  content: ' ';
+  content: " ";
   width: 2px;
   left: 24px;
   height: 35px;
@@ -770,4 +750,13 @@ height: 50px;
 }
 .close:after {
   transform: rotate(-45deg);
+}
+
+
+.background-white{
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.75);;
 }
