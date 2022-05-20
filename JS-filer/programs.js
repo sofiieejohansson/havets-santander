@@ -1,5 +1,4 @@
 "use strict";
-
 let filteredProgrammes = [];
 let programmes = DB.PROGRAMMES
 let universities = DB.UNIVERSITIES
@@ -390,11 +389,12 @@ function showProgrammePopup(event) {
     }
 } 
 
-function preFilterFromDesti(){
-    if(localStorage.length > 0){
-    let cityId = localStorage.getItem("cityID");
+function preFilterFromDesti() {
+    console.log(sessionStorage);
+    if(sessionStorage.length > 0){
+    let cityId = sessionStorage.getItem("cityID");
     filterCity(cityId);
-    localStorage.clear()
+    sessionStorage.clear()
     }
 }
 /*
@@ -421,6 +421,7 @@ preFilterFromDesti()
 createOption()
 
 showProgrammes(filteredProgrammes);
+
 
 /*
 let countryChoice = window.localStorage.getItem("countryChoice");

@@ -167,9 +167,9 @@ function renderCitiesPopup (cityName) {
 
 function sendToPrograms(cityID, cityCountry){
     document.querySelector(".programs-in-city").onclick = function() {
-        window.localStorage.setItem("cityID", cityID);
-        window.localStorage.setItem("cityCountry", cityCountry)
-        window.location.href = "programs.html"
+        sessionStorage.setItem("cityID", cityID);
+        sessionStorage.setItem("cityCountry", cityCountry)
+        location.href = "programs.html"
     }
 }
 
