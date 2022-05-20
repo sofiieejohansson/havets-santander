@@ -11,7 +11,7 @@ body {
   }
   
 
-.header {
+.header1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,14 +154,14 @@ select {
   height: 40px;
 }
 
-.div-container {
+.div-container1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.right-container {
+.right-container1 {
   display: flex;
   flex-direction: column; 
   justify-content: center;
@@ -169,7 +169,7 @@ select {
   margin-right: 20px;
 }
 
-.right-container > div {
+.right-container1 > div {
   height: 96px;
   border: 1px solid lightgrey; 
   width: 170px;
@@ -179,11 +179,11 @@ select {
   margin: 5px;
 }
 
-.right-container > :nth-child(1), .right-container > :nth-child(2){
+.right-container1 > :nth-child(1), .right-container1 > :nth-child(2){
   box-shadow: 1px 1px 5px rgba(0,0,0, 0.1);
 }
 
-.programs-in-city {
+.info-city {
   box-shadow:
   inset 1px 1px 7px rgba(255,255,255, 0.8),
   inset -1px -1px 5px rgba(155, 155, 155, 0.6),
@@ -193,27 +193,27 @@ select {
   transition: background-color 0.3s;
 }
 
-.programs-in-city:hover {
+.info-city:hover {
   background-color: whitesmoke;
   cursor: pointer;
 }
 
 
-.programs-in-city > :nth-child(2) {
+.info-city > :nth-child(2) {
   margin-left: 20px;
   font-size: 20px;
   color: rgb(175, 175, 175);
   font-weight: normal;
 }
 
-.left-container {
+.left-container1 {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
   
 }
 
-.left-container > div {
+.left-container1 > div {
   border: 1px solid lightgray;
   margin: 5px;
 }
@@ -247,13 +247,8 @@ select {
   align-items: center;
 }
 
-.comment-container > button {
-  height: 25px;
-  width: 50px;
-}
-
 .comment-container > div {
-  margin: 20px;
+  margin: 0px 40px 0px 40px;
 }
 
 .stars {
@@ -276,7 +271,7 @@ select {
   box-shadow: 1px 1px 5px rgba(0,0,0, 0.1);
 }
 
-.close-button {
+.close-button1 {
   display: none;
   position: absolute;
   z-index: 110;
@@ -290,10 +285,10 @@ select {
   cursor: pointer;
   opacity: 0.8;
 }
-.close-button:hover {
+.close-button1:hover {
   opacity: 1;
 }
-.close-button:before, .close-button:after {
+.close-button1:before, .close-button1:after {
   position: absolute;
   content: " ";
   width: 2px;
@@ -302,10 +297,10 @@ select {
   top: 6px;
   background-color: #333;
 }
-.close-button:before {
+.close-button1:before {
   transform: rotate(45deg);
 }
-.close-button:after {
+.close-button1:after {
   transform: rotate(-45deg);
 }
 
@@ -329,3 +324,50 @@ select {
   height: 620px;
   opacity: 1;
 }
+
+.gubbe{
+  background-image: url(../Images/gubbe.gif);
+  background-size: cover;
+  height: 135px;
+  width: 132px;
+}
+
+.right-button1{
+  cursor: pointer;
+  position: absolute;
+top: 72%;
+left: 71%;
+border-radius: 100%;
+border: none;
+height: 30px;
+width: 30px;
+}
+
+.left-button1{
+  cursor: pointer;
+  position: absolute;
+top: 72%;
+left: 5%;
+border-radius: 100%;
+border: none;
+height: 30px;
+width: 30px;
+}
+
+#city-popup {
+  z-index: 1000;
+}
+
+.destination-popup {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: -1%;
+  top: 7.5%;
+  background-color: white;
+  width: 900px;
+  height: 635px;
+  filter: drop-shadow(0px 4px 4px #8F8F8F);
+  z-index: 2000;
+}
+

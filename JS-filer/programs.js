@@ -53,13 +53,13 @@ function showField(programme) {
     });
 }
 
-function showComments(programme) {
-    let comments = COMMENTS_PROGRAMME;
+// function showComments(programme) {
+//     let comments = COMMENTS_PROGRAMME;
 
-    return comments.filter(comment => {
-        return programme.id == comment.programmeID;
-    })
-}
+//     return comments.filter(comment => {
+//         return programme.id == comment.programmeID;
+//     })
+// }
 
 function showLanguage(programme) {
     let languages = DB.LANGUAGES
@@ -367,67 +367,112 @@ function showProgrammePopup(event) {
 
         if (programme.id == event.target.id) {
             document.querySelector(`#popup`).innerHTML += `
-                <div class="popup-color">
-                    <h2 class="programme-name">${programme.name}</h2>
-                </div>
+            <div class="popup-color">
+                <h2 class="programme-name">${programme.name}</h2>
+            </div>
                 
-                <div class="university-info">
-                    <h4 class="university-name">${showUniversity(programme).name} - ${showField(programme).name}</h4>
-                    <div class="student-info">
-                        <img class="icon" src="Images/icon-users-29-grey.png" alt="">
-                        <p class="local-students">Local Students: ${programme.localStudents}</p>
-                        <img class="icon" src="Images/icon-users-29-grey.png" alt="">
-                        <p class="exchange-students">Exchange Students: ${programme.exchangeStudents}</p>
+            <div class="university-info">
+                <h4 class="university-name">${showUniversity(programme).name} - ${showField(programme).name}</h4>
+                <div class="student-info">
+                    <img class="icon" src="Images/icon-users-29-grey.png" alt="">
+                    <p class="local-students">Local Students: ${programme.localStudents}</p>
+                    <img class="icon" src="Images/icon-users-29-grey.png" alt="">
+                    <p class="exchange-students">Exchange Students: ${programme.exchangeStudents}</p>
+                </div>
+            </div>
+
+            <div class="div-container1">
+                <div class="left-container1">
+                    <div class="level">&cir; Level: ${level}</div>
+                    <button class="left-button1">&larr;</button>
+                    <button class="right-button1">&rarr;</button>
+                    <div class="student-comments"></div>
+                </div>
+     
+                <div class="right-container1">               
+                    <div class="entry-grade">Entry Grade: ${programme.entryGrades[0]}</div>
+                    <div class="success-rate">Success Rate: ${programme.successRate[0]}</div>
+                    <div id="${showCity(programme).name}"class="info-city">
+                        <div>${showCity(programme).name}</div> 
+                        <div>&rang;</div>
                     </div>
                 </div>
-
-                <div class="div-container">
-                    <div class="left-container">
-
-                        <div class="level">&cir; Level: ${level}</div>
-                        <div class="student-comments">
-                        <div>${showComments(programme)[0].alias}, ${showComments(programme)[0].date.year}-${showComments(programme)[0].date.month}-${showComments(programme)[0].date.day}:</div>
-                        <div class ="comment-container">
-                            <button class="left-button">&larr;</button>
-                            <div>${showComments(programme)[0].text}</div>
-                            <button class="right-button">&rarr;</button>
-                        </div>
-                            <div class="stars"> 
-                                <p>Teachers: ${showComments(programme)[0].stars.teachers}/5</p> 
-                                <p>Students: ${showComments(programme)[0].stars.students}/5</p>
-                                <p>Courses: ${showComments(programme)[0].stars.courses}/5<p>
-                            </div>
-                        </div>
-                    </div>
-     
-                    <div class="right-container">               
-                        <div class="entry-grade">Entry Grade: ${programme.entryGrades[0]}</div>
-                        <div class="success-rate">Success Rate: ${programme.successRate[0]}</div>
-                        <div class="programs-in-city">
-                            <div>${showCity(programme).name}</div> 
-                            <div>&rang;</div>
-                        </div>
-                    </div>
-                </div>`
-
+            </div>`
+                
+            programmeComments(programme.id)
+            commentButton(programme.id)
             document.querySelector(`#popup`).style.display = "flex";
-            document.querySelector(`.close-button`).style.display = "block";
+            document.querySelector(`.close-button1`).style.display = "block";
             document.querySelector(`.background-white`).style.display = "block";
             document.querySelector(`.seethrou`).style.display = "block";
-            document.querySelector(`.close-button`).addEventListener("click", function () {
-                document.querySelector(`.close-button`).style.display = "none";
+                
+            document.querySelector(`.close-button1`).addEventListener("click", function () {
+                document.querySelector(`.close-button1`).style.display = "none";
                 document.querySelector(`.background-white`).style.display = "none";
                 document.querySelector(`.seethrou`).style.display = "none";
                 document.querySelector(`#popup`).style.display = "none";
-                document.querySelector(`#popup`).innerHTML = "";
-
-
+                document.querySelector(`#popup`).innerHTML = "";                                  
             });
 
+            document.querySelector(`#${showCity(programme).name}`).addEventListener("click", function() {
+                document.querySelector(`#popup`).style.display = "none";
+                document.querySelector(`.seethrou`).style.display = "none";
+            
+                renderCitiesPopup(showCity(programme).name)
+            })               
             return;
         }
     }
 } 
+    
+let index = 0;
+
+function programmeComments (programmeID) {
+    let programmeComments = COMMENTS_PROGRAMME.filter((comment) => {
+        return comment.programmeID == programmeID
+    })
+
+    if (index < 0) {
+        index = programmeComments.length - 1
+    }
+    if (index > programmeComments.length - 1) {
+        index = 0;
+    }
+
+    if (programmeComments.length > 0) {
+        if (index == programmeComments.length) {
+            index = 0;
+        }
+        let comments = programmeComments[index];
+        document.querySelector(".student-comments").innerHTML =
+        `<div>${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}:</div>
+        <div class ="comment-container">
+            
+            <div>${comments.text}</div>
+            
+        </div>
+        <div class="stars"> 
+            <p>Teachers: ${comments.stars.teachers}/5</p> 
+            <p>Students: ${comments.stars.students}/5</p>
+            <p>Courses: ${comments.stars.courses}/5<p>
+        </div>`
+    } else {
+        document.querySelector(".student-comments").innerHTML = 
+        `<h3 class="no-comments">No comments found</h3>
+        <div class="gubbe"></div>`
+    }
+}
+
+function commentButton (programmeID) {
+    document.querySelector(".left-button1").addEventListener("click", function(){
+        index--;
+        programmeComments(programmeID)
+    })
+    document.querySelector(".right-button1").addEventListener("click", function() {
+        index++;
+        programmeComments(programmeID)
+    })
+}
 
 function preFilterFromDesti() {
     console.log(sessionStorage);
@@ -437,6 +482,118 @@ function preFilterFromDesti() {
     sessionStorage.clear()
     }
 }
+
+function renderCitiesPopup (cityName) {
+
+    for(let i= 0; i < CITIES.length; i++ ) {
+       let city = CITIES[i]
+       
+        if (city.name == cityName) {
+            
+           document.querySelector(`#programme-container`).innerHTML += `
+           <div class="destination-popup">
+           <div class="close"></div>
+     
+           <div class="city-picture-popup" style="background-image:url(Images/${city.imagesBig[0]});">
+            </div>
+     
+           <div class="div-container">
+             <div class="left-container">
+               <h2 class="popup-h2">${city.name}</h2>
+               <div class="city-popup-text">${city.text}</div>
+               <button class="left-button"><</button>
+               <button class="right-button">></button>
+               <div class="popup-comments">js fil comments</div>
+             </div>
+     
+             <div class="right-container">
+
+             <div class="sun-days">
+             <p>Sunny days per year:</p>
+             ${city.sun}
+             </div>
+               
+               
+               <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">></p></div>
+             </div>
+           </div>
+         </div>`
+         popupCommentHandler(city.id)
+         commentButtonHandler(city.id)
+        }
+    }
+    closeButton();
+    
+}  
+
+function closeButton() {
+
+    document.querySelector(".close").addEventListener("click", function () {
+        document.querySelector(".destination-popup").style.display = "none";
+        document.querySelector("#popup").style.display = "flex";
+        document.querySelector(`.seethrou`).style.display = "block";
+    })
+    // if (document.querySelector(".close-button") != null){
+    //     document.querySelector(".close-button").addEventListener("click", function(){
+    //         document.querySelector(".destination-popup").remove();
+    //     })
+    // }
+}
+
+function popupCommentHandler(cityID){
+    let cityComments = COMMENTS_CITY.filter((comment) => {
+        return comment.cityID == cityID
+    })
+    if(index < 0){
+        index = cityComments.length - 1
+    }
+    if(index > cityComments.length - 1){
+        index = 0
+    }
+
+    
+    if(cityComments.length > 0){
+        if(index == cityComments.length){
+            index = 0
+        }
+        let comments = cityComments[index]
+        document.querySelector(".popup-comments").innerHTML = `
+        <h3 class="comment-alias">${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}</h3>
+        <h3 class="comment-text">${comments.text}</h3>
+        <div class="ratings">
+            <h4 class="comment-ratings">Out: ${comments.stars.out}/5</h4>
+            <h4 class="comment-ratings">Food: ${comments.stars.food}/5</h4>
+            <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5</h4>
+        </div>    
+        `
+    }
+    else {
+        document.querySelector(".popup-comments").innerHTML = `
+        <h3 class="no-comments">No comments found</h3>
+        <div class="gubbe"></div>
+        `
+
+    }
+}
+
+function commentButtonHandler(cityID) {
+    document.querySelector(".left-button").addEventListener("click", function() {
+        index--; 
+        popupCommentHandler(cityID)})
+    document.querySelector(".right-button").addEventListener("click", function() {
+        index++; 
+        popupCommentHandler(cityID);})
+}
+
+// function setEventHandler() {
+//     for(let city of DB.CITIES) {
+//         let cityBox = document.getElementById(`${showCity(programme).name}`);
+//         if (cityBox != null) {
+//             cityBox.addEventListener("click", function(){renderCitiesPopup(city.name)})
+//         }
+//     }
+// }
+
 /*
 const programmeBox = document.querySelectorAll(".programme-box");
 
