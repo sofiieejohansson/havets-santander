@@ -374,7 +374,9 @@ function showProgrammePopup(event) {
                 <div class="university-info">
                     <h4 class="university-name">${showUniversity(programme).name} - ${showField(programme).name}</h4>
                     <div class="student-info">
+                        <img class="icon" src="Images/icon-users-29-grey.png" alt="">
                         <p class="local-students">Local Students: ${programme.localStudents}</p>
+                        <img class="icon" src="Images/icon-users-29-grey.png" alt="">
                         <p class="exchange-students">Exchange Students: ${programme.exchangeStudents}</p>
                     </div>
                 </div>
