@@ -151,7 +151,7 @@ function renderCitiesPopup (cityName) {
              </div>
                
                
-               <button type="button" class="programs-in-city">View programs in ${city.name}</button>
+               <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">></p></div>
              </div>
            </div>
          </div>
@@ -213,13 +213,18 @@ function popupCommentHandler(cityID){
         document.querySelector(".popup-comments").innerHTML = `
         <h3 class="comment-alias">${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}</h3>
         <h3 class="comment-text">${comments.text}</h3>
-        <h4 class="comment-ratings">Out: ${comments.stars.out}/5</h4>
-        <h4 class="comment-ratings">Food: ${comments.stars.food}/5</h4>
-        <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5</h4>`
+        <div class="ratings">
+            <h4 class="comment-ratings">Out: ${comments.stars.out}/5</h4>
+            <h4 class="comment-ratings">Food: ${comments.stars.food}/5</h4>
+            <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5</h4>
+        </div>    
+        `
     }
     else {
         document.querySelector(".popup-comments").innerHTML = `
-        <h3 class="no-comments">Inga kommentarer</h3>`
+        <h3 class="no-comments">No comments found</h3>
+        <div class="gubbe"></div>
+        `
 
     }
 }
