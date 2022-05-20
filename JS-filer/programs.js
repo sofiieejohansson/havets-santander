@@ -424,6 +424,14 @@ function showProgrammePopup(event) {
         }
     }
 } 
+
+function setProgrammeEvents() {
+    let programmeBoxes = document.querySelectorAll(".programme-box")
+
+    for (let programmeBox of programmeBoxes) {
+        programmeBox.addEventListener("click", showProgrammePopup)
+    }
+}
     
 let index = 0;
 
@@ -529,9 +537,10 @@ function renderCitiesPopup (cityName) {
 function closeButton() {
 
     document.querySelector(".close").addEventListener("click", function () {
-        document.querySelector(".destination-popup").style.display = "none";
+        document.querySelector(".destination-popup").remove()
         document.querySelector("#popup").style.display = "flex";
         document.querySelector(`.seethrou`).style.display = "block";
+        setProgrammeEvents()
     })
     // if (document.querySelector(".close-button") != null){
     //     document.querySelector(".close-button").addEventListener("click", function(){
