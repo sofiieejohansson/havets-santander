@@ -1,124 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programs</title>
-    <link rel="stylesheet" href="CSS-filer/programs.css" />
-    <link rel="stylesheet" href="CSS-filer/footer.css">
-    <link rel="stylesheet" href="CSS-filer/navbar.css">
-    <link rel="icon" type="image/x-icon" href="Images/LOGOTYPEN.png">
-  </head>
-  <body>
-    <header>
-      <div class="header">
-        <h1>Programs</h1>
-      </div>
-    </header>
-    <div class="nav-bar">
-      <div class="hamburger-menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </div>
-    <div class="drop-down-filters">
-      <h1>Programs</h1>
-      <p>Here you can filter programs</p>
-      <div class="drop-down-buttons">
-        <select id="field" autocomplete="off">
-          <option value="-1" disabled selected hidden>Field</option>
-          <option value="0">Mathematics</option>
-          <option value="1">Engineering</option>
-          <option value="2">Jurisprudence</option>
-          <option value="3">Medicine</option>
-          <option value="4">Sociology</option>
-          <option value="5">Philosophy</option>
-          <option value="6">Design</option>
-        </select>
-        <select id="language" autocomplete="off">
-          <option value="-1" disabled selected hidden>Language</option>
-          <option value="0">Spanish</option>
-          <option value="1">English</option>
-          <option value="2">French</option>
-          <option value="3">Swedish</option>
-        </select>
-        <select id="level" autocomplete="off"> 
-          <option value="-1" disabled selected hidden>Level</option>
-          <option value="0">Bachelor</option>
-          <option value="1">Master</option>
-          <option value="2">Doctorate</option>
-        </select>
-        <select id="country" autocomplete="off">
-          <option value="-1" disabled selected hidden>Country</option>
-          <option value="0">Spain</option>
-          <option value="1">France</option>
-          <option value="2">Australia</option>
-          <option value="3">United Kingdom</option>
-          <option value="4">Sweden</option>
-          <option value="5">Mexico</option>
-          <option value="6">USA</option>
-          <option value="7">Argentina</option>
-          <option value="8">Chile</option>
-        </select>
-        <select id="city" autocomplete="off" disabled>
-          
-        </select>
-      </div>
-    </div>
-    </div>
-    <div id="programme-container"></div>
-    <div class="seethrou">
-      <div class="close-button"></div>
-      <div id="popup">
-    </div>
-    </div>
-    <div class="background-white"></div>
 
-    <footer>
-      <div class="wrapper-footer">
-        <div class="logotyp-div-footer">
-          <a href="startsida.html">
-            <img class="logotyp-footer" src="Images/LOGOTYPEN.png" alt="">
-          </a>
-        </div>
-        <div class="adress-footer">
-          <p class="text-footer">Drottningtorg 27, Malmö</p>
-          <p class="text-footer">217 47</p>
-          <p class="text-footer">Box 10339</p>
-        </div>
-        <div class="contact-footer">
-          <p class="text-footer">Contact Us:</p>
-          <p class="text-footer">Email: info@studyabroad.se</p>
-          <p class="text-footer">Call: 099-001002003</p>
-        </div>
-      </div>
-    </footer>
-    
-    <div class="popup">
-      <p class="popup-text">POPUP TEXT</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs</title>
+  <link rel="stylesheet" href="CSS-filer/destinations.css">
+  <link rel="stylesheet" href="CSS-filer/programs.css">
+  <link rel="stylesheet" href="CSS-filer/footer.css">
+  <link rel="stylesheet" href="CSS-filer/navbar.css">
+  <link rel="icon" type="image/x-icon" href="Images/LOGOTYPEN.png">
+</head>
+
+<body>
+  <header>
+    <div class="header1">
+      <h1>Programs</h1>
     </div>
-    <a href="startsida.html"><img class="logotyp" src="Images/LOGOTYPEN.png" alt=""></a>
-    <div class="navbar-container-closed">
-      <div class="text-container-hidden">
-          <a href="startsida.html"><h1 class="text">Home</h1></a>
-          <a href="destinations.html"><h1 class="text">Destinations</h1></a>
-          <a href="programs.html"><h1 class="text">Programmes</h1></a>
-          <a href="stories.html"><h1 class="text">Stories</h1></a>
-          <a href="aboutUs.html"><h1 class="text">About us</h1></a>
+  </header>
+  <div class="nav-bar">
+    <div class="hamburger-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="drop-down-filters">
+    <h1>Programs</h1>
+    <p>Here you can filter programs</p>
+    <div class="drop-down-buttons">
+      <select id="field" autocomplete="off">
+        <option value="-1" disabled selected hidden>Field</option>
+        <option value="0">Mathematics</option>
+        <option value="1">Engineering</option>
+        <option value="2">Jurisprudence</option>
+        <option value="3">Medicine</option>
+        <option value="4">Sociology</option>
+        <option value="5">Philosophy</option>
+        <option value="6">Design</option>
+      </select>
+      <select id="language" autocomplete="off">
+        <option value="-1" disabled selected hidden>Language</option>
+        <option value="0">Spanish</option>
+        <option value="1">English</option>
+        <option value="2">French</option>
+        <option value="3">Swedish</option>
+      </select>
+      <select id="level" autocomplete="off">
+        <option value="-1" disabled selected hidden>Level</option>
+        <option value="0">Bachelor</option>
+        <option value="1">Master</option>
+        <option value="2">Doctorate</option>
+      </select>
+      <select id="country" autocomplete="off">
+        <option value="-1" disabled selected hidden>Country</option>
+        <option value="0">Spain</option>
+        <option value="1">France</option>
+        <option value="2">Australia</option>
+        <option value="3">United Kingdom</option>
+        <option value="4">Sweden</option>
+        <option value="5">Mexico</option>
+        <option value="6">USA</option>
+        <option value="7">Argentina</option>
+        <option value="8">Chile</option>
+      </select>
+      <select id="city" autocomplete="off" disabled>
+
+      </select>
+    </div>
+  </div>
+  </div>
+  <div id="programme-container"></div>
+    <div class="seethrou">
+      <div class="close-button1"></div>
+      <div id="popup"></div>
+    </div>
+
+
+  <div class="background-white"></div>
+
+  <footer>
+    <div class="wrapper-footer">
+      <div class="logotyp-div-footer">
+        <a href="startsida.html">
+          <img class="logotyp-footer" src="Images/LOGOTYPEN.png" alt="">
+        </a>
       </div>
-      <div class="hamburger-menu-closed">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+      <div class="adress-footer">
+        <p class="text-footer">Drottningtorg 27, Malmö</p>
+        <p class="text-footer">217 47</p>
+        <p class="text-footer">Box 10339</p>
       </div>
+      <div class="contact-footer">
+        <p class="text-footer">Contact Us:</p>
+        <p class="text-footer">Email: info@studyabroad.se</p>
+        <p class="text-footer">Call: 099-001002003</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="popup">
+    <p class="popup-text">POPUP TEXT</p>
+  </div>
+  <a href="startsida.html"><img class="logotyp" src="Images/LOGOTYPEN.png" alt=""></a>
+  <div class="navbar-container-closed">
+    <div class="text-container-hidden">
+      <a href="startsida.html">
+        <h1 class="text">Home</h1>
+      </a>
+      <a href="destinations.html">
+        <h1 class="text">Destinations</h1>
+      </a>
+      <a href="programs.html">
+        <h1 class="text">Programmes</h1>
+      </a>
+      <a href="stories.html">
+        <h1 class="text">Stories</h1>
+      </a>
+      <a href="aboutUs.html">
+        <h1 class="text">About us</h1>
+      </a>
+    </div>
+    <div class="hamburger-menu-closed">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
   </div>
   <div class="picture-hidden"></div>
 
-    <script src="JS-filer/commentsProgramme.js"></script>
-    <script src="JS-filer/database.js"></script>
-    <script src="JS-filer/programs.js"></script>
-    <script src="JS-filer/navBar.js"></script>
-  </body>
+  <script src="JS-filer/commentsProgramme.js"></script>
+  <script src="JS-filer/database.js"></script>
+  <script src="JS-filer/programs.js"></script>
+  <script src="JS-filer/navBar.js"></script>
+</body>
+
 </html>
