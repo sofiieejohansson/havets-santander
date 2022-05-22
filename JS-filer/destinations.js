@@ -7,12 +7,10 @@ function renderCountries () {
         if(a.name > b.name) {
             return 1;
         }
-
         else if (a.name < b.name) {
             return -1;
         }
         return 0;
-
     });
 
     let countryContainer = document.getElementById('destinations-container');
@@ -20,42 +18,48 @@ function renderCountries () {
         countryContainer.innerHTML += `
         <div class="country-container">
             <h1 class= "country-h1">${countryName[i].name}</h1>
-            <div class="cities-container">
+            <div class="cities-container" id="${countryName[i].name}">
 
             </div>
         </div>`;
         renderCities(i, countryName)
     }
-
     setEventHandler()
+    squareAdHandler()
 }
 
 function renderCities (counter, array) {
-
     let cities = CITIES.filter((city) => city).sort((a, b) => {
         if(a.name > b.name) {
             return 1;
         }
-
         else if (a.name < b.name) {
             return -1;
         }
         return 0;
-
     });
 
     for(let city of cities) {
-
         if(array[counter].id == city.countryID) {
-
             document.querySelector(`#destinations-container > div:last-child > div`).innerHTML += `
             <div class="city-box" id="${city.name}">
                 <img class="city-picture" src="Images/${city.imagesNormal[0]}" alt="">
                 <h2 class="city-h2">${city.name}</h2>
             </div> `
         }
-        
     }    
+}
+
+function squareAdHandler() {
+    let squareAd1 = document.createElement("div")
+    let squareAd2 = document.createElement("div")
+    let squareAd3 = document.createElement("div")
+    squareAd1.className = "square-Ad"
+    squareAd2.className = "square-Ad"
+    squareAd3.className = "square-Ad"
+    document.querySelector("#Chile").appendChild(squareAd1)
+    document.querySelector("#Spain").appendChild(squareAd2)
+    document.getElementById("United Kingdom").appendChild(squareAd3)
 }
 
 function setEventHandler() {
@@ -67,17 +71,12 @@ function setEventHandler() {
     }
 }
 
-
-let elementSelector = (select) => {
-    return document.querySelector(select);
-}
-
-function getResults (){
+function getCitiesAfterSearch (){
     
 
-    let input = elementSelector("#search-input").value;
+    let input = document.querySelector("#search-input").value;
 
-    elementSelector("#destinations-container").innerHTML = ""
+    document.querySelector("#destinations-container").innerHTML = ""
 
     if (input.length > 0) {
 
@@ -114,7 +113,7 @@ function getResults (){
 
 
 // document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
-elementSelector("#search-input").addEventListener("keyup", getResults);
+document.querySelector("#search-input").addEventListener("keyup", getCitiesAfterSearch);
 renderCountries()
 
 

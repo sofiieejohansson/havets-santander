@@ -70,6 +70,16 @@ body {
   margin-left: 140px;
 }
 
+.square-Ad {
+  height: 240px;
+  width: 213.75px;
+  margin: 30px;
+  margin-top: 10px;
+  background-image: url(../Images/safe-travel-square-ad.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .city-box {
   height: 240px;
   width: 213.75px;
