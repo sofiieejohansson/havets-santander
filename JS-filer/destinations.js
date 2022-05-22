@@ -1,4 +1,7 @@
 "use strict";
+
+let index = 0;
+
 localStorage.clear()
 
 function renderCountries () {
@@ -18,9 +21,7 @@ function renderCountries () {
         countryContainer.innerHTML += `
         <div class="country-container">
             <h1 class= "country-h1">${countryName[i].name}</h1>
-            <div class="cities-container" id="${countryName[i].name}">
-
-            </div>
+            <div class="cities-container" id="${countryName[i].name}"></div>
         </div>`;
         renderCities(i, countryName)
     }
@@ -72,22 +73,17 @@ function setEventHandler() {
 }
 
 function getCitiesAfterSearch (){
-    
-
     let input = document.querySelector("#search-input").value;
-
     document.querySelector("#destinations-container").innerHTML = ""
 
     if (input.length > 0) {
-
-        for(let i = 0; i < CITIES.length; i++) {
+        for (let i = 0; i < CITIES.length; i++) {
+            
             if (CITIES[i].name.toLocaleLowerCase().startsWith(input)) {
-                
                 for (let country of COUNTRIES) {
+
                     if (country.id == CITIES[i].countryID) {
                         document.querySelector(`#destinations-container`).innerHTML += `
-                        
-                        
                         <div class="country-container">
                             <h1 class="country-h1">${country.name}</h1>
                             <div class="cities-container">
@@ -97,8 +93,6 @@ function getCitiesAfterSearch (){
                                 </div> 
                             </div>
                         </div>`;
-                        
-
                     }
                 }
             }
@@ -110,17 +104,7 @@ function getCitiesAfterSearch (){
     }
 }
 
-
-
-// document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
-document.querySelector("#search-input").addEventListener("keyup", getCitiesAfterSearch);
-renderCountries()
-
-
-
-
 function renderCitiesPopup (cityName) {
-
     for(let i= 0; i < CITIES.length; i++ ) {
        let city = CITIES[i]
        
@@ -128,40 +112,36 @@ function renderCitiesPopup (cityName) {
             
            document.querySelector(`#destinations-container`).innerHTML += `
            <div class="destination-popup">
-           <div class="close"></div>
+                <div class="close"></div>
+                <div class="city-picture-popup" style="background-image:url(Images/${city.imagesBig[0]});">
+                </div>
+        
+                <div class="div-container">
+                    <div class="left-container">
+                        <h2 class="popup-h2">${city.name}</h2>
+                        <div class="city-popup-text">${city.text}</div>
+                        <button class="left-button"><</button>
+                        <button class="right-button">></button>
+                        <div class="popup-comments">js fil comments</div>
+                    </div>
      
-           <div class="city-picture-popup" style="background-image:url(Images/${city.imagesBig[0]});">
+                    <div class="right-container">
+                        <div class="sun-days">
+                            <p>Sunny days per year:</p>
+                            ${city.sun}
+                        </div>
+               
+                        <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">></p></div>
+                    </div>
+                </div>
             </div>
-     
-           <div class="div-container">
-             <div class="left-container">
-               <h2 class="popup-h2">${city.name}</h2>
-               <div class="city-popup-text">${city.text}</div>
-               <button class="left-button"><</button>
-               <button class="right-button">></button>
-               <div class="popup-comments">js fil comments</div>
-             </div>
-     
-             <div class="right-container">
-
-             <div class="sun-days">
-             <p>Sunny days per year:</p>
-             ${city.sun}
-             </div>
-               
-               
-               <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">></p></div>
-             </div>
-           </div>
-         </div>
-         <div class="background-white"></div>`
+            <div class="background-white"></div>`
          popupCommentHandler(city.id)
          commentButtonHandler(city.id)
          sendToPrograms(city.id, city.countryID)
         }
     }
-    closeButton();
-    
+    closeButton(); 
 }  
 
 function sendToPrograms(cityID, cityCountry){
@@ -173,22 +153,12 @@ function sendToPrograms(cityID, cityCountry){
 }
 
 function closeButton() {
-
     document.querySelector(".close").addEventListener("click", function () {
         document.querySelector(".destination-popup").remove();
         setEventHandler()
         document.querySelector(".background-white").remove();
     })
-
-    // if (document.querySelector(".close-button") != null){
-    //     document.querySelector(".close-button").addEventListener("click", function(){
-    //         document.querySelector(".destination-popup").remove();
-    //     })
-    // }
 }
-
-let index = 0;
-
 
 function popupCommentHandler(cityID){
     let cityComments = COMMENTS_CITY.filter((comment) => {
@@ -202,7 +172,6 @@ function popupCommentHandler(cityID){
     }
 
     let comments = cityComments[index];
-    console.log(cityComments);
     
     if(cityComments.length > 0){
         if(index == cityComments.length){
@@ -224,7 +193,6 @@ function popupCommentHandler(cityID){
         <h3 class="no-comments">No comments found</h3>
         <div class="gubbe"></div>
         `
-
     }
 }
 
@@ -238,11 +206,6 @@ function commentButtonHandler(cityID) {
 }
 
 
-
-
-
-
-
 let ukPin = document.querySelector(".uk-pin")
 ukPin.style.cursor="pointer"
 
@@ -250,7 +213,6 @@ ukPin.addEventListener("click", function(){
     ukPin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:last-child`).scrollIntoView();
 })
-
 
 
 let usaPin = document.querySelector(".usa-pin")
@@ -262,7 +224,6 @@ usaPin.addEventListener("click", function(){
 })
 
 
-
 let swePin = document.querySelector(".sweden-pin")
 swePin.style.cursor="pointer"
 
@@ -270,7 +231,6 @@ swePin.addEventListener("click", function(){
     swePin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:nth-child(7)`).scrollIntoView();
 })
-
 
 
 let spaPin = document.querySelector(".spain-pin")
@@ -282,7 +242,6 @@ spaPin.addEventListener("click", function(){
 })
 
 
-
 let mexPin = document.querySelector(".mexico-pin")
 mexPin.style.cursor="pointer"
 
@@ -290,7 +249,6 @@ mexPin.addEventListener("click", function(){
     mexPin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:nth-child(5)`).scrollIntoView();
 })
-
 
 
 let fraPin = document.querySelector(".france-pin")
@@ -302,7 +260,6 @@ fraPin.addEventListener("click", function(){
 })
 
 
-
 let chiPin = document.querySelector(".chile-pin")
 chiPin.style.cursor="pointer"
 
@@ -310,7 +267,6 @@ chiPin.addEventListener("click", function(){
     chiPin.style.cursor ="pointer"
     document.querySelector(`#destinations-container > div:nth-child(3)`).scrollIntoView();
 })
-
 
 
 let ausPin = document.querySelector(".australia-pin")
@@ -322,7 +278,6 @@ ausPin.addEventListener("click", function(){
 })
 
 
-
 let argPin = document.querySelector(".argentina-pin")
 argPin.style.cursor="pointer"
 
@@ -331,7 +286,8 @@ argPin.addEventListener("click", function(){
     document.querySelector(`#destinations-container > div:nth-child(1)`).scrollIntoView();
 })
    
-
+document.querySelector("#search-input").addEventListener("keyup", getCitiesAfterSearch);
+renderCountries()
 
 
 
