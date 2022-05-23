@@ -56,6 +56,14 @@ body {
     justify-content: center;
 }
 
+.programs-startsida {
+    text-align: center;
+    margin-left: 140px;
+    font-size:x-large;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
 .top-destination-sqaure{
     height: 415px;
     width: 260px;
@@ -196,6 +204,17 @@ body {
 
 .button-area p span {
     margin-left: 10px;
+}
+
+.wide-ad-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 140px;
+}
+
+.wide-ad {
+    border: solid black 1px;
 }
 
 
