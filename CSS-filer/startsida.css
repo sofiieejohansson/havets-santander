@@ -107,8 +107,9 @@ body {
 
 .top-destinations-p{
   margin-top: 0px;
-  margin-left: 14px;
-  font-size: 14px;
+  margin-right: 8px;
+  margin-left: 18px;
+  font-size: 13px;
 }
 
 .all-cities-container{
@@ -120,6 +121,7 @@ body {
     margin-left: 15vw;
     margin-top: 65px;
     font-size: 50px;
+    font-family: 'Montserrat', sans-serif, !important;
 }
 
 .stories {
@@ -153,12 +155,12 @@ body {
 }
 
 .stories-text-box > h1 {
-    font-size: 33px;
+    font-size: 25px;
     margin: 30px 25px 0px 25px;
 }
 
 .stories-text-box > p {
-    font-size: 18px;
+    font-size: 16px;
     margin: 25px 25px 0px 25px;
 }
 
@@ -186,6 +188,14 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 30px;
+}
+
+.button-area p {
+    font-weight: 500;
+}
+
+.button-area p span {
+    margin-left: 10px;
 }
 
 
