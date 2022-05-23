@@ -505,8 +505,8 @@ function renderCitiesPopup (cityName) {
              <div class="left-container">
                <h2 class="popup-h2">${city.name}</h2>
                <div class="city-popup-text">${city.text}</div>
-               <button class="left-button"><</button>
-               <button class="right-button">></button>
+               <button class="left-button">&larr;</button>
+               <button class="right-button">&rarr;</button>
                <div class="popup-comments">js fil comments</div>
              </div>
      
@@ -518,7 +518,7 @@ function renderCitiesPopup (cityName) {
              </div>
                
                
-               <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">></p></div>
+               <div type="button" class="programs-in-city1">Hope to see you here!<p class="arrow-city"></p></div>
              </div>
            </div>
          </div>`
@@ -566,9 +566,9 @@ function popupCommentHandler(cityID){
         <h3 class="comment-alias">${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}</h3>
         <h3 class="comment-text">${comments.text}</h3>
         <div class="ratings">
-            <h4 class="comment-ratings">Out: ${comments.stars.out}/5</h4>
-            <h4 class="comment-ratings">Food: ${comments.stars.food}/5</h4>
-            <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5</h4>
+            <h4 class="comment-ratings">Out: ${comments.stars.out}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /></h4>
+            <h4 class="comment-ratings">Food: ${comments.stars.food}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /></h4>
+            <h4 class="comment-ratings">Acomodation: ${comments.stars.accomodation}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /></h4>
         </div>    
         `
     }

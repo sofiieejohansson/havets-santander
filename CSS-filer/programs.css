@@ -18,12 +18,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
   height: 50vh;
   margin-left: 140px;
   background-image: url(../Images/vasily-koloda-8CqDvPuo_kI-unsplash.jpg);
-  background-position-y: -330px;
+  background-position-y: -400px;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Coming Soon', cursive !important;
 }
 
@@ -356,23 +357,23 @@ select {
 .right-button1{
   cursor: pointer;
   position: absolute;
-top: 72%;
-left: 71%;
-border-radius: 100%;
-border: none;
-height: 30px;
-width: 30px;
+  top: 72%;
+  left: 71%;
+  border-radius: 100%;
+  border: none;
+  height: 30px;
+  width: 30px;
 }
 
 .left-button1{
   cursor: pointer;
   position: absolute;
-top: 72%;
-left: 5%;
-border-radius: 100%;
-border: none;
-height: 30px;
-width: 30px;
+  top: 72%;
+  left: 5%;
+  border-radius: 100%;
+  border: none;
+  height: 30px;
+  width: 30px;
 }
 
 #city-popup {

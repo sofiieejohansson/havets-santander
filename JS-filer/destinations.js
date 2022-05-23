@@ -120,8 +120,8 @@ function renderCitiesPopup (cityName) {
                     <div class="left-container">
                         <h2 class="popup-h2">${city.name}</h2>
                         <div class="city-popup-text">${city.text}</div>
-                        <button class="left-button"><</button>
-                        <button class="right-button">></button>
+                        <button class="left-button">&larr;</button>
+                        <button class="right-button">&rarr;</button>
                         <div class="popup-comments">js fil comments</div>
                     </div>
      
@@ -131,7 +131,7 @@ function renderCitiesPopup (cityName) {
                             ${city.sun}
                         </div>
                
-                        <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">></p></div>
+                        <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">&rang;</p></div>
                     </div>
                 </div>
             </div>
