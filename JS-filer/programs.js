@@ -410,7 +410,7 @@ function showProgrammePopup(event) {
                 document.querySelector(`#popup`).innerHTML = "";                                  
             });
 
-            document.querySelector(`#${showCity(programme).name}`).addEventListener("click", function() {
+            document.getElementById(`${showCity(programme).name}`).addEventListener("click", function() {
                 document.querySelector(`#popup`).style.display = "none";
                 document.querySelector(`.seethrou`).style.display = "none";
             

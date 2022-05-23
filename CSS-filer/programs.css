@@ -92,6 +92,11 @@ select {
   padding: 10px;
   flex-direction: column;
   transition: background-color 0.25s;
+  padding-left: 25px;
+}
+
+.programme-box:last-child{
+  margin-bottom: 100px;
 }
 
 .programme-box:hover {
@@ -113,6 +118,8 @@ select {
 .programme-box > header {
   pointer-events: none;
   font-weight: bolder;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 #popup {
@@ -211,7 +218,7 @@ select {
   inset -1px -1px 5px rgba(155, 155, 155, 0.6),
   0px 0px 0px 1px rgba(146, 146, 146, 0.1);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 17px;
   transition: background-color 0.3s;
 }
 
