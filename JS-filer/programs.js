@@ -120,6 +120,8 @@ function emptyList () {
 }
 
 function filterFeild(fieldOption) {
+    document.querySelector(".gubbe-div").style.display = "none";
+
     if (filteredProgrammes.some((programme) => programme.subjectID == fieldOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return fieldOption == programme.subjectID
@@ -160,7 +162,9 @@ feildSelect.addEventListener("change", function(){
     showProgrammes(filteredProgrammes);
 });
 
-function filterLanguage (languageOption) {
+function filterLanguage(languageOption) {
+    document.querySelector(".gubbe-div").style.display = "none";
+    
     if (filteredProgrammes.some((programme) => programme.language == languageOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return languageOption == programme.language
@@ -203,6 +207,8 @@ languageSelect.addEventListener("change", function() {
 
 
 function filterLevel(levelOption) {
+    document.querySelector(".gubbe-div").style.display = "none";
+
     if (filteredProgrammes.some((programme) => programme.level == levelOption) == true) {
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return levelOption == programme.level
@@ -243,7 +249,9 @@ levelSelect.addEventListener("change", function() {
     showProgrammes(filteredProgrammes);
 });
 
-function filterCountry (countryOption) {
+function filterCountry(countryOption) {
+    document.querySelector(".gubbe-div").style.display = "none";
+    
     if(filteredProgrammes.some((programme) => showCountry(programme).id == countryOption) == true){
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return showCountry(programme).id == countryOption
@@ -283,7 +291,9 @@ countrySelect.addEventListener("change", function () {
     createOption(countrySelect.value)
 })
 
-function filterCity (cityOption) {
+function filterCity(cityOption) {
+    document.querySelector(".gubbe-div").style.display = "none";
+    
     if(filteredProgrammes.some((programme) => showCity(programme).id == cityOption) == true){
         filteredProgrammes = filteredProgrammes.filter(programme => {
             return showCity(programme).id == cityOption
