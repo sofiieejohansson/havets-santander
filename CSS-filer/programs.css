@@ -132,7 +132,7 @@ select {
 
 .popup-color {
   display: flex;
-  background-color: var(--darkblue);
+  background-color: var(--iceblue);
   width: 900px;
   height: 150px;
   align-items: center;
@@ -201,6 +201,7 @@ select {
 
 .right-container1 > :nth-child(1), .right-container1 > :nth-child(2){
   box-shadow: 1px 1px 5px rgba(0,0,0, 0.1);
+  background-color: var(--iceblue);
 }
 
 .info-city {
