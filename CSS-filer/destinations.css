@@ -37,16 +37,6 @@ body {
   
 }
 
-/* .search-glass{
-  height: 20px;
-  width: 20px;
-
-} */
-
-/* ::placeholder{
-  margin-left: 10px;
-} */
-
 .search-container button {
   padding: 5px;
   margin-top: 30px;
@@ -116,22 +106,29 @@ body {
   flex-wrap: wrap;
 }
 
+.map-wrapper {
+  height: 100%;
+  position: relative;
+  margin-left: 140px;
+}
+
 .map{
-  background-image: url(../Images/World_map_-_low_resolution.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 87vw;
-  height: 100vh;
-  margin-left: 10vw;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.map img{
+  display: block;
 }
 
 
 .australia-pin {
-  width: 46px;
-  height: 46px;
+  width: 36px;
+  height: 36px;
   position: absolute;
-  top: 635px;
-  right: 220px;
+  top: 65%;
+  left: 85%;
 }
 
 .australia-hover-box {
@@ -144,8 +141,8 @@ body {
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
   position: absolute;
-  top: 599px;
-  right: 290px;
+  top: 59%;
+  left: 81.5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,8 +161,8 @@ body {
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 634px;
-  right: 260px;
+  top: 65%;
+  left: 84%;
   transform: rotate(26deg);
 }
 
@@ -178,8 +175,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 669px;
-  right: 895px;
+  top: 69%;
+  left: 29%;
 }
 
 .argentina-hover-box {
@@ -192,8 +189,9 @@ body {
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
   position: absolute;
-  top: 709px;
-  right: 748px;
+  top: 64%;
+  left: 28%;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,8 +210,8 @@ body {
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 699px;
-  right: 873px;
+  top: 72%;
+  left: 31%;
   transform: rotate(36deg);
 }
 
@@ -226,8 +224,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 643px;
-  right: 928px;
+  top: 63%;
+  left: 26.5%;
 }
 
 .chile-hover-box {
@@ -240,8 +238,9 @@ body {
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
   position: absolute;
-  top: 608px;
-  right: 990px;
+  top: 57%;
+  left: 23%;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,8 +259,8 @@ body {
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 643px;
-  right: 960px;
+  top: 63%;
+  left: 25%;
   transform: rotate(26deg);
 }
 
@@ -274,8 +273,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 290px;
-  right: 686px;
+  top: 24%;
+  left: 46%;
 }
 
 .uk-hover-box {
@@ -283,8 +282,9 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
-  top: 317px;
-  right: 741px;
+  top: 19%;
+  left: 43%;
+  z-index: 1;
   width: 150px;
   height: 46px;
   border-radius: 20px;
@@ -309,7 +309,7 @@ body {
   background-color: red;
   position: absolute;
   top: 315px;
-  right: 717px;
+  left: 717px;
   transform: rotate(-26deg);
 }
 
@@ -322,8 +322,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 344px;
-  right: 1005px;
+  top: 30%;
+  left: 19%;
 }
 
 .usa-hover-box {
@@ -336,8 +336,8 @@ body {
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
   position: absolute;
-  top: 382px;
-  right: 805px;
+  top: 24%;
+  left: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,7 +357,7 @@ body {
   position: absolute;
   width: 61px;
   top: 377px;
-  right: 950px;
+  left: 950px;
   transform: rotate(26deg);
 }
 
@@ -370,8 +370,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 438px;
-  right: 1036px;
+  top: 57%;
+  left: 32%;
 }
 
 .mexico-hover-box {
@@ -384,8 +384,8 @@ body {
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
   position: absolute;
-  top: 479px;
-  right: 1082px;
+  top: 50%;
+  left: 28%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,7 +405,7 @@ body {
   background-color: red;
   position: absolute;
   top: 470px;
-  right: 1064px;
+  left: 1064px;
   transform: rotate(-43deg);
 }
 
@@ -418,8 +418,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 262px;
-  right: 633px;
+  top: 20%;
+  left: 50%;
 }
 
 .sweden-hover-box {
@@ -432,8 +432,8 @@ body {
   border-radius: 20px;
   background-color: rgba(128, 128, 128);
   position: absolute;
-  top: 222px;
-  right: 691px;
+  top: 14%;
+  left: 46%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +453,7 @@ body {
   background-color: red;
   position: absolute;
   top: 264px;
-  right: 664px;
+  left: 664px;
   transform: rotate(26deg);
 }
 
@@ -466,8 +466,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 335px;
-  right: 665px;
+  top: 28%;
+  left: 47%;
 }
 
 .france-hover-box {
@@ -475,8 +475,8 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
-  top: 331px;
-  right: 729px;
+  top: 23%;
+  left: 43%;
   width: 150px;
   height: 46px;
   border-radius: 20px;
@@ -501,7 +501,7 @@ body {
   background-color: red;
   position: absolute;
   top: 348px;
-  right: 698px;
+  left: 698px;
   transform: rotate(2deg);
 }
 
@@ -514,8 +514,8 @@ body {
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 44vh;
-  right: 51.5vw;
+  top: 31%;
+  left: 45.5%;
 }
 
 .spain-hover-box {
@@ -523,8 +523,9 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   visibility: hidden;
   opacity: 0%;
-  top: 391px;
-  right: 747px;
+  top: 26%;
+  left: 42%;
+  z-index: 1;
   width: 150px;
   height: 46px;
   border-radius: 20px;
@@ -549,8 +550,8 @@ body {
   height: 1px;
   background-color: red;
   position: absolute;
-  top: 391px;
-  right: 722px;
+  top: 34%;
+  left: 44%;
   transform: rotate(-26deg);
 }
 
@@ -565,8 +566,8 @@ body {
   position: absolute;
   left: 50%;
   top: 89%;
-
   bottom: 20px;
+  z-index: 1;
 }
 
 .arrows path {
