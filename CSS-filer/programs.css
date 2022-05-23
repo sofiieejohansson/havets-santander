@@ -401,3 +401,22 @@ select {
   transform: translate(-50%, -50%);
 }
 
+.wide-ad-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 140px;
+  margin-bottom: 50px;
+}
+
+.wide-ad {
+  border: solid black 1px;
+}
+
+.small-ad {
+  height: 111px;
+  width: 111px;
+  margin-left: 10px;
+}
+
+

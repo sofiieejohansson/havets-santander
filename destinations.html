@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="CSS-filer/footer.css" />
     <link rel="stylesheet" href="CSS-filer/navbar.css" />
     <link rel="icon" type="image/x-icon" href="Images/LOGOTYPEN.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h3 class="scroll-down-text">Scroll down</h3>
-    <a href="#search-input">
+    <a href="#search-container">
       <svg class="arrows">
         <path class="a1" d="M0 0 L30 32 L60 0"></path>
         <path class="a2" d="M0 20 L30 52 L60 20"></path>
@@ -21,6 +23,7 @@
     </a>
 
     <h1 class="header-text">DESTINATIONS</h1>
+    <h4 class="click-text">CLICK A PIN TO CHOOSE A COUNTRY or SCROLL DOWN</h4>
     <header>
       <div class="map-wrapper">
         <div class="map"><img src="Images/World_map_-_low_resolution.svg" alt="">
@@ -64,11 +67,15 @@
       </div>
     </header>
 
-    <div class="search-container">
+    <div id="search-container">
       <input id="search-input" type="text" placeholder="Search for a city..." />
     </div>
 
     <div id="destinations-container"></div>
+    <div class="wide-ad-div">
+      <img class="wide-ad" src="Images/google-ad-mockup (1).png" alt="">
+    </div>
+    
 
     <footer>
       <div class="wrapper-footer">

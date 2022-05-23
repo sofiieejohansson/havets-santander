@@ -131,7 +131,7 @@ function renderCitiesPopup (cityName) {
                             ${city.sun}
                         </div>
                
-                        <div type="button" class="programs-in-city">View programs in ${city.name}<p class="arrow-city">&rang;</p></div>
+                        <div type="button" class="programs-in-city"><div class="view-programs-text">Programmes in ${city.name}</div><div class="arrow-city">&rang;</div></div>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,9 @@ html {
   --darkblue: #005c84;
   --lightblue: #8ccbd6;
 }
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 
 body {
   height: 100vh;
@@ -23,7 +26,16 @@ body {
   margin-left: 100px;
 }
 
-.search-container input {
+.click-text {
+  text-align: center;
+  margin-left: 140px;
+  font-weight: lighter;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: small;
+}
+
+#search-container input {
   padding: 5px;
   margin-top: 30px;
   border: 1px solid grey;
@@ -37,7 +49,7 @@ body {
   
 }
 
-.search-container button {
+#search-container button {
   padding: 5px;
   margin-top: 30px;
   border: 1px solid grey;
@@ -568,6 +580,7 @@ body {
   top: 89%;
   bottom: 20px;
   z-index: 1;
+  margin-left: 40px;
 }
 
 .arrows path {
@@ -625,9 +638,10 @@ body {
 
 .header-text {
   text-align: center;
-  margin-left: 100px;
+  margin-left: 140px;
   font-size: 60px;
   margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .scroll-down-text {
@@ -704,12 +718,25 @@ justify-content: center;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-top: 50px;
-  background-color: #a5bcc4;
   height: 100px;
   margin: 10px;
-  margin-top: 30px;
+  margin-top: 18px;
   font-size: 20px;
+  box-shadow: inset 1px 1px 7px rgba(255,255,255, 0.8), inset -1px -1px 5px rgba(155, 155, 155, 0.6), 0px 0px 0px 1px rgba(146, 146, 146, 0.1);
+  font-weight: bold;
+  font-size: 17px;
+  transition: background-color 0.3s;
+  text-align: center;
+  
+}
+
+.view-programs-text{
+  width: 160px;
+}
+
+.programs-in-city:hover{
+  background-color: whitesmoke;
+  cursor: pointer;
 }
 
 .programs-in-city1 {
@@ -873,7 +900,21 @@ width: 30px;
   margin-bottom: 10px;
 }
 
-.arrow-city{
+.arrow-city {
   font-weight: normal;
-  margin-left: 10px;
+  margin-left: 7px;
+/*! margin-right: 20px; */
 }
+
+.wide-ad-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 140px;
+  margin-bottom: 50px;
+}
+
+.wide-ad {
+  border: solid black 1px;
+}
+
