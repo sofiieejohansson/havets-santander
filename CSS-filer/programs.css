@@ -362,12 +362,13 @@ width: 30px;
   justify-content: center;
   align-items: center;
   position: fixed;
-  left: -1%;
-  top: 7.5%;
   background-color: white;
   width: 900px;
   height: 635px;
   filter: drop-shadow(0px 4px 4px #8F8F8F);
   z-index: 2000;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
 
