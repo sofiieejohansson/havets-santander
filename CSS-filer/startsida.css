@@ -157,7 +157,7 @@ body {
     height: 400px;
     width: 600px;
     padding: 10px;
-    background-color: rgba(224, 213, 206, 0.447);
+    background-color: var(--lightblue);
     border-radius: 5px;
     line-height: 23px;
 }
@@ -215,6 +215,12 @@ body {
 
 .wide-ad {
     border: solid black 1px;
+}
+
+.small-ad {
+    height: 111px;
+    width: 111px;
+    margin-left: 10px;
 }
 
 

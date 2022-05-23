@@ -1,16 +1,19 @@
 :root {
-    --iceblue: #e6f4f1;
-    --red: #842700;
-    --darkblue: #005c84;
-    --lightblue: #8ccbd6;
+  --iceblue: #e6f4f1;
+  --red: #842700;
+  --darkblue: #005c84;
+  --lightblue: #8ccbd6;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    height: 100vh;
-    margin: 0;
-  }
+  height: 100vh;
+  margin: 0;
+}
   
-
 .header1 {
   display: flex;
   justify-content: center;
@@ -19,8 +22,14 @@ body {
   height: 50vh;
   margin-left: 140px;
   background-image: url(../Images/vasily-koloda-8CqDvPuo_kI-unsplash.jpg);
-  background-position: top;
+  background-position-y: -330px;
   background-size: cover;
+  font-family: 'Coming Soon', cursive !important;
+}
+
+.header1 h1 {
+  font-family: 'Coming Soon', cursive !important;
+  font-size: 60px;
 }
 
 .popup {
@@ -39,6 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 220px;
+  margin-bottom: 50px;
 }
 
 select {
@@ -72,6 +82,7 @@ select {
   margin-left: 220px;
   background-color: white;
   border: rgb(151, 151, 151) 1px solid;
+  border-radius: 5px;
   box-shadow: 2px 2px 8px 2px #bababa85;
   display: flex;
   width: 75vw;
@@ -84,7 +95,7 @@ select {
 
 .programme-box:hover {
   cursor: pointer;
-  background-color: whitesmoke;
+  background-color: var(--iceblue);
 }
 
 #programme-info {
@@ -100,6 +111,7 @@ select {
 
 .programme-box > header {
   pointer-events: none;
+  font-weight: bolder;
 }
 
 #popup {
@@ -120,7 +132,7 @@ select {
 
 .popup-color {
   display: flex;
-  background-color: lightblue;
+  background-color: var(--darkblue);
   width: 900px;
   height: 150px;
   align-items: center;
@@ -145,13 +157,21 @@ select {
 .student-info {
   display: flex;
   justify-content: space-evenly;
-  width: 400px;
+  width: 450px;
   height: 50px;
   margin-left: 20px;
 }
 
 .icon {
   height: 40px;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.icon2 {
+  height: 25px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .div-container1 {

@@ -19,17 +19,13 @@ function showProgram(id) {
     div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
     <div id="programme-info">
+        <img class="icon2" src="Images/icon-users-29-grey.png" alt=""> 
         <p>Local Students: ${programme.localStudents}</p>
+        <img class="icon2" src="Images/icon-users-29-grey.png" alt=""> 
         <p>Exchange Students: ${programme.exchangeStudents}</p>
-        <p>
-        ${field.name}
-        </p>
-        <p>
-        ${language.name}
-        </p>
-        <p>
-        ${level}
-        </p>
+        <p> | ${field.name}</p>
+        <p> | ${language.name}</p>
+        <p> | ${level}</p>
     </div>`
 
     div.addEventListener('click', showProgrammePopup); 

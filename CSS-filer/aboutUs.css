@@ -10,7 +10,9 @@ body {
   margin: 0;
 }
 
-
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .header {
   display: flex;
@@ -19,6 +21,15 @@ body {
   width: 90vw;
   height: 50vh;
   margin-left: 140px;
+  background-image: url(../Images/duy-pham-Cecb0_8Hx-o-unsplash.jpg);
+  background-size: cover;
+  background-position-y: -90px;
+}
+
+.header > h1 {
+  font-family: 'Coming Soon', cursive !important;
+  margin-bottom: 0px;
+  font-size: 60px;
 }
 
 .about-us-text {

@@ -1,20 +1,21 @@
 :root {
-    --iceblue: #e6f4f1;
-    --red: #842700;
-    --darkblue: #005c84;
-    --lightblue: #8ccbd6;
+  --iceblue: #e6f4f1;
+  --red: #842700;
+  --darkblue: #005c84;
+  --lightblue: #8ccbd6;
 }
 
 body {
-    height: 100vh;
-    margin: 0;
-  }
+  height: 100vh;
+  margin: 0;
+}
   
-  
+* {
+  font-family: 'Montserrat', sans-serif;
+}  
 
 .header {
   font-size: 50px;
-  -webkit-text-stroke: 0.5px beige;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +24,12 @@ body {
   margin-left: 140px;
   background-image: url(../Images/duy-pham-Cecb0_8Hx-o-unsplash.jpg);
   background-size: cover;
-  background-position: center;
+  background-position-y: -80px;
+}
+
+.header > h1 {
+  font-family: 'Coming Soon', cursive !important;
+  margin-bottom: 0px;
 }
 
 .content {
@@ -45,7 +51,8 @@ body {
 }
 
 .text-one, .text-two, .text-three, .text-four {
-  background-color: lightgrey;
+  background-color: var(--darkblue);
+  color: white;
   border-radius: 25px;
   margin: 10px;
   padding: 10px;
