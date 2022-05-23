@@ -401,6 +401,7 @@ select {
   transform: translate(-50%, -50%);
 }
 
+
 .wide-ad-div {
   display: flex;
   justify-content: center;
@@ -419,4 +420,11 @@ select {
   margin-left: 10px;
 }
 
+
+.gubbe-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
