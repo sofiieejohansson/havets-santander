@@ -460,9 +460,9 @@ function programmeComments (programmeID) {
             
         </div>
         <div class="stars"> 
-            <p>Teachers: ${comments.stars.teachers}/5</p> 
-            <p>Students: ${comments.stars.students}/5</p>
-            <p>Courses: ${comments.stars.courses}/5<p>
+            <p>Teachers: ${comments.stars.teachers}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /></p> 
+            <p>Students: ${comments.stars.students}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /></p>
+            <p>Courses: ${comments.stars.courses}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /><p>
         </div>`
     } else {
         document.querySelector(".student-comments").innerHTML = 
