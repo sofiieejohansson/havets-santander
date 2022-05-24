@@ -491,11 +491,13 @@ body {
   border: 1px solid #E5E5E5;
   height: 248px;
   margin-top: 11px;
+  font-weight: bold;
 }
 
 .sun-days > p:nth-child(1) {
   position: absolute;
   top: 240px;
+  font-weight: normal;
 }
 
 .close {
