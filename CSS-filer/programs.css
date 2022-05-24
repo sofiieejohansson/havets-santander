@@ -59,6 +59,11 @@ select {
   border: 1px solid lightgray;
 }
 
+select:hover {
+  cursor: pointer;
+  background-color: rgb(236, 236, 236);
+}
+
 
 .drop-down-filters > p {
   color: grey;
@@ -80,6 +85,11 @@ select {
   width: 150px;
   border: 1px solid lightgray;
   margin-left: 30px;
+}
+
+.clear:hover {
+  cursor: pointer;
+  background-color: rgb(224, 223, 223);
 }
 
 .programme-box {
