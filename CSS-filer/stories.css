@@ -31,6 +31,11 @@ body {
   margin-bottom: 0px;
 }
 
+.headline {
+  text-align: center;
+  margin-left: 140px;
+}
+
 .content {
   width: 90vw;
   margin-left: 140px;
@@ -107,4 +112,22 @@ body {
 .text-four {
   grid-row: 4;
   grid-column: 2 / span 2;
+}
+
+.wide-ad-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 140px;
+  margin-bottom: 50px;
+}
+
+.wide-ad {
+  border: solid black 1px;
+}
+
+.small-ad {
+  height: 111px;
+  width: 111px;
+  margin-left: 10px;
 }

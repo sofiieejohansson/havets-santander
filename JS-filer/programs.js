@@ -412,12 +412,12 @@ function showProgrammePopup(event) {
                 </div>
      
                 <div class="right-container1">               
-                    <div class="entry-grade">Entry Grade: ${
+                    <div class="entry-grade">Last years entry grade: ${
                       programme.entryGrades[0]
                     }</div>
                     <div class="success-rate">Success Rate: ${
                       programme.successRate[0]
-                    }</div>
+                    }%</div>
                     <div id="${showCity(programme).name}"class="info-city">
                         <div>${showCity(programme).name}</div> 
                         <div>&rang;</div>
