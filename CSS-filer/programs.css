@@ -441,3 +441,15 @@ select:hover {
   margin-left: 140px;
 }
 
+.gubbe-programmes {
+  width: 300px;
+  opacity: 30%;
+  /*! margin: ; */margin-left: 35px;
+ }
+
+ 
+ .gubbe-div > h4:nth-child(1) {
+  margin-bottom: 0px;
+  margin-top: 21.28px;
+ }
+ 
