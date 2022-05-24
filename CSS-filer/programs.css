@@ -25,11 +25,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Coming Soon', cursive !important;
 }
 
 .header1 h1 {
-  font-family: 'Coming Soon', cursive !important;
   font-size: 60px;
 }
 
