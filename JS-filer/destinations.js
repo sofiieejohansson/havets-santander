@@ -1,10 +1,12 @@
 "use strict";
 
 let index = 0;
-
+// tömmer localStorage för att få nya värden
 localStorage.clear();
 
+// Renderar länder och städer(med hjälp av renderCities)
 function renderCountries() {
+  // Filtrerar samt sorterar ut länderna från databas
   let countryName = COUNTRIES.filter((country) => country).sort((a, b) => {
     if (a.name > b.name) {
       return 1;
@@ -13,7 +15,7 @@ function renderCountries() {
     }
     return 0;
   });
-
+  // Renderar varje land utifrån countryName
   let countryContainer = document.getElementById("destinations-container");
   for (let i = 0; i < countryName.length; i++) {
     countryContainer.innerHTML += `
@@ -21,13 +23,16 @@ function renderCountries() {
             <h1 class= "country-h1">${countryName[i].name}</h1>
             <div class="cities-container" id="${countryName[i].name}"></div>
         </div>`;
+    // Här applicerar vi städerna
     renderCities(i, countryName);
   }
   setEventHandler();
   squareAdHandler();
 }
 
+// Renderar städerna för varje land
 function renderCities(counter, array) {
+  // Filtrerar samt sorterar ut städerna från databas
   let cities = CITIES.filter((city) => city).sort((a, b) => {
     if (a.name > b.name) {
       return 1;
@@ -36,7 +41,7 @@ function renderCities(counter, array) {
     }
     return 0;
   });
-
+  // Loopar genom städerna och skapar stad-div om landets id från renderCountries matchar stadens country-id
   for (let city of cities) {
     if (array[counter].id == city.countryID) {
       document.querySelector(
@@ -49,7 +54,7 @@ function renderCities(counter, array) {
     }
   }
 }
-
+// Hanterar reklamen och applicerar den till samtliga städer
 function squareAdHandler() {
   let squareAd1 = document.createElement("div");
   let squareAd2 = document.createElement("div");
@@ -61,10 +66,11 @@ function squareAdHandler() {
   document.querySelector("#Spain").appendChild(squareAd2);
   document.getElementById("United Kingdom").appendChild(squareAd3);
 }
-
+// Sätter eventListeners för popup på städer
 function setEventHandler() {
   for (let city of DB.CITIES) {
     let cityBox = document.getElementById(`${city.name}`);
+    // Om staden finns renderad så appliceras event, annars inte
     if (cityBox != null) {
       cityBox.addEventListener("click", function () {
         renderCitiesPopup(city.name);
@@ -72,26 +78,27 @@ function setEventHandler() {
     }
   }
 }
-
+// Renderar länder och städer efter sökning
 function getCitiesAfterSearch() {
   let input = document.querySelector("#search-input").value;
   document.querySelector("#destinations-container").innerHTML = "";
-
+  // Eftersom användaren söker på stad loopas stad sen land för att undvika länder med tomma städer
   if (input.length > 0) {
     for (let i = 0; i < CITIES.length; i++) {
+      // Om staden börjar med bokstäverna i sökning
       if (CITIES[i].name.toLocaleLowerCase().startsWith(input)) {
         for (let country of COUNTRIES) {
           if (country.id == CITIES[i].countryID) {
             document.querySelector(`#destinations-container`).innerHTML += `
-                        <div class="country-container">
-                            <h1 class="country-h1">${country.name}</h1>
-                            <div class="cities-container">
-                                <div class="city-box" id="${CITIES[i].name}">
-                                    <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
-                                    <h2 class="city-h2">${CITIES[i].name}</h2>
-                                </div> 
-                            </div>
-                        </div>`;
+                <div class="country-container">
+                  <h1 class="country-h1">${country.name}</h1>
+                  <div class="cities-container">
+                    <div class="city-box" id="${CITIES[i].name}">
+                        <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
+                        <h2 class="city-h2">${CITIES[i].name}</h2>
+                    </div> 
+                  </div>
+                </div>`;
           }
         }
       }
@@ -101,11 +108,11 @@ function getCitiesAfterSearch() {
     renderCountries();
   }
 }
-
+// Renderar hela stad-popup
 function renderCitiesPopup(cityName) {
   for (let i = 0; i < CITIES.length; i++) {
     let city = CITIES[i];
-
+    // Tar emot parametern cityName och matchar detta med stad i databas
     if (city.name == cityName) {
       document.querySelector(`#destinations-container`).innerHTML += `
            <div class="destination-popup">
@@ -133,6 +140,7 @@ function renderCitiesPopup(cityName) {
                 </div>
             </div>
             <div class="background-white"></div>`;
+      // Applicerar kommentarer, knappar och så användaren kommer vidare till rätt kurser i programmes
       popupCommentHandler(city.id);
       commentButtonHandler(city.id);
       sendToPrograms(city.id, city.countryID);
@@ -140,7 +148,7 @@ function renderCitiesPopup(cityName) {
   }
   closeButton();
 }
-
+// Skickar med cityID och stadens land när användare skickas till programs via popup
 function sendToPrograms(cityID, cityCountry) {
   document.querySelector(".programs-in-city").onclick = function () {
     sessionStorage.setItem("cityID", cityID);
@@ -148,7 +156,7 @@ function sendToPrograms(cityID, cityCountry) {
     location.href = "programs.html";
   };
 }
-
+// Hanterar stäng-knapp för popup
 function closeButton() {
   document.querySelector(".close").addEventListener("click", function () {
     document.querySelector(".destination-popup").remove();
@@ -156,11 +164,13 @@ function closeButton() {
     document.querySelector(".background-white").remove();
   });
 }
-
+// Hanterar kommentarerna till popup
 function popupCommentHandler(cityID) {
+  // Filtrerar ut kommentarer som matchar cityID
   let cityComments = COMMENTS_CITY.filter((comment) => {
     return comment.cityID == cityID;
   });
+  // if-satser för att återställa index om index går under eller över antalet kommentarer i array
   if (index < 0) {
     index = cityComments.length - 1;
   }
@@ -169,7 +179,7 @@ function popupCommentHandler(cityID) {
   }
 
   let comments = cityComments[index];
-
+  // Om där finns kommentarer så skapas kommentar 
   if (cityComments.length > 0) {
     if (index == cityComments.length) {
       index = 0;
@@ -191,12 +201,14 @@ function popupCommentHandler(cityID) {
         `;
   }
 }
-
+// Hanterar knapparna för kommentarkarusellen
 function commentButtonHandler(cityID) {
+  // Minskar index och kör popupCommentHandler för att rendera ny kommentar
   document.querySelector(".left-button").addEventListener("click", function () {
     index--;
     popupCommentHandler(cityID);
   });
+  // Ökar index -||-
   document
     .querySelector(".right-button")
     .addEventListener("click", function () {
@@ -204,8 +216,9 @@ function commentButtonHandler(cityID) {
       popupCommentHandler(cityID);
     });
 }
-
+// Samlingsfunktion för hantering av pins till kartan
 function setPinHandlers() {
+  // Scrollar till land beroende på klickad pin
   let ukPin = document.querySelector(".uk-pin");
   ukPin.style.cursor = "pointer";
 
@@ -297,6 +310,7 @@ function setPinHandlers() {
   });
 }
 
+// Lägger till event varje gång nånting läggs till i sök
 document
   .querySelector("#search-input")
   .addEventListener("keyup", getCitiesAfterSearch);
