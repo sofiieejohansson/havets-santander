@@ -75,7 +75,7 @@ select:hover {
   gap: 10px;
 }
 
-.clear {
+#clear {
   display: flex;
   padding-left: 37px;
   align-items: center;
@@ -87,7 +87,7 @@ select:hover {
   margin-left: 30px;
 }
 
-.clear:hover {
+#clear:hover {
   cursor: pointer;
   background-color: rgb(224, 223, 223);
 }

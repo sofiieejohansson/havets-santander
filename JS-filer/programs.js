@@ -627,6 +627,21 @@ function commentButtonHandler(cityID) {
     });
 }
 
+function resetFilters() {
+  document.getElementById("programme-container").innerHTML = ""
+  filteredProgrammes = [];
+  feildSelect.value = -1;
+  languageSelect.value = -1;
+  levelSelect.value = -1;
+  countrySelect.value = -1;
+  citySelect.innerHTML = "";
+  createOption()
+  citySelect.disabled = true
+  document.querySelector(".gubbe-div").style.display = "flex";
+}
+
+document.getElementById("clear").addEventListener("click", resetFilters)
+
 // function setEventHandler() {
 //     for(let city of DB.CITIES) {
 //         let cityBox = document.getElementById(`${showCity(programme).name}`);

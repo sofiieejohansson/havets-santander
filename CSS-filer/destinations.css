@@ -8,6 +8,7 @@ html {
   --darkblue: #005c84;
   --lightblue: #8ccbd6;
 }
+
 * {
   font-family: 'Montserrat', sans-serif;
 }
@@ -543,7 +544,6 @@ body {
   font-size: large;
   text-align: center;
   margin: 9px;
-  
 }
 
 .comment-ratings{
