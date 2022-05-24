@@ -365,6 +365,7 @@ body {
   z-index: 50;
   top: 50%;
   left: 50%;
+  margin-left: 80px;
   transform: translate(-50%, -50%);
 }
 
