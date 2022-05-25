@@ -88,9 +88,9 @@ function getCitiesAfterSearch() {
       // Om staden börjar med bokstäverna i sökning
       if (CITIES[i].name.toLocaleLowerCase().startsWith(input.toLocaleLowerCase())) {
         for (let country of COUNTRIES) {
-          if (country.id == CITIES[i].countryID) {
+          if (country.id == CITIES[i].countryID && document.getElementById(`${country.name}`) == null) {
             document.querySelector(`#destinations-container`).innerHTML += `
-                <div class="country-container">
+                <div class="country-container" id="${country.name}">
                   <h1 class="country-h1">${country.name}</h1>
                   <div class="cities-container">
                     <div class="city-box" id="${CITIES[i].name}">
@@ -99,6 +99,13 @@ function getCitiesAfterSearch() {
                     </div> 
                   </div>
                 </div>`;
+          }
+          else if(country.id == CITIES[i].countryID) {
+            document.querySelector(`#${country.name} > div`).innerHTML += `
+              <div class="city-box" id="${CITIES[i].name}">
+                <img class="city-picture" src="Images/${CITIES[i].imagesNormal[0]}" alt="">
+                <h2 class="city-h2">${CITIES[i].name}</h2>
+              </div>`
           }
         }
       }
