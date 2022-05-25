@@ -1,8 +1,8 @@
 "use strict";
 
 let index = 0;
-// tömmer localStorage för att få nya värden
-localStorage.clear();
+// tömmer sessionStorage för att få nya värden
+sessionStorage.clear();
 
 // Renderar länder och städer(med hjälp av renderCities)
 function renderCountries() {
@@ -208,7 +208,7 @@ function commentButtonHandler(cityID) {
     index--;
     popupCommentHandler(cityID);
   });
-  // Ökar index -||-
+  // Ökar index -||- 
   document
     .querySelector(".right-button")
     .addEventListener("click", function () {

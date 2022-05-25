@@ -60,12 +60,6 @@ function closeButton() {
             setTopDestinationEvents()
         })
     }
-
-    // if (document.querySelector(".close-button") != null){
-    //     document.querySelector(".close-button").addEventListener("click", function(){
-    //         document.querySelector(".destination-popup").remove();
-    //     })
-    // }
 }
 
 let index = 0;

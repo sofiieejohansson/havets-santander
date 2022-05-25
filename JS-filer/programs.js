@@ -1,4 +1,6 @@
 "use strict";
+
+// Skapar en tom array för att hantera multifiltrering
 let filteredProgrammes = [];
 let comments = COMMENTS_PROGRAMME;
 let programmes = DB.PROGRAMMES;
@@ -6,9 +8,12 @@ let universities = DB.UNIVERSITIES;
 let countries = DB.COUNTRIES;
 let cities = DB.CITIES;
 
+// Funktionen skapar DOM-element och hanterar informationen
 function showProgram(id) {
   let div = document.createElement("div");
   let programme = DB.PROGRAMMES[id];
+
+  // Applicerar variabler på funktionerna för användningen i template literals nedan 
   let field = showField(programme);
   let language = showLanguage(programme);
   let level = showLevel(programme);
@@ -16,6 +21,7 @@ function showProgram(id) {
   let city = showCity(programme);
   div.classList = "programme-box";
   div.setAttribute("id", `${programme.id}`);
+  // Regigerar DOM-element
   div.innerHTML = `
     <header>${programme.name} - ${city.name}, ${country.name}</header>
     <div id="programme-info">
@@ -28,11 +34,13 @@ function showProgram(id) {
         <p> | ${level}</p>
     </div>`;
 
+  // Adderar en eventlyssnare som kallar på funktionen för rendering av vår pop-up  
   div.addEventListener("click", showProgrammePopup);
 
   return div;
 }
 
+// Funktion med loop för att vårt DOM-element ska renderas för varje program den hittar
 function showProgrammes(programmes) {
   let programmesElement = document.getElementById("programme-container");
   for (let programme of programmes) {
@@ -41,21 +49,15 @@ function showProgrammes(programmes) {
   }
 }
 
+// Funtkion för att hämta information som används i andra funktioner 
 function showField(programme) {
   let fields = DB.FIELDS;
 
+  // Find returnerar det första elementet som uppnår kraven 
   return fields.find((field) => {
     return programme.subjectID == field.id;
   });
 }
-
-// function showComments(programme) {
-//     let comments = COMMENTS_PROGRAMME;
-
-//     return comments.filter(comment => {
-//         return programme.id == comment.programmeID;
-//     })
-// }
 
 function showLanguage(programme) {
   let languages = DB.LANGUAGES;
@@ -73,10 +75,12 @@ function showUniversity(programme) {
   });
 }
 
+// At returnerar en plats i arrayn och dess värde baserat på ett nummer
 function showLevel(programme) {
   return LEVELS.at(programme.level);
 }
 
+// 
 function showCity(programme) {
   let cities = DB.CITIES;
 
@@ -109,17 +113,16 @@ function showCountry(programme) {
   }
 }
 
-function isFilteredEmpty() {
-  return filteredProgrammes.length;
-}
-
+// Tömmer innehållet 
 function emptyList() {
   document.querySelector("#programme-container").innerHTML = "";
 }
 
+// Tar bort placeholder för gubbe-div
 function filterFeild(fieldOption) {
   document.querySelector(".gubbe-div").style.display = "none";
 
+  // Om den hittar ett program som stämmer överens med värdet i select option
   if (
     filteredProgrammes.some(
       (programme) => programme.subjectID == fieldOption
@@ -128,11 +131,13 @@ function filterFeild(fieldOption) {
     filteredProgrammes = filteredProgrammes.filter((programme) => {
       return fieldOption == programme.subjectID;
     });
+    // Om annars, gå igenom databasen
   } else {
     filteredProgrammes = DB.PROGRAMMES.filter((programme) => {
       return fieldOption == programme.subjectID;
     });
 
+    // För att övriga filter ska bli inkluderade (-1 = default option value)
     if (languageSelect.value >= 0) {
       filteredProgrammes = filteredProgrammes.filter((programme) => {
         return languageSelect.value == programme.language;
@@ -156,6 +161,7 @@ function filterFeild(fieldOption) {
   }
 }
 
+// Applicerar eventlyssnare på respektive select
 const feildSelect = document.getElementById("field");
 feildSelect.addEventListener("change", function () {
   emptyList();
@@ -290,6 +296,7 @@ function filterCountry(countryOption) {
   }
 }
 
+// Kallar på createOption för att städer ska skapas baserat på landet man väljer (city är disabled sedan innan)
 const countrySelect = document.getElementById("country");
 countrySelect.addEventListener("change", function () {
   citySelect.disabled = false;
@@ -347,6 +354,7 @@ citySelect.addEventListener("change", function () {
   showProgrammes(filteredProgrammes);
 });
 
+// Renderar city-options baserat på valt land 
 function createOption(countryId = -1) {
   citySelect.innerHTML = "";
   let defaultOption = document.createElement("option");
@@ -357,12 +365,7 @@ function createOption(countryId = -1) {
   defaultOption.innerText = "City";
   citySelect.appendChild(defaultOption);
   if (countryId == -1) {
-    //for (let i = 0; i < cities.length; i++) {
-    //    let option = document.createElement("option");
-    //    option.text = cities[i].name;
-    //    option.value = i;
-    //    citySelect.add(option);
-    //}
+
   } else {
     for (let i = 0; i < cities.length; i++) {
       if (cities[i].countryID == countryId) {
@@ -377,7 +380,6 @@ function createOption(countryId = -1) {
 
 function showProgrammePopup(event) {
   let level = showLevel(programmes);
-  console.log(event.target);
   for (let i = 0; i < PROGRAMMES.length; i++) {
     let programme = PROGRAMMES[i];
 
@@ -388,18 +390,12 @@ function showProgrammePopup(event) {
             </div>
                 
             <div class="university-info">
-                <h4 class="university-name">${
-                  showUniversity(programme).name
-                } - ${showField(programme).name}</h4>
+                <h4 class="university-name">${showUniversity(programme).name} - ${showField(programme).name}</h4>
                 <div class="student-info">
                     <img class="icon" src="Images/icon-users-29-grey.png" alt="">
-                    <p class="local-students">Local Students: ${
-                      programme.localStudents
-                    }</p>
+                    <p class="local-students">Local Students: ${programme.localStudents}</p>
                     <img class="icon" src="Images/icon-users-29-grey.png" alt="">
-                    <p class="exchange-students">Exchange Students: ${
-                      programme.exchangeStudents
-                    }</p>
+                    <p class="exchange-students">Exchange Students: ${programme.exchangeStudents}</p>
                 </div>
             </div>
 
@@ -412,12 +408,8 @@ function showProgrammePopup(event) {
                 </div>
      
                 <div class="right-container1">               
-                    <div class="entry-grade">Last years entry grade: ${
-                      programme.entryGrades[0]
-                    }</div>
-                    <div class="success-rate">Success Rate: ${
-                      programme.successRate[0]
-                    }%</div>
+                    <div class="entry-grade">Last years entry grade: ${programme.entryGrades[0]}</div>
+                    <div class="success-rate">Success Rate: ${programme.successRate[0]}%</div>
                     <div id="${showCity(programme).name}"class="info-city">
                         <div>${showCity(programme).name}</div> 
                         <div>&rang;</div>
@@ -432,9 +424,7 @@ function showProgrammePopup(event) {
       document.querySelector(`.background-white`).style.display = "block";
       document.querySelector(`.seethrou`).style.display = "block";
 
-      document
-        .querySelector(`.close-button1`)
-        .addEventListener("click", function () {
+      document.querySelector(`.close-button1`).addEventListener("click", function () {
           document.querySelector(`.close-button1`).style.display = "none";
           document.querySelector(`.background-white`).style.display = "none";
           document.querySelector(`.seethrou`).style.display = "none";
@@ -442,9 +432,7 @@ function showProgrammePopup(event) {
           document.querySelector(`#popup`).innerHTML = "";
         });
 
-      document
-        .getElementById(`${showCity(programme).name}`)
-        .addEventListener("click", function () {
+      document.getElementById(`${showCity(programme).name}`).addEventListener("click", function () {
           document.querySelector(`#popup`).style.display = "none";
           document.querySelector(`.seethrou`).style.display = "none";
 
@@ -455,6 +443,7 @@ function showProgrammePopup(event) {
   }
 }
 
+// Applicerar eventlyssnare efter "close" på stad-pop-up (bug?)
 function setProgrammeEvents() {
   let programmeBoxes = document.querySelectorAll(".programme-box");
 
@@ -470,6 +459,7 @@ function programmeComments(programmeID) {
     return comment.programmeID == programmeID;
   });
 
+  // Återställer index om man går under eller över längden på arrayen 
   if (index < 0) {
     index = programmeComments.length - 1;
   }
@@ -482,9 +472,8 @@ function programmeComments(programmeID) {
       index = 0;
     }
     let comments = programmeComments[index];
-    document.querySelector(
-      ".student-comments"
-    ).innerHTML = `<div>${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}:</div>
+    document.querySelector(".student-comments").innerHTML = 
+    `<div>${comments.alias}, ${comments.date.year}-${comments.date.month}-${comments.date.day}:</div>
         <div class ="comment-container">
             
             <div>${comments.text}</div>
@@ -496,32 +485,27 @@ function programmeComments(programmeID) {
             <p>Courses: ${comments.stars.courses}/5 <img class="star-icon" src="Images/star-icon.png" alt="" /><p>
         </div>`;
   } else {
-    document.querySelector(
-      ".student-comments"
-    ).innerHTML = `<h3 class="no-comments">No comments found</h3>
+    document.querySelector(".student-comments").innerHTML = `<h3 class="no-comments">No comments found</h3>
         <div class="gubbe"></div>`;
   }
 }
 
 function commentButton(programmeID) {
-  document
-    .querySelector(".left-button1")
-    .addEventListener("click", function () {
+  document.querySelector(".left-button1").addEventListener("click", function () {
       index--;
       programmeComments(programmeID);
     });
-  document
-    .querySelector(".right-button1")
-    .addEventListener("click", function () {
+  document.querySelector(".right-button1").addEventListener("click", function () {
       index++;
       programmeComments(programmeID);
     });
 }
 
 function preFilterFromDesti() {
-  console.log(sessionStorage);
+  // Dubbelkollar sessionstorage och tar emot/tar med stadens id från destinations 
   if (sessionStorage.length > 0) {
     let cityId = sessionStorage.getItem("cityID");
+    // Tar med och filtrerat baserat på det Id den fått med sig och tömmer sedan session storage
     filterCity(cityId);
     sessionStorage.clear();
   }
@@ -567,6 +551,7 @@ function renderCitiesPopup(cityName) {
   closeButton();
 }
 
+// Funktionen både stänger en pop-up och visar en annan "igen"
 function closeButton() {
   document.querySelector(".close").addEventListener("click", function () {
     document.querySelector(".destination-popup").remove();
@@ -574,13 +559,9 @@ function closeButton() {
     document.querySelector(`.seethrou`).style.display = "block";
     setProgrammeEvents();
   });
-  // if (document.querySelector(".close-button") != null){
-  //     document.querySelector(".close-button").addEventListener("click", function(){
-  //         document.querySelector(".destination-popup").remove();
-  //     })
-  // }
 }
 
+// 
 function popupCommentHandler(cityID) {
   let cityComments = COMMENTS_CITY.filter((comment) => {
     return comment.cityID == cityID;
@@ -619,14 +600,14 @@ function commentButtonHandler(cityID) {
     index--;
     popupCommentHandler(cityID);
   });
-  document
-    .querySelector(".right-button")
-    .addEventListener("click", function () {
+  document.querySelector(".right-button").addEventListener("click", function () {
       index++;
       popupCommentHandler(cityID);
     });
 }
 
+// Tömmer programm-div, sedan tömmer den array, applicerar default value på alla filter
+// Visar gubben
 function resetFilters() {
   document.getElementById("programme-container").innerHTML = ""
   filteredProgrammes = [];
@@ -635,63 +616,16 @@ function resetFilters() {
   levelSelect.value = -1;
   countrySelect.value = -1;
   citySelect.innerHTML = "";
+  // Skapar endast defaultvalue
   createOption()
   citySelect.disabled = true
   document.querySelector(".gubbe-div").style.display = "flex";
 }
 
-document.getElementById("clear").addEventListener("click", resetFilters)
-
-// function setEventHandler() {
-//     for(let city of DB.CITIES) {
-//         let cityBox = document.getElementById(`${showCity(programme).name}`);
-//         if (cityBox != null) {
-//             cityBox.addEventListener("click", function(){renderCitiesPopup(city.name)})
-//         }
-//     }
-// }
-
-/*
-const programmeBox = document.querySelectorAll(".programme-box");
-
-programmeBox.addEventListener('click', e => {
-    console.log(e);
-}) 
-
-
-closeButton.addEventListener("click", function () {
-    programmePopUp.style.display = "none";
-});
-
-window.addEventListener("click", function (event) {
-    if (event.target == programmePopUp) {
-        programmePopUp.style.display = "none";
-    }
-}); 
-*/
+document.getElementById("clear").addEventListener("click", resetFilters);
 
 preFilterFromDesti();
 
 createOption();
 
 showProgrammes(filteredProgrammes);
-
-/*
-let countryChoice = window.localStorage.getItem("countryChoice");
-if (countryChoice != null) {
-    console.log(countryChoice);
-}
-*/
-
-/*
-function setEventHandler() {
-    for (let programme of programmes) {
-        let programmeBox = document.getElementById(`${programme.name}`)
-        if (programmeBox != null) {
-            programmeBox.addEventListener("click", function() {
-                renderProgrammePopup(programme.name)
-            })
-        }
-    }
-}
-*/
