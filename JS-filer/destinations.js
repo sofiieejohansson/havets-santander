@@ -70,7 +70,7 @@ function squareAdHandler() {
 function setEventHandler() {
   for (let city of DB.CITIES) {
     let cityBox = document.getElementById(`${city.name}`);
-    // Om staden finns renderad så appliceras event, annars inte
+    // Om staden finns renderad så appliceras event, annars inte för att alla städer inte finns när du söker
     if (cityBox != null) {
       cityBox.addEventListener("click", function () {
         renderCitiesPopup(city.name);
@@ -86,7 +86,7 @@ function getCitiesAfterSearch() {
   if (input.length > 0) {
     for (let i = 0; i < CITIES.length; i++) {
       // Om staden börjar med bokstäverna i sökning
-      if (CITIES[i].name.toLocaleLowerCase().startsWith(input)) {
+      if (CITIES[i].name.toLocaleLowerCase().startsWith(input.toLocaleLowerCase())) {
         for (let country of COUNTRIES) {
           if (country.id == CITIES[i].countryID) {
             document.querySelector(`#destinations-container`).innerHTML += `
@@ -209,9 +209,7 @@ function commentButtonHandler(cityID) {
     popupCommentHandler(cityID);
   });
   // Ökar index -||- 
-  document
-    .querySelector(".right-button")
-    .addEventListener("click", function () {
+  document.querySelector(".right-button").addEventListener("click", function () {
       index++;
       popupCommentHandler(cityID);
     });
